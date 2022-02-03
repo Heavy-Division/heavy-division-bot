@@ -27,7 +27,8 @@ client.once('ready', () => {
 
 client.on('messageCreate', message =>{
 
-    if(message.content.includes("@Comi")) {
+    if(message.content.includes("    if(message.content.includes("Comi#0755")) {
+")) {
         message.reply('```Do not ping Comi, Please```');
     } 
 
