@@ -1,12 +1,7 @@
 const Discord = require('discord.js');
 require("dotenv").config();
-const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] });
-const express = require("express");
-const app = express();
+const client = new Discord.Client({intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS"], allowedMentions:{ parse: ["users"]}})
 
-app.listen(3000, () => {
-    console.log("Bot is running!");
-})
 
 const prefix = `.`;
 
