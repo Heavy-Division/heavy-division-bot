@@ -27,7 +27,7 @@ client.once('ready', () => {
 
 client.on('messageCreate', message =>{
 
-    if(message.content.includes("@Comi")) {
+      if(message.content.includes("Comi#0755") && message.author.id != '402403275799920641', '198174874479362048', '601162068611301377', '208058146273361921', '198918390163701761') {
         message.reply('```Do not ping Comi, Please```');
     } 
 
