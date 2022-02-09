@@ -20,11 +20,18 @@ client.once('ready', () => {
     console.log('HeavyBot is online!');
 });
 
-client.on('messageCreate', message =>{
+client.on('messageCreate', async message =>{
+    console.log()
+    if (message.author.bot) return false;
 
-      if(message.content.includes("Comi#0755") && message.author.id != '402403275799920641', '198174874479362048', '601162068611301377', '208058146273361921', '198918390163701761') {
-        message.reply('```Do not ping Comi, Please```');
-    } 
+    if(message.content.includes(ownerId)) {
+        if (message.author.id === '198174874479362048', '208058146273361921', '402403275799920641', '198918390163701761', '601162068611301377', '746781061232721921', '302614302899175424', '508343288453922828') {
+         return false;
+        
+    } else 
+         return message.reply('```Do not ping Comi, Please```');
+
+}
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
