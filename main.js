@@ -20,6 +20,8 @@ client.once('ready', () => {
     console.log('HeavyBot is online!');
 });
 
+const ownerID = "396422714690240515"
+
 client.on('messageCreate', async message =>{
     console.log()
     if (message.author.bot) return false;
