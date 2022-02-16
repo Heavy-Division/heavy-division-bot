@@ -35,6 +35,19 @@ client.on('messageCreate', async message =>{
 
 }
 
+client.once('ready', () => {
+    console.log('HeavyBot is online!');
+ 
+    client.user.setPresence({
+        status: "online",  //You can show online, idle....
+        activities: [{
+            name: ".help",  //The message shown
+            type: "LISTENING" //PLAYING: WATCHING: LISTENING: STREAMING:
+        }]
+    });
+
+});
+
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
