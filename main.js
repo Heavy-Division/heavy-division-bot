@@ -21,6 +21,18 @@ client.once('ready', () => {
 });
 
 const ownerId = "396422714690240515"
+client.once('ready', () => {
+    console.log('HeavyBot is online!');
+ 
+    client.user.setPresence({
+        status: "online",  //You can show online, idle....
+        activities: [{
+            name: ".help",  //The message shown
+            type: "LISTENING" //PLAYING: WATCHING: LISTENING: STREAMING:
+        }]
+    });
+
+});
 
 client.on('messageCreate', async message =>{
     console.log()
@@ -35,18 +47,7 @@ client.on('messageCreate', async message =>{
 
 }
 
-client.once('ready', () => {
-    console.log('HeavyBot is online!');
- 
-    client.user.setPresence({
-        status: "online",  //You can show online, idle....
-        activities: [{
-            name: ".help",  //The message shown
-            type: "LISTENING" //PLAYING: WATCHING: LISTENING: STREAMING:
-        }]
-    });
 
-});
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
