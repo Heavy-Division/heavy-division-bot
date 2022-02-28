@@ -9,9 +9,6 @@ module.exports = {
         .setDescription('Check that you have deadzones set >0% before engaging LNAV')
         .setImage('https://i.imgur.com/s6WVry4.jpg')
        
-
-
-
         message.channel.send({ embeds: [newEmbed] });
     }
 

@@ -9,9 +9,6 @@ module.exports = {
         .setDescription('You need Premium Deluxe to use the Heavy Division Mod')
         .setImage('https://cdn.discordapp.com/attachments/810316915464863774/938473429399654451/unknown.png')
        
-
-
-
         message.channel.send({ embeds: [newEmbed] });
     }
 

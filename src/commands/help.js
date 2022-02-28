@@ -1,15 +1,17 @@
 require("dotenv").config();
 module.exports = {
     name: 'help',
-    description: "If someone asks: Why isn't LNAV working? Plane constantly drifting to one side",
+    description: "Use for list of heavybot commands",
     execute(message, args, Discord) {
         const newEmbed = new Discord.MessageEmbed()
         .setColor('#304281')
         .setTitle('Bot Commands')
-        .setDescription('.wx: will return info on weather engine failures when questions are asked,.dz: will provide info on deadzone related LNAV failures, .prm: will provide explanation why user cannot see the 787 in their menu after downloading mod')
-       
-
-
+        .setDescription('How to use HeavyBot')
+        .addFields(
+            { name: '1. .prm', value: 'Explains why some users do not see the plane in the sim after unzipping to their community folder' },
+            { name: '2. .dz', value: 'Deadzone fix guide for LNAV banking issues.' },
+            { name: '3. .wx', value: 'If questions arise regarding weather engine fixes/updates.'},
+        )
 
         message.channel.send({ embeds: [newEmbed] });
     }
