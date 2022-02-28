@@ -69,6 +69,10 @@ client.on('messageCreate', async message =>{
         client.commands.get('help').execute(message, args, Discord);
     } 
 
+    if(command === 'when'){
+        client.commands.get('when').execute(message, args, Discord);
+    } 
+
 });
     
 client.login(process.env.DISCORD_TOKEN);
