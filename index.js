@@ -73,6 +73,10 @@ client.on('messageCreate', async message =>{
         client.commands.get('when').execute(message, args, Discord);
     } 
 
+    if(command === 'hud'){
+        client.commands.get('hud').execute(message, args, Discord);
+    } 
+
 });
     
 client.login(process.env.DISCORD_TOKEN);
