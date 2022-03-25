@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 require("dotenv").config();
 const client = new Discord.Client({intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS"], allowedMentions:{ parse: ["users"]}})
-
+const express = require('express');
 
 const prefix = `.`;
 
@@ -29,6 +29,13 @@ client.once('ready', () => {
         }]
     });
 
+});
+
+const app = express();
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
 });
 
 client.on('messageCreate', async message =>{
