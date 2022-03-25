@@ -79,8 +79,4 @@ client.on('messageCreate', async message =>{
 
 });
 
-client
-    .on("debug", console.log)
-    .on("warn", console.log)
-
 client.login(process.env.DISCORD_TOKEN);
