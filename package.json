@@ -2,7 +2,7 @@
   "name": "heavybot",
   "version": "1.0.0",
   "description": "Auto responder and moderation bot for the Heavy Division Discord",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
