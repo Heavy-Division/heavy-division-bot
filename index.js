@@ -2,11 +2,9 @@ const Discord = require('discord.js');
 require("dotenv").config();
 const client = new Discord.Client({intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS"], allowedMentions:{ parse: ["users"]}})
 const express = require('express');
-
-const prefix = `.`;
-
 const fs = require('fs');
 
+const prefix = `.`;
 
 client.commands = new Discord.Collection();
 
