@@ -20,7 +20,7 @@ for(const file of commandFiles){
 const ownerId = "396422714690240515"
 client.once('ready', () => {
     console.log('HeavyBot is online!');
- 
+
     client.user.setPresence({
         status: "online",  //You can show online, idle....
         activities: [{
@@ -37,8 +37,8 @@ client.on('messageCreate', async message =>{
     if(message.content.includes(ownerId)) {
         if (message.author.id === '198174874479362048', '208058146273361921', '402403275799920641', '198918390163701761', '601162068611301377', '746781061232721921', '302614302899175424', '508343288453922828') {
          return false;
-        
-    } else 
+
+    } else
          return message.reply('```Do not ping Comi, Please```');
 
 }
@@ -55,28 +55,32 @@ client.on('messageCreate', async message =>{
 
     if(command === 'prm'){
         client.commands.get('prm').execute(message, args, Discord);
-    } 
+    }
 
     if(command === 'wx'){
         client.commands.get('wx').execute(message, args, Discord);
-    } 
-    
+    }
+
     if(command === 'dz'){
         client.commands.get('dz').execute(message, args, Discord);
-    } 
+    }
 
     if(command === 'help'){
         client.commands.get('help').execute(message, args, Discord);
-    } 
+    }
 
     if(command === 'when'){
         client.commands.get('when').execute(message, args, Discord);
-    } 
+    }
 
     if(command === 'hud'){
         client.commands.get('hud').execute(message, args, Discord);
-    } 
+    }
 
 });
-    
+
+client
+    .on("debug", console.log)
+    .on("warn", console.log)
+
 client.login(process.env.DISCORD_TOKEN);
