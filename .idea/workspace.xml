@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50c1b9e2-ebb4-4e8b-87d8-4f7db3d26878" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/dz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/dz.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,8 +66,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\dev\Desktop\HeavyBot\src" />
       <recent name="C:\Users\dev\Desktop\HeavyBot" />
+      <recent name="C:\Users\dev\Desktop\HeavyBot\src" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -83,7 +82,7 @@
       <workItem from="1648090949874" duration="626000" />
       <workItem from="1648171038921" duration="188000" />
       <workItem from="1648171238270" duration="140000" />
-      <workItem from="1648171385079" duration="2211000" />
+      <workItem from="1648171385079" duration="3208000" />
     </task>
     <servers />
   </component>
