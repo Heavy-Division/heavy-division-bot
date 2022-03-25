@@ -4,13 +4,15 @@ const client = new Discord.Client({intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_
 const express = require('express');
 const fs = require('fs');
 
+
 const prefix = `.`;
 
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./src/commands/').filter(file => file.endsWith('.js'));
+
 for(const file of commandFiles){
-    const command = require(`./src/commands/${file}`);
+    const command = require(`./commands/${file}`);
 
     client.commands.set(command.name, command);
 }
@@ -33,7 +35,7 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Our app is running on port ${ PORT }`);
+    console.log(`The app is running on port ${ PORT }`);
 });
 
 client.on('messageCreate', async message =>{

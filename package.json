@@ -1,18 +1,19 @@
 {
-  "name": "heavybot",
-  "version": "1.0.0",
-  "description": "Auto responder and moderation bot for the Heavy Division Discord",
-  "main": "index.js",
+  "name": "HeavyBot",
+  "version": "2.0.0",
+  "description": "Chat, support, and moderation bot for the Heavy Division Discord",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
-  "author": "Kola",
+  "author": "Heavy Division Simulations",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^13.6.0",
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
-    "rollup": "^2.67.0"
+    "rollup": "^2.67.0",
+    "typescript": "^4.6.3"
   }
 }
