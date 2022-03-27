@@ -1,6 +1,6 @@
 import { CommandDefinition } from '../lib/command';
 import Logger from '../lib/logger';
-import { when } from './support/when';
+import { when } from './general/when';
 
 const commands: CommandDefinition[] = [
     when
