@@ -15,6 +15,7 @@ import { airframe } from './B78XH/airframe';
 import { versions } from './B78XH/version';
 import { directx12 } from './support/directx12';
 import { experimental } from './B78XH/experimental';
+import { p3d } from './memes/p3d';
 
 const commands: CommandDefinition[] = [
     when,
@@ -31,7 +32,8 @@ const commands: CommandDefinition[] = [
     airframe,
     versions,
     directx12,
-    experimental
+    experimental,
+    p3d
 
 ];
 
