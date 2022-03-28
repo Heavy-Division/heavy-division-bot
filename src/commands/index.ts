@@ -3,11 +3,13 @@ import Logger from '../lib/logger';
 import { when } from './general/when';
 import { dlc } from './support/dlc';
 import { boing } from './memes/boing';
+import { msfs } from './support/msfs';
 
 const commands: CommandDefinition[] = [
     when,
     dlc,
-    boing
+    boing,
+    msfs
 ];
 
 const commandsObject: { [k: string]: CommandDefinition } = {};
