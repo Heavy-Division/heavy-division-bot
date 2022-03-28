@@ -5,13 +5,15 @@ import { dlc } from './support/dlc';
 import { boing } from './memes/boing';
 import { msfs } from './support/msfs';
 import { comi } from './memes/comi';
+import { premium } from './memes/premium';
 
 const commands: CommandDefinition[] = [
     when,
     dlc,
     boing,
     msfs,
-    comi
+    comi,
+    premium,
 ];
 
 const commandsObject: { [k: string]: CommandDefinition } = {};
