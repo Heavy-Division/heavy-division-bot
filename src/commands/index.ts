@@ -25,6 +25,7 @@ import { metar } from './utils/metar';
 import { metarhow } from './general/metarhow';
 import { coffee } from './memes/coffee';
 import { merge } from './memes/merge';
+import { defaultmeme } from './memes/default';
 
 const commands: CommandDefinition[] = [
     when,
@@ -51,7 +52,8 @@ const commands: CommandDefinition[] = [
     metar,
     metarhow,
     coffee,
-    merge
+    merge,
+    defaultmeme
 
 ];
 
