@@ -4,28 +4,47 @@ Text and moderation bot for the Heavy Division Discord
 Current Commands: 
 -----------------
 
-## .wx: 
+## B78XH: 
+**.airframe**
 
-will return info on weather engine failures when questions are asked
+**.experimental**
 
-## .dz: 
+**.simbriefimport**
 
-will provide info on deadzone related LNAV failures
+**.version**
 
-## .prm: 
+## General:
+**.when**
 
-will provide explanation why user cannot see the 787 in their menu after downloading mod
+## Memes: 
+**.boing**
 
-## .restart:
+**.comi**
 
-restart (moderator only): will restart the bot for troubleshooting
+**.p3d**
+
+**.premium**
  
-## .when: 
+## Support 
+**.contentmanager or .cm**
 
-will provide info on B78XH updates
+**.controls**
 
-## .hud: 
+**.ctd or .crash**
 
-provides support for Heads Up Display alignment issues
+**.deadzones or .dz**
 
-The bot also has a message.content.contains scanner for reducing pings to the server owner and devs.
+**.dx12**
+
+**.dlc**
+
+**.hud**
+
+**.msfs**
+
+## Utilities
+**.help**
+
+**.membercount**
+
+**.metar**
