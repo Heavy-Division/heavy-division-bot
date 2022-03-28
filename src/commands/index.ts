@@ -12,6 +12,7 @@ import { ctd } from './support/ctd';
 import { simbriefimport } from './B78XH/simbriefimport';
 import { membercount } from './utils/membercount';
 import { airframe } from './B78XH/airframe';
+import { versions } from './B78XH/version';
 
 const commands: CommandDefinition[] = [
     when,
@@ -25,7 +26,8 @@ const commands: CommandDefinition[] = [
     ctd,
     simbriefimport,
     membercount,
-    airframe
+    airframe,
+    versions
 
 ];
 
