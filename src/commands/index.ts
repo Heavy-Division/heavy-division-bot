@@ -7,6 +7,8 @@ import { msfs } from './support/msfs';
 import { comi } from './memes/comi';
 import { premium } from './memes/premium';
 import { controls } from './support/controls';
+import { deadzones } from './support/deadzones';
+import { ctd } from './support/ctd';
 
 const commands: CommandDefinition[] = [
     when,
@@ -15,7 +17,10 @@ const commands: CommandDefinition[] = [
     msfs,
     comi,
     premium,
-    controls
+    controls,
+    deadzones,
+    ctd,
+
 ];
 
 const commandsObject: { [k: string]: CommandDefinition } = {};
