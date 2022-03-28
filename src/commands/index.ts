@@ -23,6 +23,7 @@ import { donate } from './general/donate';
 import { irs } from './B78XH/irs';
 import { metar } from './utils/metar';
 import { metarhow } from './general/metarhow';
+import { coffee } from './memes/coffee';
 
 const commands: CommandDefinition[] = [
     when,
@@ -47,7 +48,8 @@ const commands: CommandDefinition[] = [
     donate,
     irs,
     metar,
-    metarhow
+    metarhow,
+    coffee
 
 ];
 
