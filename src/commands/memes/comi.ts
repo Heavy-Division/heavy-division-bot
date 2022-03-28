@@ -5,7 +5,7 @@ const COMI_URL = 'https://tenor.com/view/cookie-monster-waiting-tapping-gif-5331
 
 export const comi: CommandDefinition = {
     name: 'comi',
-    description: 'GIT MERGE!',
+    description: 'Stop with these sh*ts last chance...',
     category: CommandCategory.MEMES,
     executor: async (msg) => {
         await msg.channel.send(COMI_URL);
