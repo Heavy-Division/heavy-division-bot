@@ -20,6 +20,7 @@ import { hud } from './support/hud';
 import { contentManager } from './support/contentmanager';
 import { help } from './utils/help';
 import { donate } from './general/donate';
+import { irs } from './B78XH/irs';
 
 const commands: CommandDefinition[] = [
     when,
@@ -41,7 +42,8 @@ const commands: CommandDefinition[] = [
     hud,
     contentManager,
     help,
-    donate
+    donate,
+    irs
 
 ];
 
