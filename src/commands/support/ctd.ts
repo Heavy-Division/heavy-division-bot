@@ -5,7 +5,7 @@ import { makeEmbed, makeLines } from '../../lib/embed';
 export const ctd: CommandDefinition = {
     name: ['ctd', 'crash'],
     description: 'Provides direction for addressing CTD issues.',
-    category: CommandCategory.B78XH,
+    category: CommandCategory.SUPPORT,
     executor: async (msg) => {
         const ctdEmbed = makeEmbed({
             title: 'Heavy Division | Crash to Desktop',
