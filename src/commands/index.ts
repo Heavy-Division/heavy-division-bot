@@ -13,6 +13,8 @@ import { simbriefimport } from './B78XH/simbriefimport';
 import { membercount } from './utils/membercount';
 import { airframe } from './B78XH/airframe';
 import { versions } from './B78XH/version';
+import { directx12 } from './support/directx12';
+import { experimental } from './B78XH/experimental';
 
 const commands: CommandDefinition[] = [
     when,
@@ -27,7 +29,9 @@ const commands: CommandDefinition[] = [
     simbriefimport,
     membercount,
     airframe,
-    versions
+    versions,
+    directx12,
+    experimental
 
 ];
 
