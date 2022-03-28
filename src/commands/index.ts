@@ -11,6 +11,7 @@ import { deadzones } from './support/deadzones';
 import { ctd } from './support/ctd';
 import { simbriefimport } from './B78XH/simbriefimport';
 import { membercount } from './utils/membercount';
+import { airframe } from './B78XH/airframe';
 
 const commands: CommandDefinition[] = [
     when,
@@ -23,7 +24,8 @@ const commands: CommandDefinition[] = [
     deadzones,
     ctd,
     simbriefimport,
-    membercount
+    membercount,
+    airframe
 
 ];
 
