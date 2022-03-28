@@ -10,13 +10,14 @@ export const ctd: CommandDefinition = {
         const ctdEmbed = makeEmbed({
             title: 'Heavy Division | Crash to Desktop',
             description: makeLines([
-                'Please see the official MSFS forums for support addressing CTD issues. **No support will be offered via Discord.** ',
+                'Please see the official MSFS forums for support addressing CTD issues.',
+                '**No support will be offered via Discord.** ',
                 '',
-                '[-Basic Troubleshooting](https://flightsimulator.zendesk.com/hc/en-us/articles/4406280399250-All-versions-Crashing-CTDs-issues-Basic-Troubleshooting) ',
+                '1. [Basic Troubleshooting](https://flightsimulator.zendesk.com/hc/en-us/articles/4406280399250-All-versions-Crashing-CTDs-issues-Basic-Troubleshooting) ',
                 '',
-                '[-Crashing/CTD issues Checklist](https://flightsimulator.zendesk.com/hc/en-us/articles/360015893879-All-versions-Crashing-CTDs-issues-Checklist) ',
+                '2. [Crashing/CTD issues Checklist](https://flightsimulator.zendesk.com/hc/en-us/articles/360015893879-All-versions-Crashing-CTDs-issues-Checklist) ',
                 '',
-                '[-Crashing/CTD Advanced Troubleshooting](https://flightsimulator.zendesk.com/hc/en-us/articles/4406280653202-All-versions-Crashing-CTDs-issues-Advanced-Troubleshooting) ',
+                '3. [Crashing/CTD Advanced Troubleshooting](https://flightsimulator.zendesk.com/hc/en-us/articles/4406280653202-All-versions-Crashing-CTDs-issues-Advanced-Troubleshooting) ',
             ]),
         });
 

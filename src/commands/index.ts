@@ -18,6 +18,7 @@ import { experimental } from './B78XH/experimental';
 import { p3d } from './memes/p3d';
 import { hud } from './support/hud';
 import { contentManager } from './support/contentmanager';
+import { help } from './utils/help';
 
 const commands: CommandDefinition[] = [
     when,
@@ -37,7 +38,8 @@ const commands: CommandDefinition[] = [
     experimental,
     p3d,
     hud,
-    contentManager
+    contentManager,
+    help
 
 ];
 
