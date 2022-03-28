@@ -1,10 +1,14 @@
-# HeavyBot
+<img src="https://cdn.discordapp.com/attachments/828780654438514729/957702428340408411/hdlogo2.gif">
+
 Text and moderation bot for the Heavy Division Discord
+
+<!--TODO: <Add imageshields with server member count, contributor count, socials links, and release version-->
 
 Current Commands: 
 -----------------
 
-## B78XH: 
+>B78XH:
+> 
 **.airframe**
 
 **.experimental**
@@ -13,10 +17,15 @@ Current Commands:
 
 **.version**
 
-## General:
+**.irs**
+
+>General:
+> 
 **.when**
 
-## Memes: 
+**.donate** 
+>Memes:
+> 
 **.boing**
 
 **.comi**
@@ -25,7 +34,8 @@ Current Commands:
 
 **.premium**
  
-## Support 
+>Support
+> 
 **.contentmanager or .cm**
 
 **.controls**
@@ -42,9 +52,11 @@ Current Commands:
 
 **.msfs**
 
-## Utilities
+>Utilities
+> 
 **.help**
 
 **.membercount**
 
 **.metar**
+
