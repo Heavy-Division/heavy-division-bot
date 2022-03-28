@@ -97,7 +97,7 @@ client.on('messageCreate', async (msg) => {
 });
 
 client.once('ready', () => {
-    console.log('HeavyBot is online!');
+    console.log('The bot is online!');
 
     client.user.setPresence({
         status: "online",  //You can show online, idle....
