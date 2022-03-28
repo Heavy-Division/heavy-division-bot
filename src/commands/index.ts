@@ -21,6 +21,8 @@ import { contentManager } from './support/contentmanager';
 import { help } from './utils/help';
 import { donate } from './general/donate';
 import { irs } from './B78XH/irs';
+import { metar } from './utils/metar';
+import { metarhow } from './general/metarhow';
 
 const commands: CommandDefinition[] = [
     when,
@@ -43,7 +45,9 @@ const commands: CommandDefinition[] = [
     contentManager,
     help,
     donate,
-    irs
+    irs,
+    metar,
+    metarhow
 
 ];
 
