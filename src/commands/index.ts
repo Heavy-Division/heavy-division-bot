@@ -6,6 +6,7 @@ import { boing } from './memes/boing';
 import { msfs } from './support/msfs';
 import { comi } from './memes/comi';
 import { premium } from './memes/premium';
+import { controls } from './support/controls';
 
 const commands: CommandDefinition[] = [
     when,
@@ -14,6 +15,7 @@ const commands: CommandDefinition[] = [
     msfs,
     comi,
     premium,
+    controls
 ];
 
 const commandsObject: { [k: string]: CommandDefinition } = {};
