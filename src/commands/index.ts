@@ -9,6 +9,8 @@ import { premium } from './memes/premium';
 import { controls } from './support/controls';
 import { deadzones } from './support/deadzones';
 import { ctd } from './support/ctd';
+import { simbriefimport } from './B78XH/simbriefimport';
+import { membercount } from './utils/membercount';
 
 const commands: CommandDefinition[] = [
     when,
@@ -20,6 +22,8 @@ const commands: CommandDefinition[] = [
     controls,
     deadzones,
     ctd,
+    simbriefimport,
+    membercount
 
 ];
 
