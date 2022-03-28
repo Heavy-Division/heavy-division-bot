@@ -2,10 +2,12 @@ import { CommandDefinition } from '../lib/command';
 import Logger from '../lib/logger';
 import { when } from './general/when';
 import { dlc } from './support/dlc';
+import { boing } from './memes/boing';
 
 const commands: CommandDefinition[] = [
     when,
-    dlc
+    dlc,
+    boing
 ];
 
 const commandsObject: { [k: string]: CommandDefinition } = {};
