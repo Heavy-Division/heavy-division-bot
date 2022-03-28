@@ -19,6 +19,7 @@ import { p3d } from './memes/p3d';
 import { hud } from './support/hud';
 import { contentManager } from './support/contentmanager';
 import { help } from './utils/help';
+import { donate } from './general/donate';
 
 const commands: CommandDefinition[] = [
     when,
@@ -39,7 +40,8 @@ const commands: CommandDefinition[] = [
     p3d,
     hud,
     contentManager,
-    help
+    help,
+    donate
 
 ];
 

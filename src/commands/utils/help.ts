@@ -1,4 +1,25 @@
-// TODO: Implement Option between link redirect or DM'd list. Why does using the DM Feature crash the bot after reacting "next" on the last page?
+// TODO: Implement Option between link redirect or DM'd list. Why does using the DM Feature crash the bot after reacting "next" on the last page? Starts at Line 24
+// TEMP WORKAROUND
+import { CommandDefinition } from '../../lib/command';
+import { CommandCategory } from '../../constants';
+import { makeEmbed } from '../../lib/embed';
+
+export const help: CommandDefinition = {
+    name: ['help'],
+    description: 'Explains the abscence of the 787 in hangar after downloading the mod.',
+    category: CommandCategory.UTILS,
+    executor: async (msg) => {
+        const helpEmbed = makeEmbed({
+            title: 'Heavy Division | Bot Commands',
+            description: 'Check out the [Heavy Bot Repository](https://github.com/Hypeism/HeavyBot/tree/typescript-refactor) for a list of availible commands. ', //TODO Replace hyperlink with Heavy Division Repo one
+        });
+
+        await msg.channel.send({ embeds: [helpEmbed] });
+
+    },
+};
+
+
 
 // import { DMChannel, EmbedFieldData, User } from 'discord.js';
 // import { CommandDefinition } from '../../lib/command';
@@ -204,22 +225,7 @@
 //
 //     return prefix;
 // }
+//
+//
+//
 
-import { CommandDefinition } from '../../lib/command';
-import { CommandCategory } from '../../constants';
-import { makeEmbed } from '../../lib/embed';
-
-export const help: CommandDefinition = {
-    name: ['help'],
-    description: 'Explains the abscence of the 787 in hangar after downloading the mod.',
-    category: CommandCategory.UTILS,
-    executor: async (msg) => {
-        const helpEmbed = makeEmbed({
-            title: 'Heavy Division | Bot Commands',
-            description: 'Check out the [Heavy Bot Repository](https://github.com/Hypeism/HeavyBot/tree/typescript-refactor) for a list of availible commands. ',
-        });
-
-        await msg.channel.send({ embeds: [helpEmbed] });
-
-    },
-};

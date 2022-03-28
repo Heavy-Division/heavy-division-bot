@@ -12,20 +12,15 @@ export enum CommandCategory {
 }
 
 export enum Channels {
-    MOD_LOGS = '783996780181585921',
-    USER_LOGS = '779944761699729418',
-    SCAM_LOGS = '932687046315737149',
+    MOD_LOGS = '957878311835549737',
+    USER_LOGS = '957878337424994344',
+    SCAM_LOGS = '957878380307554366',
 }
 
 export const UserLogExclude = [
-    '628400349979344919', // StickyBot
-    '910632773117702185', //FBW Bot
-    '856826179491594271', //FBW Staging bot
-    '864492608163807302', //BenW test bot
+    '957125673196073001', //HD Bot
 ];
 
 export const ModLogsExclude = [
-    '910632773117702185', //FBW Bot
-    '856826179491594271', //FBW Staging bot
-    '864492608163807302', //BenW test bot
+    '957125673196073001', // HD Bot
 ];
