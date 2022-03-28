@@ -17,6 +17,7 @@ import { directx12 } from './support/directx12';
 import { experimental } from './B78XH/experimental';
 import { p3d } from './memes/p3d';
 import { hud } from './support/hud';
+import { contentManager } from './support/contentmanager';
 
 const commands: CommandDefinition[] = [
     when,
@@ -35,7 +36,8 @@ const commands: CommandDefinition[] = [
     directx12,
     experimental,
     p3d,
-    hud
+    hud,
+    contentManager
 
 ];
 
