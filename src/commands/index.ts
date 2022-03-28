@@ -4,12 +4,14 @@ import { when } from './general/when';
 import { dlc } from './support/dlc';
 import { boing } from './memes/boing';
 import { msfs } from './support/msfs';
+import { comi } from './memes/comi';
 
 const commands: CommandDefinition[] = [
     when,
     dlc,
     boing,
-    msfs
+    msfs,
+    comi
 ];
 
 const commandsObject: { [k: string]: CommandDefinition } = {};
