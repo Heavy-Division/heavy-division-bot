@@ -1,4 +1,4 @@
-<img src="https://cdn.discordapp.com/attachments/828780654438514729/957702428340408411/hdlogo2.gif">
+<img src="https://cdn.discordapp.com/attachments/828780654438514729/957702428340408411/hdlogo2.gif"> <!-- add bot logo image with new Heavy NASA font -->
 
 Text and moderation bot for the Heavy Division Discord
 
