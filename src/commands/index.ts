@@ -29,6 +29,7 @@ import { defaultmeme } from './memes/default';
 import { cowsay } from './memes/cowsay';
 import { avatar } from './utils/avatar';
 import { oceanfix } from './general/oceanfix';
+import { wingflex } from './memes/wingflex';
 
 const commands: CommandDefinition[] = [
     when,
@@ -59,7 +60,8 @@ const commands: CommandDefinition[] = [
     defaultmeme,
     cowsay,
     avatar,
-    oceanfix
+    oceanfix,
+    wingflex
 
 ];
 
