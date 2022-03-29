@@ -27,6 +27,7 @@ import { coffee } from './memes/coffee';
 import { merge } from './memes/merge';
 import { defaultmeme } from './memes/default';
 import { cowsay } from './memes/cowsay';
+import { avatar } from './utils/avatar';
 
 const commands: CommandDefinition[] = [
     when,
@@ -55,7 +56,8 @@ const commands: CommandDefinition[] = [
     coffee,
     merge,
     defaultmeme,
-    cowsay
+    cowsay,
+    avatar
 
 ];
 
