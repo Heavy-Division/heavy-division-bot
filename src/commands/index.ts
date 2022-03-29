@@ -28,6 +28,7 @@ import { merge } from './memes/merge';
 import { defaultmeme } from './memes/default';
 import { cowsay } from './memes/cowsay';
 import { avatar } from './utils/avatar';
+import { oceanfix } from './general/oceanfix';
 
 const commands: CommandDefinition[] = [
     when,
@@ -57,7 +58,8 @@ const commands: CommandDefinition[] = [
     merge,
     defaultmeme,
     cowsay,
-    avatar
+    avatar,
+    oceanfix
 
 ];
 
