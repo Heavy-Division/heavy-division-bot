@@ -41,7 +41,7 @@ export const metar: CommandDefinition = {
                 fields: [
                     {
                         name: 'Unsure of how to read the raw report?',
-                        value: 'Type \'**.metarhow**\' to learn how to read raw METAR reports',
+                        value: 'Type \'**.metarhow**\' to learn how to read raw METARs',
                         inline: false
                     },
                 ],

@@ -11,7 +11,6 @@ import { makeEmbed } from './lib/embed';
 
 dotenv.config();
 
-
 export const DEBUG_MODE = process.env.DEBUG_MODE === 'true';
 
 const intents = new Discord.Intents(32767);

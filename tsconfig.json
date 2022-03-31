@@ -7,13 +7,5 @@
     "esModuleInterop": true,
     "experimentalDecorators": false,
     "skipLibCheck": true
-},
-  "include": [
-    "./src/**/*",
-    "environment.d.ts"
-  ],
-  "exclude":[
-    "node_modules",
-    "**/*.spec.ts"
-]
+  }
 }

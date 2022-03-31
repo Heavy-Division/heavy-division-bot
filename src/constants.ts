@@ -1,5 +1,5 @@
 export enum Colors {
-    HD_BLUE = '#117df7',
+    HD_BLUE = '#003A61',
 }
 
 export enum CommandCategory {
