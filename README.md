@@ -1,4 +1,4 @@
-<img src="https://media.discordapp.net/attachments/927293618295824415/958221549243088906/hdlogogithubCutout.png?width=1920&height=482"> 
+<img src="https://cdn.discordapp.com/attachments/927293618295824415/958960581669453834/hglogonobg.png"> 
 
 Text and moderation bot for the Heavy Division Discord
 
@@ -24,6 +24,11 @@ Current Commands:
 **.when**
 
 **.donate** 
+
+**.oceanfix**
+
+**.metarhow**
+
 >Memes:
 > 
 **.boing**
@@ -33,6 +38,16 @@ Current Commands:
 **.p3d**
 
 **.premium**
+
+**.coffee**
+
+**.cowsay or .cs**
+
+**.default**
+
+**.merge**
+
+**.wingflex**
  
 >Support
 > 
@@ -59,4 +74,6 @@ Current Commands:
 **.membercount**
 
 **.metar**
+
+**.avatar or .av**
 
