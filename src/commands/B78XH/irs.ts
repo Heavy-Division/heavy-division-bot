@@ -12,10 +12,13 @@ export const irs: CommandDefinition = {
         const irsEmbed = makeEmbed({
             title: 'Heavy Division | IRS',
             description: makeLines([
-                'On the overhead panel you will see the three switches under \'IRS\'. Turn these three to the \'NAV\' position. It takes several minutes for the ADIRUs to align.',
-                'You can check how long you have to wait by looking at the align time on your Upper Ecam.',
+                'On the overhead panel you will see two switches under \'IRS\'. Turn these to the \'NAV\' position.',
                 '',
-                'To align the IRS instantly (not realistic) in the FMC select: ',
+                ' **It takes several minutes for the IRS to align.**',
+                '',
+                'You can check how long you have to wait by looking at the align time on the UPPER ECAM.',
+                '',
+                'To align the IRS instantly (not realistic) in the CDU select: ',
                 '\'HEAVY\' -> \'IRS CONFIGURATION\' -> \'FORCE ALIGN\' ',
             ]),
             image: { url: IRS_IMAGE_URL },
