@@ -29,6 +29,11 @@ import { cowsay } from './memes/cowsay';
 import { avatar } from './utils/avatar';
 import { oceanfix } from './general/oceanfix';
 import { wingflex } from './memes/wingflex';
+import { ban } from './moderation/ban';
+import { timeout } from './moderation/timeout';
+import { unban } from './moderation/unban';
+import { untimeout } from './moderation/untimeout';
+import { whois } from './moderation/whois';
 
 const commands: CommandDefinition[] = [
     when,
@@ -59,7 +64,12 @@ const commands: CommandDefinition[] = [
     cowsay,
     avatar,
     oceanfix,
-    wingflex
+    wingflex,
+    timeout,
+    whois,
+    untimeout,
+    ban,
+    unban,
 
 ];
 

@@ -1,3 +1,5 @@
+// based off FlyByWire Simulations Discord Bot - https://github.com/flybywiresim/discord-bot
+
 import { DMChannel, TextChannel } from 'discord.js';
 import { makeEmbed } from '../lib/embed';
 import Logger from '../lib/logger';
