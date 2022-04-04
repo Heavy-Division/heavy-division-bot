@@ -4,7 +4,7 @@ import { makeEmbed } from '../../lib/embed';
 
 export const dlc: CommandDefinition = {
     name: ['dlc'],
-    description: 'Explains the abscence of the 787 in hangar after downloading the mod.',
+    description: 'Explains the abscence of the 787 in hangar after downloading the addon.',
     category: CommandCategory.GENERAL,
     executor: async (msg) => {
         const dlcEmbed = makeEmbed({
