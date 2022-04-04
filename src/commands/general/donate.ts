@@ -9,7 +9,9 @@ export const donate: CommandDefinition = {
     executor: async (msg) => {
         const donateEmbed = makeEmbed({
             title: 'Heavy Division | Donations',
-            description: 'The Heavy Division Team is grateful for your support. At this time, we are not accepting donations, but you can still help by boosting the server, allowing us to provide more features to the community!',
+            description: 'The Heavy Division Team is grateful for your support. At this time, we are not accepting '
+                       + 'donations, but you can still help by boosting the server, '
+                       + 'allowing us to provide more features to the community!',
         });
 
         await msg.channel.send({ embeds: [donateEmbed] });
