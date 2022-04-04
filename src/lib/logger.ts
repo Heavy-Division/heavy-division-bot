@@ -1,3 +1,5 @@
+// based off FlyByWire Simulations Discord Bot - https://github.com/flybywiresim/discord-bot
+
 import winston from 'winston';
 import ecsFormat from '@elastic/ecs-winston-format';
 
