@@ -34,6 +34,7 @@ import { timeout } from './moderation/timeout';
 import { unban } from './moderation/unban';
 import { untimeout } from './moderation/untimeout';
 import { whois } from './moderation/whois';
+import { lnav } from './support/lnav';
 
 const commands: CommandDefinition[] = [
     when,
@@ -70,6 +71,7 @@ const commands: CommandDefinition[] = [
     untimeout,
     ban,
     unban,
+    lnav
 
 ];
 
