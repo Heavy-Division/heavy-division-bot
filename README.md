@@ -10,7 +10,7 @@ Text and moderation bot for the Heavy Division Discord
 ***
 
 ## Command List
-Check the [Commands Directory]() to find the full list of availible commands 
+Check the [Commands Directory](https://github.com/Hypeism/HeavyBot/blob/typescript-refactor/.github/COMMANDS.md) to find the full list of availible commands 
 
 ## Contributing 
 To get started with contributing, read the [contributing guide here](https://github.com/Hypeism/HeavyBot/blob/typescript-refactor/.github/CONTRIBUTING.md) 
