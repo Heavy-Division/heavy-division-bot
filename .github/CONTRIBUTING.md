@@ -88,6 +88,7 @@ Privileged Gateway Intents must now be enabled within the Discord Developer Port
 3. Add it to `src/commands/index.ts`. You need to add the line `import { name } from './commandfolder/filename';`, replacing `name` with the `export const` from your command, `commandfolder` with the relevant folder your command has been placed within, and `filename` with the file name you created in step 1.
    (Add this below the last command.)
 4. Add your command name to the list under `const commands: CommandDefinition[] = [`
+5. Add your command name the COMMANDS.md index under the appropriate section in the .github directory 
 
 If you need help creating a command, you may find it useful to copy an existing command as a template, changing what you need.
 
@@ -104,26 +105,31 @@ import { CommandDefinition } from '../../lib/command';
 import { makeEmbed, makeLines } from '../../lib/embed';
 import { CommandCategory } from '../../constants';
 
-const IRS_IMAGE_URL = 'https://cdn.discordapp.com/attachments/429734269838032898/957887521931530250/irs.PNG';
+const IRS_IMAGE_URL = 'https://cdn.discordapp.com/attachments/429734269838032898/957887521931530250/irs.PNG'; //TODO: Add a more professional looking photo (square view of overhead panel, clean red box
 
 export const irs: CommandDefinition = {
-    name: 'irs',
-    description: 'Display help with IRS alignment',
-    category: CommandCategory.B78XH,
-    executor: async (msg) => {
-        const irsEmbed = makeEmbed({
-            title: 'Heavy Division | IRS',
-            description: makeLines([
-                'On the overhead panel you will see the three switches under \'IRS\'. Turn these three to the \'NAV\' position. It takes several minutes for the ADIRUs to align.',
-                'You can check how long you have to wait by looking at the align time on your Upper Ecam.',
-                '',
-                'To align the IRS instantly (not realistic) in the FMC select \'HEAVY\' -> \'IRS CONFIGURATION\' -> \'FORCE ALIGN\' ',
-            ]),
-            image: { url: IRS_IMAGE_URL },
-        });
+   name: 'irs',
+   description: 'Display help with IRS alignment',
+   category: CommandCategory.B78XH,
+   executor: async (msg) => {
+      const irsEmbed = makeEmbed({
+         title: 'Heavy Division | IRS',
+         description: makeLines([
+            'On the overhead panel you will see two switches under \'IRS\'. Turn these to the \'NAV\' position.',
+            '',
+            ' **It takes several minutes for the IRS to align.**',
+            '',
+            'You can check how long you have to wait by looking at the align time on the UPPER ECAM.',
+            '',
+            'To align the IRS instantly (not realistic) in the CDU select: ',
+            '\'HEAVY\' -> \'IRS CONFIGURATION\' -> \'FORCE ALIGN\' ',
+         ]),
+         image: { url: IRS_IMAGE_URL },
+      });
 
-        await msg.channel.send({ embeds: [irsEmbed] });
+      await msg.channel.send({ embeds: [irsEmbed] });
 
-    },
+   },
 };
+
 ```
