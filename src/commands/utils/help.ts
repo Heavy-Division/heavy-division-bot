@@ -11,7 +11,7 @@ export const help: CommandDefinition = {
     executor: async (msg) => {
         const helpEmbed = makeEmbed({
             title: 'Heavy Division | Bot Commands',
-            description: 'Check out the [Heavy Bot Repository](https://github.com/Hypeism/HeavyBot/tree/typescript-refactor) for a list of availible commands. ', //TODO Replace hyperlink with Heavy Division Repo one
+            description: 'Check out the [Heavy Bot Repository](https://github.com/Hypeism/HeavyBot/blob/typescript-refactor/README.md) for a list of availible commands. ', //TODO Replace hyperlink with Heavy Division Repo one
         });
 
         await msg.channel.send({ embeds: [helpEmbed] });
