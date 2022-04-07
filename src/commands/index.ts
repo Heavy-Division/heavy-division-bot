@@ -40,6 +40,7 @@ import { rules } from './moderation/rules';
 import { faq } from './moderation/faq';
 import { roleassignment } from './moderation/roleassignment';
 import { takeoffPerf } from './B78XH/takeoffPerf';
+import { ping } from './utils/ping';
 
 const commands: CommandDefinition[] = [
     when,
@@ -81,7 +82,8 @@ const commands: CommandDefinition[] = [
     rules,
     faq,
     roleassignment,
-    takeoffPerf
+    takeoffPerf,
+    ping
 
 ];
 
