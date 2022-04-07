@@ -1,3 +1,4 @@
+// based off FlyByWire Simulations Discord Bot - https://github.com/flybywiresim/discord-bot
 // import { start } from 'elastic-apm-node';
 import Discord from 'discord.js';
 import dotenv from 'dotenv';

@@ -1,3 +1,5 @@
+// based off FlyByWire Simulations Discord Bot - https://github.com/flybywiresim/discord-bot
+
 # Title
 
 >Please use the appropriate prefix in your PR title:

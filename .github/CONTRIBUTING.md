@@ -1,3 +1,5 @@
+// based off FlyByWire Simulations Discord Bot - https://github.com/flybywiresim/discord-bot
+
 # Contributing
 
 Please reference the information below when contributing to this repository.
