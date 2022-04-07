@@ -11,6 +11,8 @@
 
 **.version**
 
+**.takeoffPerf**
+
 **.irs**
 
 ## General:
@@ -43,6 +45,8 @@
 
 **.wingflex**
 
+**.addon or .mod**
+
 ## Support
 
 **.contentmanager or .cm**
@@ -66,8 +70,6 @@
 **.help**
 
 **.membercount**
-
-**.metar**
 
 **.avatar or .av**
 
