@@ -30,7 +30,6 @@ import { cowsay } from './memes/cowsay';
 import { avatar } from './utils/avatar';
 import { oceanfix } from './general/oceanfix';
 import { wingflex } from './memes/wingflex';
-import { rules } from './moderation/rules';
 
 const commands: CommandDefinition[] = [
     when,
@@ -62,8 +61,7 @@ const commands: CommandDefinition[] = [
     cowsay,
     avatar,
     oceanfix,
-    wingflex,
-    rules
+    wingflex
 
 ];
 
