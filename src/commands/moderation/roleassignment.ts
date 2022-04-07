@@ -6,7 +6,7 @@ const ROLES_EMBED =
     makeEmbed({
         title: 'Role Assignment',
         description: makeLines([
-            'Please react below to set your role according to your skill set. If you do not have the skills in any of the available roles, please do not react as this will not benefit the development of the addon.',
+            'Please react below to set your role according to your skill set. If you do not have the skills in any of the available roles, please do not react as this will not benefit the development of the mod.',
             '',
             ':computer: Interested in Programming',
             ':triangular_ruler: Interested in Modelling/Design',
