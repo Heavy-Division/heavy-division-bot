@@ -14,7 +14,7 @@ const faqEmbeds = [
             },
             {
                 name: `When is the Next Update?`,
-                value: "> We don't know when the next update will be, however you can keep track of development in <#837105238158082099>. ",
+                value: "> We don't know when the next update will be, however you can keep track of development in <#837105238158082099> and <#821078930840354868>. ",
             },
             {
                 name: `How do I join the team?`,
