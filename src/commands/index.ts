@@ -38,6 +38,7 @@ import { lnav } from './support/lnav';
 import { addon } from './memes/addon';
 import { rules } from './moderation/rules';
 import { faq } from './moderation/faq';
+import { roleassignment } from './moderation/roleassignment';
 
 const commands: CommandDefinition[] = [
     when,
@@ -77,7 +78,8 @@ const commands: CommandDefinition[] = [
     lnav,
     addon,
     rules,
-    faq
+    faq,
+    roleassignment
 
 ];
 
