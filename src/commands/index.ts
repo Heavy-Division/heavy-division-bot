@@ -39,6 +39,7 @@ import { addon } from './memes/addon';
 import { rules } from './moderation/rules';
 import { faq } from './moderation/faq';
 import { roleassignment } from './moderation/roleassignment';
+import { takeoffPerf } from './B78XH/takeoffPerf';
 
 const commands: CommandDefinition[] = [
     when,
@@ -79,7 +80,8 @@ const commands: CommandDefinition[] = [
     addon,
     rules,
     faq,
-    roleassignment
+    roleassignment,
+    takeoffPerf
 
 ];
 
