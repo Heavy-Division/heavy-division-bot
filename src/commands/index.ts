@@ -37,6 +37,7 @@ import { whois } from './moderation/whois';
 import { lnav } from './support/lnav';
 import { addon } from './memes/addon';
 import { rules } from './moderation/rules';
+import { faq } from './moderation/faq';
 
 const commands: CommandDefinition[] = [
     when,
@@ -75,7 +76,8 @@ const commands: CommandDefinition[] = [
     unban,
     lnav,
     addon,
-    rules
+    rules,
+    faq
 
 ];
 
