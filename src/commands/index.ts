@@ -21,7 +21,6 @@ import { contentManager } from './support/contentmanager';
 import { help } from './utils/help';
 import { donate } from './general/donate';
 import { irs } from './B78XH/irs';
-import { metar } from './utils/metar';
 import { metarhow } from './general/metarhow';
 import { coffee } from './memes/coffee';
 import { merge } from './memes/merge';
@@ -30,6 +29,14 @@ import { cowsay } from './memes/cowsay';
 import { avatar } from './utils/avatar';
 import { oceanfix } from './general/oceanfix';
 import { wingflex } from './memes/wingflex';
+import { ban } from './moderation/ban';
+import { timeout } from './moderation/timeout';
+import { unban } from './moderation/unban';
+import { untimeout } from './moderation/untimeout';
+import { whois } from './moderation/whois';
+import { lnav } from './support/lnav';
+import { addon } from './memes/addon';
+import { rules } from './moderation/rules';
 
 const commands: CommandDefinition[] = [
     when,
@@ -53,7 +60,6 @@ const commands: CommandDefinition[] = [
     help,
     donate,
     irs,
-    metar,
     metarhow,
     coffee,
     merge,
@@ -61,7 +67,15 @@ const commands: CommandDefinition[] = [
     cowsay,
     avatar,
     oceanfix,
-    wingflex
+    wingflex,
+    timeout,
+    whois,
+    untimeout,
+    ban,
+    unban,
+    lnav,
+    addon,
+    rules
 
 ];
 

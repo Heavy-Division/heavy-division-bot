@@ -6,12 +6,12 @@ import { makeEmbed } from '../../lib/embed';
 
 export const help: CommandDefinition = {
     name: ['help'],
-    description: 'Explains the abscence of the 787 in hangar after downloading the mod.',
+    description: 'Explains the abscence of the 787 in hangar after downloading the addon.',
     category: CommandCategory.UTILS,
     executor: async (msg) => {
         const helpEmbed = makeEmbed({
             title: 'Heavy Division | Bot Commands',
-            description: 'Check out the [Heavy Bot Repository](https://github.com/Hypeism/HeavyBot/tree/typescript-refactor) for a list of availible commands. ', //TODO Replace hyperlink with Heavy Division Repo one
+            description: 'Check out the [Heavy Bot Repository](https://github.com/Hypeism/HeavyBot/blob/typescript-refactor/README.md) for a list of availible commands. ', //TODO Replace hyperlink with Heavy Division Repo one
         });
 
         await msg.channel.send({ embeds: [helpEmbed] });

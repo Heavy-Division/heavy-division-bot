@@ -88,7 +88,9 @@ Privileged Gateway Intents must now be enabled within the Discord Developer Port
 3. Add it to `src/commands/index.ts`. You need to add the line `import { name } from './commandfolder/filename';`, replacing `name` with the `export const` from your command, `commandfolder` with the relevant folder your command has been placed within, and `filename` with the file name you created in step 1.
    (Add this below the last command.)
 4. Add your command name to the list under `const commands: CommandDefinition[] = [`
-5. Add your command to the commands index in the .github folder 
+5. Add your command to the commands index in the .github folder
+5. Add your command name the COMMANDS.md index under the appropriate section in the .github directory 
+
 
 If you need help creating a command, you may find it useful to copy an existing command as a template, changing what you need.
 
@@ -115,10 +117,19 @@ export const irs: CommandDefinition = {
       const irsEmbed = makeEmbed({
          title: 'Heavy Division | IRS',
          description: makeLines([
+
             'On the overhead panel you will see the two switches under \'IRS\'. Turn these two to the \'NAV\' position. **It takes several minutes for the ADIRUs to align.** ',
             'You can check how long you have to wait by looking at the align time on your Upper Ecam.',
             '',
             'To align the IRS instantly (not realistic) in the FMC select: ',
+
+            'On the overhead panel you will see two switches under \'IRS\'. Turn these to the \'NAV\' position.',
+            '',
+            ' **It takes several minutes for the IRS to align.**',
+            '',
+            'You can check how long you have to wait by looking at the align time on the UPPER ECAM.',
+            '',
+            'To align the IRS instantly (not realistic) in the CDU select: ',
             '\'HEAVY\' -> \'IRS CONFIGURATION\' -> \'FORCE ALIGN\' ',
          ]),
          image: { url: IRS_IMAGE_URL },
@@ -128,4 +139,5 @@ export const irs: CommandDefinition = {
 
    },
 };
+
 ```

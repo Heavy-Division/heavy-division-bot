@@ -1,3 +1,5 @@
+// //based off FlyByWire Simulations Discord Bot - https://github.com/flybywiresim/discord-bot
+
 export enum Colors {
     HD_BLUE = '#003A61',
 }
@@ -12,9 +14,9 @@ export enum CommandCategory {
 }
 
 export enum Channels {
-    MOD_LOGS = '957878311835549737',
-    USER_LOGS = '957878337424994344',
-    SCAM_LOGS = '957878380307554366',
+    MOD_LOGS = '960653690681827389',
+    USER_LOGS = '960653707991711795',
+    SCAM_LOGS = '960653664144490536',
 }
 
 export const UserLogExclude = [

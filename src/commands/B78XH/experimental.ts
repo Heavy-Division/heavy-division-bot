@@ -10,7 +10,7 @@ export const experimental: CommandDefinition = {
         const experimentalEmbed = makeEmbed({
             title: 'Heavy Division | Experimental Version',
             description: makeLines([
-                'Currently experimental is geared toward testing the FPS drops over long haul flights. **No support will be offered via Discord.** ',
+                'Check <@channelid> to see the current uses of the experimental build. **No support will be offered via Discord.** ',
                 '',
                 'Please use the appropriate discord thread to discuss any issues: ',
                 '- <#811459130313015328> ',
