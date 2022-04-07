@@ -21,7 +21,6 @@ const MEDIA_ANNOUNCEMENT_EMBED =
             '',
             ':mega: Server Announcements',
             ':airplane: B78XH Releases',
-            ':hourglass_flowing_sand: Progress Updates',
         ]),
     });
 
