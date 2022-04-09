@@ -41,6 +41,7 @@ import { faq } from './moderation/faq';
 import { roleassignment } from './moderation/roleassignment';
 import { takeoffPerf } from './B78XH/takeoffPerf';
 import { ping } from './utils/ping';
+import { palindrome } from './memes/palindrome';
 
 const commands: CommandDefinition[] = [
     when,
@@ -83,7 +84,8 @@ const commands: CommandDefinition[] = [
     faq,
     roleassignment,
     takeoffPerf,
-    ping
+    ping,
+    palindrome,
 
 ];
 
