@@ -2,14 +2,14 @@ import { CommandDefinition } from '../../lib/command';
 import { CommandCategory } from '../../constants';
 
 export const palindrome: CommandDefinition = {
-    name: ['palindrome', 'pal', 'pdrome'],
+    name: 'palindrome',
     description: 'Checks if passed word is a palindrome',
     category: CommandCategory.MEMES,
     executor: async (msg) => {
 
-            const text = msg.content.replace(/[\s\.pal\.palindrome\.pdrome\"'.,-\/#!$%\^&*;:{}=\-_`~()\\\[\]@+|?><]/g,"").toLowerCase();
+            const text = msg.content.replace( /[\s\.palindrome\W_]/g,"").toLowerCase();
 
-            const reverseText = text.split('').reverse().join('');
+            const reverseText = text.split("").reverse().join("");
 
             console.log(reverseText)
 
