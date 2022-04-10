@@ -7,7 +7,9 @@ export const palindrome: CommandDefinition = {
     category: CommandCategory.MEMES,
     executor: async (msg) => {
 
-            const text = msg.content.replace( /[\s\.palindrome\W_]/g,"").toLowerCase();
+            const text = msg.content.replace(/\.palindrome\s([a-zA-Z]+\s)+[a-zA-Z]+/i,"").toLowerCase()
+
+            console.log(text)
 
             const reverseText = text.split("").reverse().join("");
 

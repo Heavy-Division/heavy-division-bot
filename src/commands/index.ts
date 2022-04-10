@@ -42,6 +42,7 @@ import { roleassignment } from './moderation/roleassignment';
 import { takeoffPerf } from './B78XH/takeoffPerf';
 import { ping } from './utils/ping';
 import { palindrome } from './memes/palindrome';
+import { autothrottle } from './support/autothrottle';
 
 const commands: CommandDefinition[] = [
     when,
@@ -86,6 +87,7 @@ const commands: CommandDefinition[] = [
     takeoffPerf,
     ping,
     palindrome,
+    autothrottle
 
 ];
 
