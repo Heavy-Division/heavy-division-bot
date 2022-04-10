@@ -4,7 +4,6 @@ import request from 'request';
 import { CommandDefinition } from '../../lib/command';
 import { CommandCategory } from '../../constants';
 import { makeEmbed, makeLines } from '../../lib/embed';
-import * as JSON from '../../lib/airports.json';
 
 export const metar: CommandDefinition = {
     name: 'metar',
@@ -26,12 +25,6 @@ export const metar: CommandDefinition = {
             return Promise.resolve();
         }
 
-        const isValidICAO = JSON.parse(airports.ICAO)
-
-        if (!msg.content.includes(isValidICAO)) {
-            await msg.reply (metarError);
-            return Promise.resolve();
-        } else {
             request({
             method: 'GET',
             url: `https://avwx.rest/api/metar/${icaoArg}`,

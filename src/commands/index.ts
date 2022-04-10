@@ -44,6 +44,7 @@ import { ping } from './utils/ping';
 import { palindrome } from './memes/palindrome';
 import { autothrottle } from './support/autothrottle';
 import { metar } from './utils/metar';
+import { station } from './utils/station';
 
 const commands: CommandDefinition[] = [
     when,
@@ -89,7 +90,8 @@ const commands: CommandDefinition[] = [
     ping,
     palindrome,
     autothrottle,
-    metar
+    metar,
+    station
 
 ];
 

@@ -4,7 +4,6 @@ import Discord from 'discord.js';
 import dotenv from 'dotenv';
 import commands from './commands';
 import express from 'express';
-import { readdirSync } from 'fs';
 import Logger from './lib/logger';
 import { makeEmbed } from './lib/embed';
 
