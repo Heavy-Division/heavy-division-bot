@@ -47,6 +47,8 @@
 
 **.addon or .mod**
 
+**.palindrome**
+
 ## Support
 
 **.contentmanager or .cm**
@@ -65,6 +67,8 @@
 
 **.msfs**
 
+**.at, .throttle, .autothrottle**
+
 ## Utilities
 
 **.help**
@@ -73,3 +77,6 @@
 
 **.avatar or .av**
 
+**.station**
+
+**.metar**

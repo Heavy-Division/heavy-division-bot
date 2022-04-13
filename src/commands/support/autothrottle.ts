@@ -9,7 +9,7 @@ export const autothrottle: CommandDefinition = {
     executor: async (msg) => {
         const atEmbed = makeEmbed({
             title: 'Heavy Division | AT Issue',
-            description: 'Issues with the AT are under investigation. To restore the normal autothrottle function, push forward on the control column while Autopilot is engaged.'
+            description: 'Issues with the AT are under investigation. To restore the normal auto-throttle function, push forward on the control column while Autopilot is engaged.'
         });
 
         await msg.channel.send({ embeds: [atEmbed] });
