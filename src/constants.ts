@@ -1,7 +1,7 @@
 // based off FlyByWire Simulations Discord Bot - https://github.com/flybywiresim/discord-bot
 
 export enum Colors {
-    HD_BLUE = '#385673',
+    HD_BLUE = '#0761e2',
 }
 
 export enum CommandCategory {
