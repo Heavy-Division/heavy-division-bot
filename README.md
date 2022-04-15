@@ -3,7 +3,7 @@
 Text and moderation bot for the Heavy Division Discord
 
 [![Discord](https://img.shields.io/discord/808476259016769546?color=%237289DA&label=%20&logo=Discord&logoColor=%23ffff)](https://discord.gg/BR38YwKZea)
-[![Version](https://img.shields.io/badge/Version-0.1.13-%23003A61)](https://github.com/Heavy-Division/B78XH/releases/tag/v0.1.13)
+[![Version](https://img.shields.io/badge/Release-v0.1.13-%230761e2%20)](https://github.com/Heavy-Division/B78XH/releases/tag/v0.1.13)
 
 ***
 
