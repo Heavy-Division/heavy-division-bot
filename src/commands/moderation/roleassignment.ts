@@ -1,8 +1,10 @@
-// based off FlyByWire Simulations Discord Bot - https://github.com/flybywiresim/discord-bot
-
 import { CommandDefinition } from '../../lib/command';
 import { makeEmbed, makeLines } from '../../lib/embed';
 import { CommandCategory } from '../../constants';
+import { client } from "../../index";
+
+const gitEmoji = '<:Interest_programming:964857375427289168>'
+const modellingEmoji = '<:Interest_modeling:964857360474591342>'
 
 const ROLES_EMBED =
     makeEmbed({
@@ -10,21 +12,27 @@ const ROLES_EMBED =
         description: makeLines([
             'Please react below to set your role according to your skill set. If you do not have the skills in any of the available roles, please do not react as this will not benefit the development of the mod.',
             '',
-            ':computer: Interested in Programming',
-            ':triangular_ruler: Interested in Modelling/Design',
+            `${gitEmoji}: Interested in Programming`,
+            `${modellingEmoji}: Interested in Modelling/Design`
         ]),
     });
+
+const megaEmoji = '<:Server_updates:964857392028348426>'
+const planeEmoji = '<:B78XH_Updates:964857413570285598>'
+const progressEmoji = '<:progress:964857428191625338>'
 
 const MEDIA_ANNOUNCEMENT_EMBED =
     makeEmbed({
         title: 'Media Announcements',
         description: makeLines([
-            'Please react to the corresponding reactions to be pinged for the various announcements.',
+            'Please react to the corresponding reactions to be pinged for various announcements.',
             '',
-            ':mega: Server Announcements',
-            ':airplane: B78XH Releases',
+            `${megaEmoji}: Server Announcements`,
+            `${planeEmoji}: Releases`,
+            `${progressEmoji}: Progress`,
         ]),
     });
+
 
 export const roleassignment: CommandDefinition = {
     name: 'roleassignment',
@@ -33,6 +41,45 @@ export const roleassignment: CommandDefinition = {
     category: CommandCategory.MODERATION,
     executor: async (msg) => {
         await msg.channel.send({ embeds: [ROLES_EMBED] });
-        await msg.channel.send({ embeds: [MEDIA_ANNOUNCEMENT_EMBED] });
+        let messageEmbed = await msg.channel.send({ embeds: [MEDIA_ANNOUNCEMENT_EMBED] });
+        messageEmbed.react(gitEmoji);
+        messageEmbed.react(modellingEmoji);
+        messageEmbed.react(megaEmoji);
+        messageEmbed.react(planeEmoji);
+        messageEmbed.react(progressEmoji);
+
+        // TODO: Add role handling via Heavy discord bot instead of Zira.
+
+        // client.on ('messageReactionAdd', async (reaction, user) =>{
+        //     if (reaction.message.partial) await reaction.message.fetch();
+        //     if (reaction.partial) await reaction.fetch();
+        //     if(user.bot) return;
+        //     if (!reaction.message.guild) return;
+        //
+        //     if (reaction.message.channel.id === '<:Interest_programming:964857375427289168>') {
+        //         if (reaction.emoji.name === gitEmoji ) {
+        //             await reaction.message.guild.members.cache.get(user.id).roles.add('<@&964889358794633237>')
+        //         }
+        //     } else {
+        //         return;
+        //     }
+        //
+        // });
+        //
+        // client.on ('messageReactionRemove', async (reaction, user) =>{
+        //     if (reaction.message.partial) await reaction.message.fetch();
+        //     if (reaction.partial) await reaction.fetch();
+        //     if(user.bot) return;
+        //     if (!reaction.message.guild) return;
+        //
+        //     if (reaction.message.channel.id === '927293618295824415') {
+        //         if (reaction.emoji.name === gitEmoji ) {
+        //             await reaction.message.guild.members.cache.get(user.id).roles.remove('<@&964889358794633237>')
+        //         }
+        //     } else {
+        //         return;
+        //     }
+        //
+        // });
     },
 };

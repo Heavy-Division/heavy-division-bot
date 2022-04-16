@@ -36,7 +36,7 @@ const faqEmbeds = [
             },
             {
                 name: `I am a real life Aero Engineer, GA, B787-8/9/10 Pilot, or Cabin Crew. Where do I get my role?`,
-                value: "> You simply DM one of the <@&957506216848941056> with proof of your job!\n ",
+                value: "> You simply DM one of the <@&402403275799920641> with proof of your job!\n ",
             },
 
         ],

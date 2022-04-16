@@ -14,7 +14,7 @@ dotenv.config();
 export const DEBUG_MODE = process.env.DEBUG_MODE === 'true';
 
 const intents = new Discord.Intents(32767);
-const client = new Discord.Client({
+export const client = new Discord.Client({
     partials: ['USER', 'CHANNEL', 'GUILD_MEMBER', 'MESSAGE', 'REACTION'],
     intents,
 });
@@ -116,6 +116,7 @@ client.login(process.env.DISCORD_TOKEN)
     });
 
 const app = express();
+
 
 
 app.listen(3000, () => {
