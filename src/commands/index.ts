@@ -46,6 +46,7 @@ import { autothrottle } from './support/autothrottle';
 import { metar } from './utils/metar';
 import { station } from './utils/station';
 import { welcome } from './moderation/welcome';
+import { roleinfo } from "./utils/roleinfo";
 
 const commands: CommandDefinition[] = [
     when,
@@ -93,7 +94,8 @@ const commands: CommandDefinition[] = [
     autothrottle,
     metar,
     station,
-    welcome
+    welcome,
+    roleinfo
 
 ];
 
