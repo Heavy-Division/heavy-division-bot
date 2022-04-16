@@ -45,6 +45,7 @@ import { palindrome } from './memes/palindrome';
 import { autothrottle } from './support/autothrottle';
 import { metar } from './utils/metar';
 import { station } from './utils/station';
+import { welcome } from './moderation/welcome';
 
 const commands: CommandDefinition[] = [
     when,
@@ -91,7 +92,8 @@ const commands: CommandDefinition[] = [
     palindrome,
     autothrottle,
     metar,
-    station
+    station,
+    welcome
 
 ];
 
