@@ -1,4 +1,4 @@
-<img src="https://cdn.discordapp.com/attachments/960729491750141993/966116721985474570/hdgithub_banner.png"> 
+<img src="https://cdn.discordapp.com/attachments/927293618295824415/966187066058764338/hdgithub_banner.png"> 
 
 Text and moderation bot for the Heavy Division Discord
 
