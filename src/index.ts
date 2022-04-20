@@ -98,13 +98,6 @@ client.on('messageCreate', async (msg) => {
 client.once('ready', () => {
     console.log('The bot is online!');
 
-    client.user.setPresence({
-        status: "online",  //You can show online, idle....
-        activities: [{
-            name: ".help",  //The message shown
-            type: "LISTENING" //PLAYING: WATCHING: LISTENING: STREAMING:
-        }]
-    });
 
 });
 

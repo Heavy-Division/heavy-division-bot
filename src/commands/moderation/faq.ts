@@ -20,7 +20,7 @@ const faqEmbeds = [
             },
             {
                 name: `How do I join the team?`,
-                value: "> That depends on which role you are seeking. Most team roles are on an invite-only basis, you can message a member of the team you're seeking to join for more info. \n",
+                value: "> That depends on which role you are seeking. Most team roles are on an invite-only basis. You can message a member of the team you're seeking to join for more info. \n",
             },
             {
                 name: `Is it payware?`,
@@ -36,7 +36,7 @@ const faqEmbeds = [
             },
             {
                 name: `I am a real life Aero Engineer, GA, B787-8/9/10 Pilot, or Cabin Crew. Where do I get my role?`,
-                value: "> You simply DM one of the <@&402403275799920641> with proof of your job!\n ",
+                value: "> Simply DM one of the <@&402403275799920641> with proof of your job!\n ",
             },
 
         ],
