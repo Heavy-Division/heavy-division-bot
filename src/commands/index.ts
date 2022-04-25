@@ -47,6 +47,7 @@ import { metar } from './utils/metar';
 import { station } from './utils/station';
 import { welcome } from './moderation/welcome';
 import { roleinfo } from "./utils/roleinfo";
+import { timezone } from "./utils/timezone";
 
 const commands: CommandDefinition[] = [
     when,
@@ -95,8 +96,8 @@ const commands: CommandDefinition[] = [
     metar,
     station,
     welcome,
-    roleinfo
-
+    roleinfo,
+    timezone
 ];
 
 const commandsObject: { [k: string]: CommandDefinition } = {};
