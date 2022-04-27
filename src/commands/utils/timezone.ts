@@ -6,26 +6,31 @@ export const timezone: CommandDefinition = {
     description: 'Returns the time at a given timezone',
     category: CommandCategory.UTILS,
     executor: async (msg) => {
+        const text = msg.content
+
         const currentDate = new Date();
 
-        const utc = currentDate.getUTCHours();
+        /**
+         * Is end of command number or negative number
+         */
+        const regex = /-?[0-9]+$/;
+        const result = text.match(regex);
+        // Result is null if end of command is not number
+        if (result !== null) {
+            const convertedResult = Number(result);
+            // Is the number from command valid offset
+            if (convertedResult < -12 || convertedResult > 14) {
+                return msg.channel.send('Non valid offset');
+            }
 
-        const minute = currentDate.getUTCMinutes();
-
-        const args = msg.content.split(' ').slice(1);
-
-        const parseTime = parseInt(args.join('')) + utc;
-
-        if (args.length > 1 || args.length === 0) {
-            return msg.channel.send('No timezone was provided.');
-        } else if (parseTime >= 24) {
-            const overTime = parseTime - 24;
-            return msg.channel.send(`The time is ${overTime}:${minute} there.`);
+            // Add offset to hours
+            currentDate.setUTCHours(currentDate.getUTCHours() + convertedResult);
+            // convert values to string
+            const hours = currentDate.getUTCHours().toString();
+            const minutes = currentDate.getUTCMinutes().toString();
+            // print; padStart -> make the value length 2 chars and fill the empty chars with '0';
+            return msg.channel.send(`The time is ${hours.padStart(2, '0')}:${minutes.padStart(2, '0')} there.`);
         }
-        if (minute < 10) {
-            return msg.channel.send(`The time is ${parseTime}:0${minute} there.`);
-        }
-        return msg.channel.send(`The time is ${parseTime}:${minute} there.`);
-
     },
 };
+

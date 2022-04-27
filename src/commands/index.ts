@@ -41,13 +41,13 @@ import { faq } from './moderation/faq';
 import { roleassignment } from './moderation/roleassignment';
 import { takeoffPerf } from './B78XH/takeoffPerf';
 import { ping } from './utils/ping';
-import { palindrome } from './memes/palindrome';
 import { autothrottle } from './support/autothrottle';
 import { metar } from './utils/metar';
 import { station } from './utils/station';
 import { welcome } from './moderation/welcome';
-import { roleinfo } from "./utils/roleinfo";
-import { timezone } from "./utils/timezone";
+import { roleinfo } from './utils/roleinfo';
+import { timezone } from './utils/timezone';
+import { rot } from './utils/tod';
 
 const commands: CommandDefinition[] = [
     when,
@@ -91,13 +91,13 @@ const commands: CommandDefinition[] = [
     roleassignment,
     takeoffPerf,
     ping,
-    palindrome,
     autothrottle,
     metar,
     station,
     welcome,
     roleinfo,
-    timezone
+    timezone,
+    rot
 ];
 
 const commandsObject: { [k: string]: CommandDefinition } = {};
