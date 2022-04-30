@@ -21,4 +21,4 @@
 
 ## Utilities
 
-**.help** | **.membercount** | **.avatar .av** | **.station** | **.metar** | **.timezone .utc .gmt .zulu**
+**.help** | **.membercount** | **.avatar .av** | **.station** | **.metar** | **.timezone .utc .gmt .zulu** | **.ruleofthree .rot .ro3** 
