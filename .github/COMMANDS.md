@@ -1,82 +1,24 @@
 # Current Commands:
 
-
 ## B78XH:
 
-**.airframe**
-
-**.experimental**
-
-**.import, .integration, .integ**
-
-**.version**
-
-**.takeoffPerf**
-
-**.irs**
+**.airframe** | **.experimental** | **.import .integration, .integ** | **.version** | **.takeoffPerf** | **.irs**
 
 ## General:
 
-**.when**
-
-**.donate**
-
-**.oceanfix**
-
-**.metarhow**
+**.when** | **.donate** | **.oceanfix** | **.metarhow**
 
 ## Memes:
 
-**.boing**
+**.boing** | **.comi** | **.p3d** | **.premium** | **.coffee** | **.cowsay .cs** | **.default** 
 
-**.comi**
-
-**.p3d**
-
-**.premium**
-
-**.coffee**
-
-**.cowsay or .cs**
-
-**.default**
-
-**.merge**
-
-**.wingflex**
-
-**.addon or .mod**
-
-**.palindrome**
+**.merge** | **.wingflex** | **.addon .mod**
 
 ## Support
 
-**.contentmanager or .cm**
-
-**.controls**
-
-**.ctd or .crash**
-
-**.deadzones or .dz**
-
-**.dx12**
-
-**.dlc**
-
-**.hud**
-
-**.msfs**
-
-**.at, .throttle, .autothrottle**
+**.contentmanager .cm** | **.controls** | **.ctd .crash** | **.deadzones .dz** | **.dx12** | **.dlc** | **.hud**  
+**.msfs** | **.at .throttle .autothrottle**
 
 ## Utilities
 
-**.help**
-
-**.membercount**
-
-**.avatar or .av**
-
-**.station**
-
-**.metar**
+**.help** | **.membercount** | **.avatar .av** | **.station** | **.metar** | **.timezone .utc .gmt .zulu**
