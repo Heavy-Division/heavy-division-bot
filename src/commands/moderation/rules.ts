@@ -26,7 +26,7 @@ const RULES_EMBED =
             '',
             '6. Do not send any sort of NSFW or Illegal content as this is prohibited. Sending content related to this can result in a ban. ',
             '',
-            '7. Do not ask for help for, distribute, or encourage downloading pirated pieces of software. This can result in a ban',
+            '7. Do not ask for help for, distribute, or encourage downloading pirated pieces of software. This can result in a ban. ',
             '',
             '8. All decisions made by <@&955273994393780244> amd Heavy Division\'s Team are final. '
 
