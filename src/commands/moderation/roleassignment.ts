@@ -50,36 +50,5 @@ export const roleassignment: CommandDefinition = {
 
         // TODO: Add role handling via Heavy discord bot instead of Zira.
 
-        // client.on ('messageReactionAdd', async (reaction, user) =>{
-        //     if (reaction.message.partial) await reaction.message.fetch();
-        //     if (reaction.partial) await reaction.fetch();
-        //     if(user.bot) return;
-        //     if (!reaction.message.guild) return;
-        //
-        //     if (reaction.message.channel.id === '<:Interest_programming:964857375427289168>') {
-        //         if (reaction.emoji.name === gitEmoji ) {
-        //             await reaction.message.guild.members.cache.get(user.id).roles.add('<@&964889358794633237>')
-        //         }
-        //     } else {
-        //         return;
-        //     }
-        //
-        // });
-        //
-        // client.on ('messageReactionRemove', async (reaction, user) =>{
-        //     if (reaction.message.partial) await reaction.message.fetch();
-        //     if (reaction.partial) await reaction.fetch();
-        //     if(user.bot) return;
-        //     if (!reaction.message.guild) return;
-        //
-        //     if (reaction.message.channel.id === '927293618295824415') {
-        //         if (reaction.emoji.name === gitEmoji ) {
-        //             await reaction.message.guild.members.cache.get(user.id).roles.remove('<@&964889358794633237>')
-        //         }
-        //     } else {
-        //         return;
-        //     }
-        //
-        // });
     },
 };

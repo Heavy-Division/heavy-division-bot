@@ -2,7 +2,7 @@ import { CommandDefinition } from '../../lib/command';
 import { CommandCategory } from '../../constants';
 import { makeEmbed } from '../../lib/embed';
 
-//TODO: Append an image of the simbrief default airframe to this message
+//TODO: Append an image of the simBrief default airframe to this message
 export const airframe: CommandDefinition = {
     name: ['airframe', 'simbrief'],
     description: 'If someone asks for a custom B78XH airframe',
