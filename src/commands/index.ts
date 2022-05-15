@@ -48,6 +48,7 @@ import { welcome } from './moderation/welcome';
 import { roleinfo } from './utils/roleinfo';
 import { timezone } from './utils/timezone';
 import { rot } from './utils/tod';
+import { sbReferenceError } from './support/simbriefReferenceError';
 
 const commands: CommandDefinition[] = [
     when,
@@ -97,7 +98,8 @@ const commands: CommandDefinition[] = [
     welcome,
     roleinfo,
     timezone,
-    rot
+    rot,
+    sbReferenceError
 ];
 
 const commandsObject: { [k: string]: CommandDefinition } = {};

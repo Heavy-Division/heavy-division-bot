@@ -8,7 +8,7 @@ import {makeEmbed, makeLines} from '../../lib/embed';
 export const lnav: CommandDefinition = {
     name: 'lnav',
     description: 'Explains the plane not following LNAV route due to user error.',
-    category: CommandCategory.GENERAL,
+    category: CommandCategory.SUPPORT,
     executor: async (msg) => {
         const lnavEmbed = makeEmbed({
             title: 'Heavy Division | Engaging LNAV',

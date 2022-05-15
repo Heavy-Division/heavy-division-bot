@@ -5,7 +5,7 @@ import { makeEmbed } from '../../lib/embed';
 export const dlc: CommandDefinition = {
     name: ['dlc'],
     description: 'Explains the abscence of the 787 in hangar after downloading the addon.',
-    category: CommandCategory.GENERAL,
+    category: CommandCategory.SUPPORT,
     executor: async (msg) => {
         const dlcEmbed = makeEmbed({
             title: 'Premium Deluxe is required to Operate the B78XH',
