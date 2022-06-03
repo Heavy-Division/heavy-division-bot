@@ -49,6 +49,10 @@ import { roleinfo } from './utils/roleinfo';
 import { timezone } from './utils/timezone';
 import { rot } from './utils/tod';
 import { sbReferenceError } from './support/simbriefReferenceError';
+import { drm } from "./general/missingfeature";
+import { donator } from "./general/donatorwelcome";
+import { ci } from './support/cleaninstall';
+import { conflict } from './support/conflicts';
 
 const commands: CommandDefinition[] = [
     when,
@@ -99,7 +103,11 @@ const commands: CommandDefinition[] = [
     roleinfo,
     timezone,
     rot,
-    sbReferenceError
+    sbReferenceError,
+    drm,
+    donator,
+    ci,
+    conflict
 ];
 
 const commandsObject: { [k: string]: CommandDefinition } = {};

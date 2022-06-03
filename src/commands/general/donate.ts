@@ -1,5 +1,3 @@
-// based off FlyByWire Simulations Discord Bot - https://github.com/flybywiresim/discord-bot
-
 import { CommandDefinition } from '../../lib/command';
 import { CommandCategory } from '../../constants';
 import { makeEmbed } from '../../lib/embed';
@@ -11,12 +9,9 @@ export const donate: CommandDefinition = {
     executor: async (msg) => {
         const donateEmbed = makeEmbed({
             title: 'Heavy Division | Donations',
-            description: 'The Heavy Division Team is grateful for your support. At this time, we are not accepting '
-                       + 'donations, but you can still help by boosting the server, '
-                       + 'allowing us to provide more features to the community!',
+            description: 'See our [Open Collective](https://opencollective.com/heavy-division-simulations) to donate and view a breakdown of expenses. '
+                       + 'You can also receive the donator role by boosting our server!',
         });
-
         await msg.channel.send({ embeds: [donateEmbed] });
-
     },
 };

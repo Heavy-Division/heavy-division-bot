@@ -6,7 +6,7 @@
 
 ## General:
 
-**.when** | **.donate** | **.oceanfix** | **.metarhow**
+**.when** | **.donate** | **.oceanfix** | **.metarhow** | **.newdonor .dintro** | **.drm**
 
 ## Memes:
 

@@ -15,3 +15,5 @@ To get started with contributing, read the [contributing guide here](https://git
 and format your pull request [using this template](https://github.com/Hypeism/HeavyBot/blob/typescript-refactor/.github/PULL_REQUEST_TEMPLATE.md)
 
 Ping or DM HowNowBrownCrow#2591 on Discord if you have any questions
+
+>Repo inspired by the [flybywire discord bot](https://github.com/flybywiresim/discord-bot)
