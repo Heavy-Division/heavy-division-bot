@@ -9,8 +9,8 @@
     "dev": "nodemon --watch src/ -e ts --exec ts-node src/index.ts",
     "run": "npm run build:typescript && npm run run:node",
     "watch": "-tsc -w",
-    "lint": "eslint src/**/*.ts",
-    "lint-fix": "eslint src/**/*.ts --fix"
+    "lint": "eslint src/**/**/*.ts",
+    "lint-fix": "eslint src/**/**/*.ts --fix"
   },
   "author": "Heavy Division Simulations",
   "license": "AGPL 3.0",
