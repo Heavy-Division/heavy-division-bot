@@ -60,7 +60,7 @@ jobs:
       - name: Deploy
         run: |
           TAG=$(echo $GITHUB_SHA | head -c7) &&
-          helm install --namespace ${NAMESPACE} \
+          helm upgrade --install --namespace ${NAMESPACE} \
             --set image.tag=sha-${TAG} \
             --set bot.discordToken=${DISCORD_TOKEN} \
             --set bot.metarToken=${METAR_TOKEN} \
