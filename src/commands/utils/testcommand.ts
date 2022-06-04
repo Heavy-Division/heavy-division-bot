@@ -5,7 +5,7 @@ import { CommandCategory } from '../../constants';
 import { makeEmbed } from '../../lib/embed';
 
 export const testcommand: CommandDefinition = {
-    name: ['test'],
+    name: 'test',
     description: 'Provides links to MSFS support for sim issues',
     category: CommandCategory.UTILS,
     executor: async (msg) => {
