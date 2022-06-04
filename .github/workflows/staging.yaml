@@ -19,7 +19,7 @@ jobs:
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v1
         with:
-          images: flybywiresim/discord-bot
+          images: nakajimayoshi/heavy-division-bot
           tag-sha: true
           tag-latest: false
       - name: Set up QEMU
@@ -35,7 +35,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          cache-from: type=registry,ref=flybywiresim/discord-bot:staging
+          cache-from: type=registry,ref=nakajimayoshi/heavy-division-bot:staging
           cache-to: type=inline
           push: true
           tags: ${{ steps.docker_meta.outputs.tags }}
