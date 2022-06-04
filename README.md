@@ -17,3 +17,5 @@ and format your pull request [using this template](https://github.com/Hypeism/He
 Ping or DM HowNowBrownCrow#2591 on Discord if you have any questions
 
 >Repo inspired by the [flybywire discord bot](https://github.com/flybywiresim/discord-bot)
+
+[![DigitalOcean Referral Badge](https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%203.svg)](https://www.digitalocean.com/?refcode=c9afef266f16&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
