@@ -45,7 +45,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build_and_push, lint_helm]
     env:
-      NAMESPACE: heavy-division-bot-staging
+      NAMESPACE: heavy-division-bot
       RELEASE_NAME: heavy-division-bot
       VALUES_FILE: ./charts/discord-bot/environments/staging.yaml
       DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
