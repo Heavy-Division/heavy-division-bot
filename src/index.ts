@@ -1,20 +1,23 @@
-// based off FlyByWire Simulations Discord Bot - https://github.com/flybywiresim/discord-bot
-// import { start } from 'elastic-apm-node';
-import Discord from 'discord.js';
+import { start } from 'elastic-apm-node';
 import dotenv from 'dotenv';
-import commands from './commands';
+import Discord from 'discord.js';
 import express from 'express';
-import Logger from './lib/logger';
+import { readdirSync } from 'fs';
+import { join } from 'path';
+import commands from './commands';
 import { makeEmbed } from './lib/embed';
-
-// TODO: Implement performance metrics server with elastic-apm node
+import Logger from './lib/logger';
 
 dotenv.config();
+const apm = start({
+    serviceName: 'heavy-division-bot',
+    disableSend: true,
+});
 
 export const DEBUG_MODE = process.env.DEBUG_MODE === 'true';
 
 const intents = new Discord.Intents(32767);
-export const client = new Discord.Client({
+const client = new Discord.Client({
     partials: ['USER', 'CHANNEL', 'GUILD_MEMBER', 'MESSAGE', 'REACTION'],
     intents,
 });
@@ -28,7 +31,6 @@ client.on('ready', () => {
 
 client.on('disconnect', () => {
     Logger.warn('Client disconnected');
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     healthy = false;
 });
 
@@ -43,12 +45,13 @@ client.on('messageCreate', async (msg) => {
         return;
     }
 
-    if(isDm) {
+    if (isDm) {
         Logger.debug('Bailing because message is a DM.');
         return;
     }
 
     if (msg.content.startsWith('.')) {
+        const transaction = apm.startTransaction('command');
         Logger.debug('Message starts with dot.');
 
         const usedCommand = msg.content.substring(1, msg.content.includes(' ') ? msg.content.indexOf(' ') : msg.content.length).toLowerCase();
@@ -67,19 +70,18 @@ client.on('messageCreate', async (msg) => {
                 if (commandsArray.includes(usedCommand)) {
                     try {
                         await executor(msg, client);
-
+                        transaction.result = 'success';
                     } catch ({ name, message, stack }) {
                         Logger.error({ name, message, stack });
-                        // eslint-disable-next-line camelcase
-                        const error_embed = makeEmbed({
+                        const errorEmbed = makeEmbed({
                             color: 'RED',
                             title: 'Error while Executing Command',
                             description: DEBUG_MODE ? `\`\`\`D\n${stack}\`\`\`` : `\`\`\`\n${name}: ${message}\n\`\`\``,
                         });
 
-                        await msg.channel.send({ embeds: [error_embed] });
+                        await msg.channel.send({ embeds: [errorEmbed] });
 
-
+                        transaction.result = 'error';
                     }
 
                     Logger.debug('Command executor done.');
@@ -89,17 +91,24 @@ client.on('messageCreate', async (msg) => {
             }
         } else {
             Logger.info('Command doesn\'t exist');
-
+            transaction.result = 'error';
         }
-
+        transaction.end();
     }
 });
 
-client.once('ready', () => {
-    console.log('The bot is online!');
+const eventHandlers = readdirSync(join(__dirname, 'handlers'));
 
+for (const file of eventHandlers) {
+    // eslint-disable-next-line global-require,import/no-dynamic-require
+    const handler = require(`./handlers/${file}`);
 
-});
+    if (handler.once) {
+        client.once(handler.event, (...args) => handler.executor(...args));
+    } else {
+        client.on(handler.event, (...args) => handler.executor(...args));
+    }
+}
 
 client.login(process.env.DISCORD_TOKEN)
     .then()
@@ -108,11 +117,21 @@ client.login(process.env.DISCORD_TOKEN)
         process.exit(1);
     });
 
+//express/k8s code. Auto restarts?
+
 const app = express();
 
-
-
+app.get('/healthz', (req, res) => (healthy ? res.status(200)
+    .send('Ready') : res.status(500)
+    .send('Not Ready')));
 app.listen(3000, () => {
     Logger.info('Server is running at http://localhost:3000');
 });
 
+process.on('SIGTERM', () => {
+    Logger.info('SIGTERM signal received.');
+    client.destroy();
+    app.close(() => {
+        Logger.info('Server stopped.');
+    });
+});
