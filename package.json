@@ -1,6 +1,6 @@
 {
-  "name": "heavy-bot",
-  "version": "0.1.1",
+  "name": "heavy-division-bot",
+  "version": "1.0.0",
   "description": "Chat, support, and moderation bot for the Heavy Division Discord",
   "main": "src/index.js",
   "scripts": {

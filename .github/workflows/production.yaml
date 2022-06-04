@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Lint Helm
-        run: helm lint ./charts/discord-bot
   build_and_push:
     runs-on: ubuntu-latest
     steps:
