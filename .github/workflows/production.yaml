@@ -62,7 +62,7 @@ jobs:
           TAG=$(echo $GITHUB_SHA | head -c7) &&
           helm upgrade --install --namespace ${NAMESPACE} \
             --set image.tag=sha-${TAG} \
-            --set bot.secret=${DISCORD_TOKEN} \
+            --set bot.discordToken=${DISCORD_TOKEN} \
             --set bot.metarToken=${METAR_TOKEN} \
             --set bot.stationToken=${STATION_TOKEN} \
             -f ./charts/discord-bot/values.yaml -f ${VALUES_FILE} ${RELEASE_NAME} ./charts/discord-bot
