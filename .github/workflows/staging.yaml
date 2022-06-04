@@ -19,7 +19,7 @@ jobs:
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v1
         with:
-          images: flybywiresim/discord-bot
+          images: nakajimayoshi/heavy-division-bot
           tag-sha: true
           tag-latest: false
       - name: Set up QEMU
@@ -35,7 +35,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          cache-from: type=registry,ref=flybywiresim/discord-bot:staging
+          cache-from: type=registry,ref=nakajimayoshi/heavy-division-bot:staging
           cache-to: type=inline
           push: true
           tags: ${{ steps.docker_meta.outputs.tags }}
@@ -45,10 +45,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build_and_push, lint_helm]
     env:
-      NAMESPACE: heavy-division-bot-staging
+      NAMESPACE: heavy-division-bot
       RELEASE_NAME: heavy-division-bot
       VALUES_FILE: ./charts/discord-bot/environments/staging.yaml
-      BOT_SECRET: ${{ secrets.STAGING_BOT_SECRET }}
+      DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
       METAR_TOKEN: ${{ secrets.METAR_TOKEN }}
       STATION_TOKEN: ${{ secrets.STATION_TOKEN }}
     steps:

@@ -17,4 +17,4 @@ updates:
       - dependency-name: "*"
         update-types: ["version-update:semver-minor", "version-update:semver-patch"]
     open-pull-requests-limit: 10
-    target-branch: typescript-refactor
+    target-branch: staging
