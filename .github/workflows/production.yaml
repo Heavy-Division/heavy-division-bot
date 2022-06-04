@@ -10,8 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Lint Helm
-        run: helm lint ./charts/discord-bot
   build_and_push:
     runs-on: ubuntu-latest
     steps:
@@ -19,7 +17,7 @@ jobs:
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v1
         with:
-          images: heavy-division-bot
+          images: nakajimayoshi/heavy-division-bot
           tag-sha: true
           tag-latest: false
       - name: Set up QEMU
@@ -35,7 +33,7 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          cache-from: type=registry,ref=NakajimaYoshi/heavy-division-bot:master
+          cache-from: type=registry,ref=nakajimayoshi/heavy-division-bot:main
           cache-to: type=inline
           push: true
           tags: ${{ steps.docker_meta.outputs.tags }}
@@ -46,9 +44,9 @@ jobs:
     needs: [build_and_push, lint_helm]
     env:
       NAMESPACE: heavy-division-bot
-      RELEASE_NAME: discord-bot
+      RELEASE_NAME: heavy-division-bot
       VALUES_FILE: ./charts/discord-bot/environments/production.yaml
-      BOT_SECRET: ${{ secrets.PROD_DISCORD_TOKEN }}
+      DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
       METAR_TOKEN: ${{ secrets.METAR_TOKEN }}
       STATION_TOKEN: ${{ secrets.STATION_TOKEN }}
     steps:
@@ -64,7 +62,7 @@ jobs:
           TAG=$(echo $GITHUB_SHA | head -c7) &&
           helm upgrade --install --namespace ${NAMESPACE} \
             --set image.tag=sha-${TAG} \
-            --set bot.secret=${DISCORD_SECRET} \
+            --set bot.discordToken=${DISCORD_TOKEN} \
             --set bot.metarToken=${METAR_TOKEN} \
             --set bot.stationToken=${STATION_TOKEN} \
-            -f ./charts/discord-bot/values.yaml -f ${VALUES_FILE} ${RELEASE_NAME} ./charts/heavy-division-bot
+            -f ./charts/discord-bot/values.yaml -f ${VALUES_FILE} ${RELEASE_NAME} ./charts/discord-bot

@@ -53,6 +53,7 @@ import { drm } from "./general/missingfeature";
 import { donator } from "./general/donatorwelcome";
 import { ci } from './support/cleaninstall';
 import { conflict } from './support/conflicts';
+import { testcommand } from './utils/testcommand';
 
 const commands: CommandDefinition[] = [
     when,
@@ -107,7 +108,8 @@ const commands: CommandDefinition[] = [
     drm,
     donator,
     ci,
-    conflict
+    conflict,
+    testcommand
 ];
 
 const commandsObject: { [k: string]: CommandDefinition } = {};
