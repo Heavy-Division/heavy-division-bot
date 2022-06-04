@@ -35,7 +35,6 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: .
           cache-from: type=registry,ref=nakajimayoshi/heavy-division-bot:staging
           cache-to: type=inline
           push: true
@@ -49,7 +48,7 @@ jobs:
       NAMESPACE: heavy-division-bot-staging
       RELEASE_NAME: heavy-division-bot
       VALUES_FILE: ./charts/discord-bot/environments/staging.yaml
-      BOT_SECRET: ${{ secrets.STAGING_BOT_SECRET }}
+      DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
       METAR_TOKEN: ${{ secrets.METAR_TOKEN }}
       STATION_TOKEN: ${{ secrets.STATION_TOKEN }}
     steps:
