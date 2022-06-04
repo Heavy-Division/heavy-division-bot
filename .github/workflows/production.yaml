@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build_and_push, lint_helm]
     env:
-      NAMESPACE: nakajimayoshi-heavy-division-bot
+      NAMESPACE: heavy-division-bot-ctho0
       RELEASE_NAME: discord-bot
       VALUES_FILE: ./charts/discord-bot/environments/production.yaml
       DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
