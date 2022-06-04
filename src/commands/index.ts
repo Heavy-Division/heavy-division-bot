@@ -54,6 +54,7 @@ import { donator } from "./general/donatorwelcome";
 import { ci } from './support/cleaninstall';
 import { conflict } from './support/conflicts';
 import { testcommand } from './utils/testcommand';
+import { testcommand2 } from "./general/testcommand2";
 
 const commands: CommandDefinition[] = [
     when,
@@ -109,7 +110,8 @@ const commands: CommandDefinition[] = [
     donator,
     ci,
     conflict,
-    testcommand
+    testcommand,
+    testcommand2
 ];
 
 const commandsObject: { [k: string]: CommandDefinition } = {};
