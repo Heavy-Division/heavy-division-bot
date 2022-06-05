@@ -20,9 +20,11 @@ export enum Channels {
 }
 
 export const UserLogExclude = [
-    '957125673196073001', //HD Bot
+    '957125673196073001', // HD Bot
+    '983004116349513728', // Staging Bot
 ];
 
 export const ModLogsExclude = [
     '957125673196073001', // HD Bot
+    '983004116349513728', // Staging Bot
 ];
