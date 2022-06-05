@@ -1,4 +1,4 @@
-
+![HD_Banner](https://cdn.discordapp.com/attachments/960729491750141993/983010796189659216/hdgithub_banner.png)
 Text and moderation bot for the Heavy Division Discord
 
 [![Discord](https://img.shields.io/discord/808476259016769546?color=%237289DA&label=%20&logo=Discord&logoColor=%23ffff)](https://discord.gg/BR38YwKZea)
