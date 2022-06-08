@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: nakajimayoshi/heavy-division-bot
+  repository: heavydivision/heavy-division-bot
   pullPolicy: Always
   tag: ""
 
