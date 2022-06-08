@@ -2,7 +2,7 @@ import { CommandDefinition } from '../../lib/command';
 import { makeEmbed, makeLines } from '../../lib/embed';
 import { CommandCategory } from '../../constants';
 
-const gitEmoji = '<:Interest_programming:984230714851606528.>'
+const gitEmoji = '<:Interest_programming:984230714851606528>'
 const modellingEmoji = '<:Interest_modeling:984230713656246282>'
 
 const ROLES_EMBED =
