@@ -2,8 +2,8 @@ import { CommandDefinition } from '../../lib/command';
 import { makeEmbed, makeLines } from '../../lib/embed';
 import { CommandCategory } from '../../constants';
 
-const gitEmoji = '<:Interest_programming:964857375427289168>'
-const modellingEmoji = '<:Interest_modeling:964857360474591342>'
+const gitEmoji = '<:Interest_programming:984230714851606528.>'
+const modellingEmoji = '<:Interest_modeling:984230713656246282>'
 
 const ROLES_EMBED =
     makeEmbed({
@@ -16,9 +16,9 @@ const ROLES_EMBED =
         ]),
     });
 
-const megaEmoji = '<:Server_updates:964857392028348426>'
-const planeEmoji = '<:B78XH_Updates:964857413570285598>'
-const progressEmoji = '<:progress:964857428191625338>'
+const megaEmoji = '<:Server_updates:984230711588438096>'
+const planeEmoji = '<:B78XH_Updates:984230712267898911>'
+const progressEmoji = '<:progress:984230710615367710>'
 
 const MEDIA_ANNOUNCEMENT_EMBED =
     makeEmbed({
