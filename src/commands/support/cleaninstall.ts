@@ -4,7 +4,7 @@ import { makeEmbed } from '../../lib/embed';
 
 export const ci: CommandDefinition = {
     name: ['cleaninstall', 'ci', 'order66'],
-    description: 'Provides a fix for auto-throttle bug.',
+    description: 'Last-resort option for people with major bugs/issues that can\'t be fixed by normal means.',
     category: CommandCategory.SUPPORT,
     executor: async (msg) => {
         const ciEmbed = makeEmbed({
