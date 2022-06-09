@@ -5,8 +5,8 @@ import { CommandCategory } from '../../constants';
 import { makeEmbed } from '../../lib/embed';
 
 // TODO: Replace Url With custom one
-const HEADER_IMAGE_URL = "https://cdn.discordapp.com/attachments/960729491750141993/964564303325831218/unknown.png"
-const HELP_IMAGE_URL = "https://media.discordapp.net/attachments/820041148764389376/933702744001347604/1250410_20210615145216_1.png?width=832&height=468"
+const HEADER_IMAGE_URL = "https://cdn.discordapp.com/attachments/927293618295824415/984448072283222036/hd__banner.png"
+const HELP_IMAGE_URL = "https://cdn.discordapp.com/attachments/970853183037530123/977399291196899398/Microsoft_Flight_Simulator_Screenshot_2022.05.21_-_11.06.19.01.png"
 
 export const helpEmbed = makeEmbed({
     title: 'Heavy Division | Help and Support',
