@@ -90,9 +90,8 @@ Privileged Gateway Intents must now be enabled within the Discord Developer Port
 3. Add it to `src/commands/index.ts`. You need to add the line `import { name } from './commandfolder/filename';`, replacing `name` with the `export const` from your command, `commandfolder` with the relevant folder your command has been placed within, and `filename` with the file name you created in step 1.
    (Add this below the last command.)
 4. Add your command name to the list under `const commands: CommandDefinition[] = [`
-5. Add your command to the commands index in the .github folder
-5. Add your command name the COMMANDS.md index under the appropriate section in the .github directory 
-
+6. Add your command name the COMMANDS.md index under the appropriate section in the .github directory 
+7. Add you command to the CHANGELOG.md in the .github directory.
 
 If you need help creating a command, you may find it useful to copy an existing command as a template, changing what you need.
 
