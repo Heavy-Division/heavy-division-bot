@@ -28,7 +28,7 @@ const RULES_EMBED =
             '',
             '7. Do not ask for help for, distribute, or encourage downloading pirated pieces of software. This can result in a ban. ',
             '',
-            '8. All decisions made by <@&955273994393780244> amd Heavy Division\'s Team are final. '
+            '8. All decisions made by Heavy Division\'s Team are final. '
 
         ]),
     });
