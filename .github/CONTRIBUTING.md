@@ -91,7 +91,7 @@ Privileged Gateway Intents must now be enabled within the Discord Developer Port
    (Add this below the last command.)
 4. Add your command name to the list under `const commands: CommandDefinition[] = [`
 6. Add your command name the COMMANDS.md index under the appropriate section in the .github directory 
-7. Add you command to the CHANGELOG.md in the .github directory.
+7. Add your command to the CHANGELOG.md in the .github directory.
 
 If you need help creating a command, you may find it useful to copy an existing command as a template, changing what you need.
 
