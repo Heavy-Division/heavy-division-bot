@@ -42,8 +42,8 @@
 | Command             | Description                                                                               | Alias                          |
 |:--------------------|:------------------------------------------------------------------------------------------|:-------------------------------|
 | .at                 | Provides a fix for auto-throttle bug.                                                     | .throttle <br> .autothrottle   |
-| .cleaninstall       | Provides a fix for auto-throttle bug.                                                     | .ci <br> .order66              |
-| .conflict           | Provides a fix for auto-throttle bug.                                                     | .conflicts                     |
+| .cleaninstall       | Last-resort option for people with major bugs/issues that can't be fixed by normal means. | .ci <br> .order66              |
+| .conflict           | Describes process for narrowing down bugs and issues to the B78XH mod.                    | .conflicts                     |
 | .contentmanager     | For initial troubleshooting, to make sure the base plane is up to date.                   | .cm                            |
 | .controls           | Instructions on how to switch back to legacy controls and how to use new controls.        | ---                            |
 | .ctd                | Provides direction for addressing CTD issues.                                             | .crash                         |
