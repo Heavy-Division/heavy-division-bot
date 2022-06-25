@@ -21,7 +21,7 @@ export const versions: CommandDefinition = {
                 },
                 {
                     name: 'Stable',
-                    value: `> Stable is the version with features that are the most mature and most tested. We recommend downloading from our discord in ${linksChannel} to obtain the stable version.`,
+                    value: `> Stable is the version with features that are the most mature and tested. We recommend downloading from our discord in ${linksChannel} to obtain the stable version.`,
                     inline: false,
                 },
                 {
