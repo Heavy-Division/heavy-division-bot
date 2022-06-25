@@ -2,14 +2,14 @@
 
 ## B78XH:
 
-| Command             | Description                                                                               | Alias                          |
-|:--------------------|:------------------------------------------------------------------------------------------|:-------------------------------|
-| .airframe           | If someone asks for a custom B78XH airframe.                                              | .simbrief                      |
-| .experimental       | Explains the current state of the experimental build.                                     | .exp                           |
-| .import             | Shows how to use SimBrief integration.                                                    | .integration <br> .integ       |
-| .irs                | Display help with IRS alignment.                                                          | ---                            |
-| .takeoffPerf        | Provides an explanation as to why there is no takeoff calculator for V-speeds or FLEX.    | .calculator <br> .perf         |
-| .versions           | Provides a link to the autopilot/fly-by-wire page within docs.                            | ---                            |
+| Command       | Description                                                                            | Alias                    |
+|:--------------|:---------------------------------------------------------------------------------------|:-------------------------|
+| .airframe     | If someone asks for a custom B78XH airframe.                                           | .simbrief                |
+| .experimental | Explains the current state of the experimental build.                                  | .exp                     |
+| .import       | Shows how to use SimBrief integration.                                                 | .integration <br> .integ |
+| .irs          | Display help with IRS alignment.                                                       | ---                      |
+| .takeoffPerf  | Provides an explanation as to why there is no takeoff calculator for V-speeds or FLEX. | .calculator <br> .perf   |
+| .versions     | Explains the different B78XH versions                                                  | .version                 |
 
 ## General:
 

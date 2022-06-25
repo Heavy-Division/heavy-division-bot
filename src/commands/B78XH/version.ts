@@ -1,14 +1,15 @@
-// based off FlyByWire Simulations Discord Bot - https://github.com/flybywiresim/discord-bot
-
 import { CommandDefinition } from '../../lib/command';
-import { CommandCategory } from '../../constants';
+import { Channels, CommandCategory } from '../../constants';
 import { makeEmbed, makeLines } from '../../lib/embed';
+import { TextChannel } from 'discord.js';
 
 export const versions: CommandDefinition = {
-    name: 'versions',
+    name: ['versions', 'version'],
     description: 'Explains the different B78XH versions',
     category: CommandCategory.B78XH,
     executor: async (msg) => {
+
+        const linksChannel = msg.guild.channels.resolve(Channels.DOWNLOAD_LINKS) as TextChannel | null;
         const versionsEmbed = makeEmbed({
             title: 'B78XH | Versions',
             footer: { text: 'If you are having further problems, let us know in our #support channel.' },
@@ -20,7 +21,7 @@ export const versions: CommandDefinition = {
                 },
                 {
                     name: 'Stable',
-                    value: '> Stable is our version which has features that are the most mature and most tested. Due to the current testing schedule we do not recommend using Stable at this time until we can update it to be compatible with the latest Sim version. ',
+                    value: `> Stable is the version with features that are the most mature and tested. We recommend downloading from our discord in ${linksChannel} to obtain the stable version.`,
                     inline: false,
                 },
                 {
@@ -35,7 +36,7 @@ export const versions: CommandDefinition = {
                     name: 'Experimental',
                     value: makeLines([
                         '> The Experimental version is a test version to find problems, issues and to improve functionality based on your feedback. It is not meant to be used for daily use or serious flights with an Online ATC service.\n' +
-                        '> Please see our [Experimental Version Support Page] **No support will be offered via Discord.**', // TODO: Add link to discord channel for exp version here
+                        '>**No support will be offered via Discord.**',
                     ]),
                     inline: false,
                 },
