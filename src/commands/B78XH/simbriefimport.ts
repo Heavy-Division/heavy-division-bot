@@ -4,7 +4,6 @@ import { CommandDefinition } from '../../lib/command';
 import { makeEmbed, makeLines } from '../../lib/embed';
 import { CommandCategory } from '../../constants';
 
-
 // TODO: APPEND A GIF OF THE INSTRUCTIONS TO THE FOLLOWING:
 export const simbriefimport: CommandDefinition = {
     name: ['import', 'integration', 'integ'],
@@ -21,6 +20,5 @@ export const simbriefimport: CommandDefinition = {
         });
 
         await msg.channel.send({ embeds: [simbriefImportEmbed] });
-
     },
 };

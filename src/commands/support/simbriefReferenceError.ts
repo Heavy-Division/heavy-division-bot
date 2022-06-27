@@ -2,6 +2,7 @@ import { CommandDefinition } from '../../lib/command';
 import { CommandCategory } from '../../constants';
 import { makeEmbed, makeLines } from '../../lib/embed';
 
+// eslint-disable-next-line camelcase
 const SB_ReferenceError_URL = 'https://cdn.discordapp.com/attachments/810316915464863774/975182259013439488/unknown.png';
 
 export const sbReferenceError: CommandDefinition = {
@@ -18,12 +19,11 @@ export const sbReferenceError: CommandDefinition = {
                 '',
                 '2. Download an updated version of the mod available in <#852748629877850143>',
                 '',
-                '3. Extract the zip to your community folder.'
+                '3. Extract the zip to your community folder.',
             ]),
             image: { url: SB_ReferenceError_URL },
         });
 
         await msg.channel.send({ embeds: [sbErrorEmbed] });
-
     },
 };

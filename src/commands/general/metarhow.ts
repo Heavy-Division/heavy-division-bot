@@ -11,7 +11,8 @@ export const metarhow: CommandDefinition = {
     executor: async (msg) => {
         const metarEmbed = makeEmbed({
             title: 'Heavy Division | Reading the METAR',
-            image: { url: METAR_URL } });
+            image: { url: METAR_URL },
+        });
         await msg.channel.send({ embeds: [metarEmbed] });
     },
 };

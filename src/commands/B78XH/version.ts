@@ -1,14 +1,13 @@
+import { TextChannel } from 'discord.js';
 import { CommandDefinition } from '../../lib/command';
 import { Channels, CommandCategory } from '../../constants';
 import { makeEmbed, makeLines } from '../../lib/embed';
-import { TextChannel } from 'discord.js';
 
 export const versions: CommandDefinition = {
     name: ['versions', 'version'],
     description: 'Explains the different B78XH versions',
     category: CommandCategory.B78XH,
     executor: async (msg) => {
-
         const linksChannel = msg.guild.channels.resolve(Channels.DOWNLOAD_LINKS) as TextChannel | null;
         const versionsEmbed = makeEmbed({
             title: 'B78XH | Versions',
@@ -35,8 +34,8 @@ export const versions: CommandDefinition = {
                 {
                     name: 'Experimental',
                     value: makeLines([
-                        '> The Experimental version is a test version to find problems, issues and to improve functionality based on your feedback. It is not meant to be used for daily use or serious flights with an Online ATC service.\n' +
-                        '>**No support will be offered via Discord.**',
+                        '> The Experimental version is a test version to find problems, issues and to improve functionality based on your feedback. It is not meant to be used for daily use or serious flights with an Online ATC service.\n'
+                        + '>**No support will be offered via Discord.**',
                     ]),
                     inline: false,
                 },
@@ -44,6 +43,5 @@ export const versions: CommandDefinition = {
         });
 
         await msg.channel.send({ embeds: [versionsEmbed] });
-
     },
 };

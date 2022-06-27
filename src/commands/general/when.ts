@@ -12,11 +12,10 @@ export const when: CommandDefinition = {
         const whenEmbed = makeEmbed({
             title: 'When is there going to be an update?',
             description: 'Contributers to the B78XH are unpaid volunteers who ensure the smooth operation of the B78XH '
-                      +  'modification for MSFS, thus we cannot enforce deadlines or provide an estimate '
-                      +  'when new features or updates will be ready.',
+                      + 'modification for MSFS, thus we cannot enforce deadlines or provide an estimate '
+                      + 'when new features or updates will be ready.',
         });
 
         await msg.channel.send({ embeds: [whenEmbed] });
-
     },
 };

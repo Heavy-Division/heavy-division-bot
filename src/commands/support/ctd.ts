@@ -22,6 +22,5 @@ export const ctd: CommandDefinition = {
         });
 
         await msg.channel.send({ embeds: [ctdEmbed] });
-
     },
 };

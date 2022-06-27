@@ -50,21 +50,21 @@ export const unTimeoutModLogEmbed = (moderator: User, user: User) => makeEmbed({
 });
 
 const failedUnTimeoutEmbed = (user: User) => (makeEmbed({
-        title: 'Failed to remove timeout from user',
-        fields: [
-            {
-                inline: true,
-                name: 'User',
-                value: user.toString(),
-            },
-            {
-                inline: true,
-                name: 'ID',
-                value: user.id,
-            },
-        ],
-        color: 'RED',
-    })
+    title: 'Failed to remove timeout from user',
+    fields: [
+        {
+            inline: true,
+            name: 'User',
+            value: user.toString(),
+        },
+        {
+            inline: true,
+            name: 'ID',
+            value: user.id,
+        },
+    ],
+    color: 'RED',
+})
 );
 
 export const untimeout: CommandDefinition = {

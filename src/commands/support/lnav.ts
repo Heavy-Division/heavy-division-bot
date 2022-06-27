@@ -1,7 +1,6 @@
 import { CommandDefinition } from '../../lib/command';
 import { CommandCategory } from '../../constants';
-import {makeEmbed, makeLines} from '../../lib/embed';
-
+import { makeEmbed, makeLines } from '../../lib/embed';
 
 // TODO: Implement a GIF guide of the following:
 
@@ -19,11 +18,10 @@ export const lnav: CommandDefinition = {
                 '',
                 '2. Press the \'EXEC\' key once the green indicator appears ',
                 '',
-                '3. Engage by pressing the \'LNAV\' button on the glareshield.'
+                '3. Engage by pressing the \'LNAV\' button on the glareshield.',
             ]),
         });
 
         await msg.channel.send({ embeds: [lnavEmbed] });
-
     },
 };

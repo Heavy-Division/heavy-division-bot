@@ -25,6 +25,5 @@ export const irs: CommandDefinition = {
         });
 
         await msg.channel.send({ embeds: [irsEmbed] });
-
     },
 };

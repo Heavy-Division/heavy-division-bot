@@ -9,6 +9,7 @@ export const station: CommandDefinition = {
     name: 'station',
     description: 'Provides station information',
     category: CommandCategory.UTILS,
+    // eslint-disable-next-line consistent-return
     executor: async (msg) => {
         const splitUp = msg.content.replace(/\.station\s+/, ' ').split(' ');
 
@@ -20,23 +21,22 @@ export const station: CommandDefinition = {
         request({
             method: 'GET',
             url: `https://avwx.rest/api/station/${icaoArg}`,
-            headers: {
-                Authorization: process.env.STATION_TOKEN },
+            headers: { Authorization: process.env.STATION_TOKEN },
         }, async (error, response, body) => {
             let stationEmbed;
 
-            if(response.statusCode == 200) {
+            // eslint-disable-next-line eqeqeq
+            if (response.statusCode == 200) {
                 // Response OK, parse the JSON
                 const stationReport = JSON.parse(body);
 
-                const runwayIdents = stationReport.runways.map((runways) => {
-                    return `**${runways.ident1}/${runways.ident2}:** `
-                        +`${runways.length_ft} ft x ${runways.width_ft} ft / `
-                        +`${Math.round(runways.length_ft * 0.3048)} m x ${Math.round(runways.width_ft * 0.3048)} m`;
-                });
+                const runwayIdents = stationReport.runways.map((runways) => `**${runways.ident1}/${runways.ident2}:** `
+                        + `${runways.length_ft} ft x ${runways.width_ft} ft / `
+                        + `${Math.round(runways.length_ft * 0.3048)} m x ${Math.round(runways.width_ft * 0.3048)} m`);
 
                 stationEmbed = makeEmbed({
                     title: `Station Info | ${stationReport.icao}`,
+                    // eslint-disable-next-line no-sparse-arrays
                     description: makeLines([
                         '**Station Information:**',
                         `**Name:** ${stationReport.name}`,
@@ -44,18 +44,17 @@ export const station: CommandDefinition = {
                         `**City:** ${stationReport.city}`,
                         `**Latitude:** ${stationReport.latitude}°`,
                         `**Longitude:** ${stationReport.longitude}°`,
-                        `**Elevation:** ${stationReport.elevation_m} m/${stationReport.elevation_ft} ft`,
-                        ,
-                        `**Runways (Ident1/Ident2: Length x Width):**`,
-                        `${runwayIdents.toString( ).replace(/,/g,"\n")}`,
-                        ,
-                        `**Type:** ${stationReport.type.replace(/_/g," ")}`,
+                        `**Elevation:** ${stationReport.elevation_m} m/${stationReport.elevation_ft} ft`,,
+                        '**Runways (Ident1/Ident2: Length x Width):**',
+                        `${runwayIdents.toString().replace(/,/g, '\n')}`,,
+                        `**Type:** ${stationReport.type.replace(/_/g, ' ')}`,
                         `**Website:** ${stationReport.website}`,
                         `**Wiki:** ${stationReport.wiki}`,
                     ]),
-                    footer: { text: 'Due to limitations of the API, not all links may be up to date at all times.' }
+                    footer: { text: 'Due to limitations of the API, not all links may be up to date at all times.' },
                 });
-            } else if(response.statusCode == 400) {
+                // eslint-disable-next-line eqeqeq
+            } else if (response.statusCode == 400) {
                 // Invalid ICAO/IATA code
                 stationEmbed = makeEmbed({
                     title: `Station Error | ${icaoArg.toUpperCase()}`,
@@ -66,16 +65,14 @@ export const station: CommandDefinition = {
             } else {
                 // Unknown error
                 stationEmbed = makeEmbed({
-                    title: `Station Error`,
+                    title: 'Station Error',
                     description: makeLines([
-                        `There was an unknown error with the station request!`,
+                        'There was an unknown error with the station request!',
                     ]),
                 });
             }
 
             await msg.channel.send({ embeds: [stationEmbed] });
-
         });
     },
 };
-

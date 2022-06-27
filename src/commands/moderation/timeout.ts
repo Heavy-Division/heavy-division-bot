@@ -113,21 +113,21 @@ const modLogEmbed = (moderator: User, user: User, reason: string, timeoutDuratio
 });
 
 const failedTimeoutEmbed = (user: User) => (makeEmbed({
-        title: 'Failed to timeout user',
-        fields: [
-            {
-                inline: true,
-                name: 'User',
-                value: user.toString(),
-            },
-            {
-                inline: true,
-                name: 'ID',
-                value: user.id,
-            },
-        ],
-        color: 'RED',
-    })
+    title: 'Failed to timeout user',
+    fields: [
+        {
+            inline: true,
+            name: 'User',
+            value: user.toString(),
+        },
+        {
+            inline: true,
+            name: 'ID',
+            value: user.id,
+        },
+    ],
+    color: 'RED',
+})
 );
 
 export const timeout: CommandDefinition = {
@@ -148,23 +148,23 @@ export const timeout: CommandDefinition = {
 
         let timeoutDuration: number;
         switch (timeoutArg[timeoutArg.length - 1].toLowerCase()) {
-            default: {
-                // defaults to minutes; 'm' will also run this block
-                timeoutDuration = parseInt(timeoutArg.replace('m', '')) * TimeConversions.MINUTES_TO_MILLISECONDS;
-                break;
-            }
-            case 'h': {
-                timeoutDuration = parseInt(timeoutArg.replace('h', '')) * TimeConversions.HOURS_TO_MILLISECONDS;
-                break;
-            }
-            case 'd': {
-                timeoutDuration = parseInt(timeoutArg.replace('d', '')) * TimeConversions.DAYS_TO_MILLISECONDS;
-                break;
-            }
-            case 'w': {
-                timeoutDuration = parseInt(timeoutArg.replace('w', '')) * TimeConversions.WEEKS_TO_MILLISECONDS;
-                break;
-            }
+        default: {
+            // defaults to minutes; 'm' will also run this block
+            timeoutDuration = parseInt(timeoutArg.replace('m', '')) * TimeConversions.MINUTES_TO_MILLISECONDS;
+            break;
+        }
+        case 'h': {
+            timeoutDuration = parseInt(timeoutArg.replace('h', '')) * TimeConversions.HOURS_TO_MILLISECONDS;
+            break;
+        }
+        case 'd': {
+            timeoutDuration = parseInt(timeoutArg.replace('d', '')) * TimeConversions.DAYS_TO_MILLISECONDS;
+            break;
+        }
+        case 'w': {
+            timeoutDuration = parseInt(timeoutArg.replace('w', '')) * TimeConversions.WEEKS_TO_MILLISECONDS;
+            break;
+        }
         }
 
         if (timeoutDuration > 3 * TimeConversions.WEEKS_TO_MILLISECONDS) {

@@ -12,10 +12,9 @@ export const takeoffPerf: CommandDefinition = {
         const takeoffPerfEmbed = makeEmbed({
             title: 'Heavy Division B78XH | Where is the takeoff calculator?',
             description: makeLines(['Currently, Boeing does not publicly release takeoff performance data for the 787-10, which means it is difficult to create an accurate takeoff calculator.',
-                ]
-            )});
+            ]),
+        });
 
         await msg.channel.send({ embeds: [takeoffPerfEmbed] });
-
     },
 };

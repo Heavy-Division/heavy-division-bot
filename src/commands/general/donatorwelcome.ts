@@ -1,6 +1,6 @@
 import { CommandDefinition } from '../../lib/command';
 import { CommandCategory } from '../../constants';
-import {makeEmbed, makeLines} from '../../lib/embed';
+import { makeEmbed, makeLines } from '../../lib/embed';
 
 const B78XH_URL = 'https://cdn.discordapp.com/attachments/927293618295824415/978762846961795132/donatorimage.png';
 
@@ -21,6 +21,5 @@ export const donator: CommandDefinition = {
         });
 
         await msg.channel.send({ embeds: [donatorEmbed] });
-
     },
 };

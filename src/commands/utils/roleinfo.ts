@@ -12,7 +12,7 @@ export const roleinfo: CommandDefinition = {
         const query = msg.content.replace(/\.roleinfo(\s|$)+/, '').toLowerCase();
 
         if (query.length < 1) {
-            await msg.reply ('You did not provide a role to search. (<role>)');
+            await msg.reply('You did not provide a role to search. (<role>)');
             return Promise.resolve();
         }
 
@@ -31,6 +31,6 @@ export const roleinfo: CommandDefinition = {
             description: `**${role.members.size}** members have that role.`,
         });
 
-        return msg.channel.send({embeds: [roleinfoEmbed]});
-    }
-}
+        return msg.channel.send({ embeds: [roleinfoEmbed] });
+    },
+};
