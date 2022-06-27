@@ -29,3 +29,9 @@ export const ModLogsExclude = [
     '957125673196073001', // HD Bot
     '983004116349513728', // Staging Bot
 ];
+
+export enum Units {
+    DEGREES = '\u00B0',
+    CELSIUS = '\u2103',
+    KNOTS = 'kts',
+}

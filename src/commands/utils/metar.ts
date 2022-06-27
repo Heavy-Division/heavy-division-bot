@@ -2,7 +2,7 @@
 
 import request from 'request';
 import { CommandDefinition } from '../../lib/command';
-import { CommandCategory } from '../../constants';
+import { CommandCategory, Units } from '../../constants';
 import { makeEmbed, makeLines } from '../../lib/embed';
 
 export const metar: CommandDefinition = {
@@ -34,15 +34,14 @@ export const metar: CommandDefinition = {
                     // eslint-disable-next-line no-sparse-arrays
                     description: makeLines([
                         '**Raw Report**',
-                        metarReport.raw,,
+                        metarReport.raw,
                         '**Basic Report:**',
                         `**Time Observed:** ${metarReport.time.dt}`,
                         `**Station:** ${metarReport.station}`,
-                        `**Wind:** ${metarReport.wind_direction.repr}° at ${metarReport.wind_speed.repr}kts`,
-                        // eslint-disable-next-line no-restricted-globals
-                        `**Visibility:** ${metarReport.visibility.repr}${isNaN(metarReport.visibility.repr) ? '' : metarReport.units.visibility}`,
-                        `**Temperature:** ${metarReport.temperature.repr}C`,
-                        `**Dew Point:** ${metarReport.dewpoint.repr}C`,
+                        `**Wind:** ${metarReport.wind_direction.repr}${metarReport.wind_direction.repr === 'VRB' ? '' : Units.DEGREES} at ${metarReport.wind_speed.repr} ${Units.KNOTS}`,
+                        `**Visibility:** ${metarReport.visibility.repr} ${Number.isNaN(+metarReport.visibility.repr) ? '' : metarReport.units.visibility}`,
+                        `**Temperature:** ${metarReport.temperature.repr} ${Units.CELSIUS}`,
+                        `**Dew Point:** ${metarReport.dewpoint.repr} ${Units.CELSIUS}`,
                         `**Altimeter:** ${metarReport.altimeter.value.toString()} ${metarReport.units.altimeter}`,
                         `**Flight Rules:** ${metarReport.flight_rules}`,
                     ]),
