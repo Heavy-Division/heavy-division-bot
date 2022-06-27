@@ -1,7 +1,7 @@
 {
     "root": true,
     "env": { "browser": true },
-    "extends": "@Heavy-Division/eslint-config",
+    "extends": "@heavy-division/eslint-config",
     "plugins": ["@typescript-eslint"],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {

@@ -10,10 +10,9 @@ export const airframe: CommandDefinition = {
     executor: async (msg) => {
         const airframeEmbed = makeEmbed({
             title: 'B78XH | SimBrief Airframe',
-            description: 'As of now the B78XH does not have a custom simbrief airframe. We recommend using the default B78X airframe.'
+            description: 'As of now the B78XH does not have a custom simbrief airframe. We recommend using the default B78X airframe.',
         });
 
         await msg.channel.send({ embeds: [airframeEmbed] });
-
     },
 };

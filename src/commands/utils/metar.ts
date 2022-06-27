@@ -9,6 +9,7 @@ export const metar: CommandDefinition = {
     name: 'metar',
     description: 'Provides the METAR report of the requested airport',
     category: CommandCategory.UTILS,
+    // eslint-disable-next-line consistent-return
     executor: async (msg) => {
         const splitUp = msg.content.replace(/\.metar\s+/, ' ').split(' ');
 
@@ -20,20 +21,20 @@ export const metar: CommandDefinition = {
         request({
             method: 'GET',
             url: `https://avwx.rest/api/metar/${icaoArg}`,
-            headers: {
-                Authorization: process.env.METAR_TOKEN },
+            headers: { Authorization: process.env.METAR_TOKEN },
         }, async (error, response, body) => {
             let metarEmbed;
 
-            if(response.statusCode == 200) {
+            // eslint-disable-next-line eqeqeq
+            if (response.statusCode == 200) {
                 // Response OK, parse the JSON
                 const metarReport = JSON.parse(body);
                 metarEmbed = makeEmbed({
                     title: `METAR Report | ${metarReport.station}`,
+                    // eslint-disable-next-line no-sparse-arrays
                     description: makeLines([
                         '**Raw Report**',
                         metarReport.raw,
-                        ,
                         '**Basic Report:**',
                         `**Time Observed:** ${metarReport.time.dt}`,
                         `**Station:** ${metarReport.station}`,
@@ -48,12 +49,13 @@ export const metar: CommandDefinition = {
                         {
                             name: 'Unsure of how to read the raw report?',
                             value: 'Type \'.metarhow\' to learn how to read raw reports.',
-                            inline: false
+                            inline: false,
                         },
                     ],
                     footer: { text: 'This METAR report may not accurately reflect the weather in the simulator. However, it will always be similar to the current conditions present in the sim.' },
                 });
-            } else if(response.statusCode == 400) {
+                // eslint-disable-next-line eqeqeq
+            } else if (response.statusCode == 400) {
                 // Invalid ICAO/IATA code
                 metarEmbed = makeEmbed({
                     title: `METAR Error | ${icaoArg.toUpperCase()}`,
@@ -64,15 +66,14 @@ export const metar: CommandDefinition = {
             } else {
                 // Unknown error
                 metarEmbed = makeEmbed({
-                    title: `METAR Error`,
+                    title: 'METAR Error',
                     description: makeLines([
-                        `There was an unknown error with the METAR request!`,
+                        'There was an unknown error with the METAR request!',
                     ]),
                 });
             }
 
             await msg.channel.send({ embeds: [metarEmbed] });
-
         });
     },
 };

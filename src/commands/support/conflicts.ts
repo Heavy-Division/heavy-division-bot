@@ -9,10 +9,9 @@ export const conflict: CommandDefinition = {
     executor: async (msg) => {
         const conflictEmbed = makeEmbed({
             title: 'Heavy Division | Conflicts',
-            description: 'Before attributing major issues to the mod, ensure that no conflicts are occuring by removing other addons from the community folder and testing each one individually in the sim. '
+            description: 'Before attributing major issues to the mod, ensure that no conflicts are occuring by removing other addons from the community folder and testing each one individually in the sim. ',
         });
 
         await msg.channel.send({ embeds: [conflictEmbed] });
-
     },
 };

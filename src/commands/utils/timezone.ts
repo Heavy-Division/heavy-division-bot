@@ -5,8 +5,9 @@ export const timezone: CommandDefinition = {
     name: ['Timezone', 'utc', 'gmt', 'zulu'],
     description: 'Returns the time at a given timezone',
     category: CommandCategory.UTILS,
+    // eslint-disable-next-line consistent-return
     executor: async (msg) => {
-        const text = msg.content
+        const text = msg.content;
 
         const currentDate = new Date();
 
@@ -33,4 +34,3 @@ export const timezone: CommandDefinition = {
         }
     },
 };
-

@@ -12,7 +12,8 @@ export const oceanfix: CommandDefinition = {
     executor: async (msg) => {
         const oceanicFixEmbed = makeEmbed({
             title: 'Heavy Division B78XH | Oceanic Fixes',
-            image: { url: OCEAN_FIX_URL } });
+            image: { url: OCEAN_FIX_URL },
+        });
         await msg.channel.send({ embeds: [oceanicFixEmbed] });
     },
 };

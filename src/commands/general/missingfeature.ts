@@ -10,12 +10,11 @@ export const drm: CommandDefinition = {
         const drmEmbed = makeEmbed({
             title: 'Why isn\'t [X] a feature in the B78XH?',
             description: 'Due to various Digital Rights Management protections or encryption of the core 787-10 files '
-                +  'we are unable to add/change/remove certain aircraft features. '
-                +  'For a detailed list of features we are able to work on, check out the [contributor guide](https://github.com/Heavy-Division/B78XH/blob/main/.github/CONTRIBUTING.md). '
-                +  'This list is not set in stone, and we will update it when and if Asobo provides access to various core systems files in the future.'
+                + 'we are unable to add/change/remove certain aircraft features. '
+                + 'For a detailed list of features we are able to work on, check out the [contributor guide](https://github.com/Heavy-Division/B78XH/blob/main/.github/CONTRIBUTING.md). '
+                + 'This list is not set in stone, and we will update it when and if Asobo provides access to various core systems files in the future.',
         });
 
         await msg.channel.send({ embeds: [drmEmbed] });
-
     },
 };
