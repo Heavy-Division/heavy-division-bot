@@ -1,13 +1,15 @@
 import { CommandDefinition } from '../../lib/command';
 import { makeEmbed, makeLines } from '../../lib/embed';
-import { CommandCategory } from '../../constants';
+import { CommandCategory, Roles } from '../../constants';
+
+const moderationTeam = Roles.MODERATOR;
 
 const RULES_EMBED = makeEmbed({
     title: 'Heavy Division Server Rules',
     description: makeLines([
         'Below are the rules you must follow to participate in this discord server. Failure to abide by these rules could result in a removal from the server. Mute/ban evasions will result in a permanent ban.',
         '',
-        'The <@&957506216848941056> reserve the right to action at discretion.',
+        `The ${moderationTeam} reserve the right to action at discretion.`,
         '',
         '1. By joining this server you agree to Discord\'s terms of service and guidelines: ',
         '',
