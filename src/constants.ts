@@ -35,3 +35,9 @@ export enum Units {
     CELSIUS = '\u2103',
     KNOTS = 'kts',
 }
+
+export enum Roles {
+    ADMIN = '<@&964674392414109766>',
+    MODERATOR = '<@&964672207253045288>',
+    DEVELOPER = '<@&964672047953346590>',
+}
