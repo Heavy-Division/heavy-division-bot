@@ -8,4 +8,3 @@ export interface CommandDefinition {
     requiredPermissions?: PermissionsString[],
     executor: (msg: Message, client?: Client) => Promise<any>,
 }
-
