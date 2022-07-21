@@ -1,5 +1,3 @@
-// based off FlyByWire Simulations Discord Bot - https://github.com/flybywiresim/discord-bot
-
 import { DMChannel, TextChannel } from 'discord.js';
 import { makeEmbed } from '../lib/embed';
 import Logger from '../lib/logger';
@@ -36,7 +34,7 @@ module.exports = {
                     description: 'An allowed role has used @everyone',
                     author: {
                         name: msg.author.tag,
-                        iconURL: msg.author.displayAvatarURL({ dynamic: true }),
+                        iconURL: msg.author.displayAvatarURL(),
                     },
                     fields: [
                         {
@@ -67,7 +65,7 @@ module.exports = {
                     const noDMEmbed = makeEmbed({
                         author: {
                             name: msg.author.tag,
-                            iconURL: msg.author.displayAvatarURL({ dynamic: true }),
+                            iconURL: msg.author.displayAvatarURL(),
                         },
                         // eslint-disable-next-line no-useless-concat
                         description: ' DM was not sent to ' + `<@${msg.author.id}>` + '.',
@@ -81,7 +79,7 @@ module.exports = {
                     thumbnail: { url: 'https://cdn.discordapp.com/attachments/932350968522240101/932625893657026630/Scam.png' },
                     author: {
                         name: msg.author.tag,
-                        iconURL: msg.author.displayAvatarURL({ dynamic: true }),
+                        iconURL: msg.author.displayAvatarURL(),
                     },
                     fields: [
                         {

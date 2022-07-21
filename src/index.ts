@@ -6,7 +6,6 @@ import { join } from 'path';
 import commands from './commands';
 import { makeEmbed } from './lib/embed';
 import Logger from './lib/logger';
-import intents from './lib/intents';
 
 dotenv.config();
 const apm = require('elastic-apm-node').start({
@@ -17,16 +16,16 @@ const apm = require('elastic-apm-node').start({
 export const DEBUG_MODE = process.env.DEBUG_MODE === 'true';
 const client = new Client({
     intents: [
-        intents.Guilds,
-        intents.Members,
-        intents.Presences,
-        intents.Messages,
-        intents.MessageReactions,
-        intents.EmojisAndStickers,
-        intents.DirectMessages,
-        intents.DirectMessageReactions,
-        intents.DirectMessageTyping,
-        intents.MessageContent,
+        'Guilds',
+        'GuildMembers',
+        'GuildPresences',
+        'GuildMessages',
+        'GuildMessageReactions',
+        'GuildEmojisAndStickers',
+        'DirectMessages',
+        'DirectMessageReactions',
+        'DirectMessageTyping',
+        'MessageContent',
     ],
     partials: [
         Partials.Channel,

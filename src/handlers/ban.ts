@@ -1,6 +1,4 @@
-// based off FlyByWire Simulations Discord Bot - https://github.com/flybywiresim/discord-bot
-
-import { TextChannel } from 'discord.js';
+import { TextChannel, Colors } from 'discord.js';
 import { Channels, ModLogsExclude } from '../constants';
 import { makeEmbed } from '../lib/embed';
 
@@ -23,13 +21,13 @@ module.exports = {
 
         if (modLogsChannel && !ModLogsExclude.some((e) => e)) {
             const noLogEmbed = makeEmbed({
-                color: 'RED',
+                color: Colors.Red,
                 author: {
                     name: `[BANNED] ${msg.user.tag}`,
-                    icon_url: msg.user.displayAvatarURL({dynamic: true}),
+                    iconURL: msg.user.displayAvatarURL({ dynamic: true }),
                 },
                 description: `${msg.user.tag} was banned from ${msg.guild.name} but no audit log could be found.`,
-                footer: {text: `User ID: ${msg.user.id}`},
+                footer: { text: `User ID: ${msg.user.id}` },
             });
 
             // eslint-disable-next-line consistent-return
@@ -45,10 +43,10 @@ module.exports = {
         if (modLogsChannel && !ModLogsExclude.some((e) => e === executor.id)) {
             if (target.id === msg.user.id) {
                 const userBannedEmbed = makeEmbed({
-                    color: 'RED',
+                    color: Colors.Red,
                     author: {
                         name: `[BANNED] ${msg.user.tag}`,
-                        icon_url: msg.user.displayAvatarURL({dynamic: true}),
+                        iconURL: msg.user.displayAvatarURL({ dynamic: true }),
                     },
                     fields: [
                         {
@@ -64,15 +62,15 @@ module.exports = {
                             value: `\u200B${reason}`,
                         },
                     ],
-                    footer: {text: `User ID: ${msg.user.id}`},
+                    footer: { text: `User ID: ${msg.user.id}` },
                 });
                 await modLogsChannel.send({ embeds: [userBannedEmbed] });
             } else {
                 const userBannedIncompleteEmbed = makeEmbed({
-                    color: 'RED',
+                    color: Colors.Red,
                     author: {
                         name: `[BANNED] ${msg.user.tag}`,
-                        icon_url: msg.user.displayAvatarURL({dynamic: true}),
+                        iconURL: msg.user.displayAvatarURL({ dynamic: true }),
                     },
                     fields: [
                         {
@@ -88,7 +86,7 @@ module.exports = {
                             value: 'Unavailable - Audit log incomplete',
                         },
                     ],
-                    footer: {text: `User ID: ${msg.user.id}`},
+                    footer: { text: `User ID: ${msg.user.id}` },
                 });
                 await modLogsChannel.send({ embeds: [userBannedIncompleteEmbed] });
             }
