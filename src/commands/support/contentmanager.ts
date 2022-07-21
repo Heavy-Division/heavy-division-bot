@@ -13,7 +13,7 @@ export const contentManager: CommandDefinition = {
         const contentManagerEmbed = makeEmbed({
             title: 'Heavy Division B78XH | Content Manager',
             description: 'The B78X Heavy is a modification of the default 787-10 for MSFS. Please ensure the base plane is updated by checking for updates in the content manager.',
-            image: { url: CONTENT_MANAGER_URL },
+            image: {url: CONTENT_MANAGER_URL},
         });
         await msg.channel.send({ embeds: [contentManagerEmbed] });
     },

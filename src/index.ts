@@ -1,12 +1,12 @@
-// based off FlyByWire Simulations Discord Bot - https://github.com/flybywiresim/discord-bot
 import dotenv from 'dotenv';
-import Discord from 'discord.js';
 import express from 'express';
+import { Client, Partials, Colors, ChannelType } from 'discord.js';
 import { readdirSync } from 'fs';
 import { join } from 'path';
 import commands from './commands';
 import { makeEmbed } from './lib/embed';
 import Logger from './lib/logger';
+import intents from './lib/intents';
 
 dotenv.config();
 const apm = require('elastic-apm-node').start({
@@ -15,11 +15,26 @@ const apm = require('elastic-apm-node').start({
 });
 
 export const DEBUG_MODE = process.env.DEBUG_MODE === 'true';
-
-const intents = new Discord.Intents(32767);
-const client = new Discord.Client({
-    partials: ['USER', 'CHANNEL', 'GUILD_MEMBER', 'MESSAGE', 'REACTION'],
-    intents,
+const client = new Client({
+    intents: [
+        intents.Guilds,
+        intents.Members,
+        intents.Presences,
+        intents.Messages,
+        intents.MessageReactions,
+        intents.EmojisAndStickers,
+        intents.DirectMessages,
+        intents.DirectMessageReactions,
+        intents.DirectMessageTyping,
+        intents.MessageContent,
+    ],
+    partials: [
+        Partials.Channel,
+        Partials.Message,
+        Partials.GuildMember,
+        Partials.Reaction,
+        Partials.User,
+    ],
 });
 
 let healthy = false;
@@ -35,9 +50,8 @@ client.on('disconnect', () => {
 });
 
 client.on('messageCreate', async (msg) => {
-    const isDm = msg.channel.type === 'DM';
-    const guildId = !isDm ? msg.guild.id : 'DM';
-
+    const isDm = msg.channel.type === ChannelType.DM;
+    const guildId = !isDm ? msg.guild.id : ChannelType.DM;
     Logger.debug(`Processing message ${msg.id} from user ${msg.author.id} in channel ${msg.channel.id} of server ${guildId}.`);
 
     if (msg.author.bot === true) {
@@ -74,7 +88,7 @@ client.on('messageCreate', async (msg) => {
                     } catch ({ name, message, stack }) {
                         Logger.error({ name, message, stack });
                         const errorEmbed = makeEmbed({
-                            color: 'RED',
+                            color: Colors.Red,
                             title: 'Error while Executing Command',
                             description: DEBUG_MODE ? `\`\`\`D\n${stack}\`\`\`` : `\`\`\`\n${name}: ${message}\n\`\`\``,
                         });

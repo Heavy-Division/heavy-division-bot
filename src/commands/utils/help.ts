@@ -5,7 +5,7 @@ import { makeEmbed } from '../../lib/embed';
 
 export const help: CommandDefinition = {
     name: ['help'],
-    description: 'Explains the abscence of the 787 in hangar after downloading the addon.',
+    description: 'Explains the absence of the 787 in hangar after downloading the addon.',
     category: CommandCategory.UTILS,
     executor: async (msg) => {
         const helpEmbed = makeEmbed({

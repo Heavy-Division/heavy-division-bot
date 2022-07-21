@@ -9,7 +9,7 @@ export const boing: CommandDefinition = {
     description: 'Uploads image of a bouncy 747',
     category: CommandCategory.MEMES,
     executor: async (msg) => {
-        const boingEmbed = makeEmbed({ image: { url: BOING_URL } });
+        const boingEmbed = makeEmbed({image: {url: BOING_URL}});
         await msg.channel.send({ embeds: [boingEmbed] });
     },
 };

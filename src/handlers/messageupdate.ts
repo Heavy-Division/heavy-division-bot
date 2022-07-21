@@ -25,18 +25,26 @@ module.exports = {
         if (userLogsChannel && !UserLogExclude.some((e) => e == oldMessage.author.id)) {
             const messageUpdateEmbed = makeEmbed({
                 color: 'ORANGE',
-                thumbnail: { url: 'https://cdn.discordapp.com/attachments/770835189419999262/779963227589050378/edit-message-pngrepo-com.png' },
+                thumbnail: {url: 'https://cdn.discordapp.com/attachments/770835189419999262/779963227589050378/edit-message-pngrepo-com.png'},
                 author: {
                     name: oldMessage.author.tag,
-                    icon_url: oldMessage.author.displayAvatarURL({ dynamic: true }),
+                    icon_url: oldMessage.author.displayAvatarURL({dynamic: true}),
                 },
                 fields: [
-                    { name: 'Author', value: `<@${oldMessage.author}>`, inline: true },
-                    { name: 'Channel', value: `<#${oldMessage.channel.id}>`, inline: true },
-                    { name: 'Original Message', value: oldMessage.content ? `\`\`\`${oldMessage.content}\`\`\`` : FEATURE_NOT_AVAIL, inline: false },
-                    { name: 'Edited Message', value: newMessage.content ? `\`\`\`${newMessage.content}\`\`\`` : FEATURE_NOT_AVAIL, inline: false },
+                    {name: 'Author', value: `<@${oldMessage.author}>`, inline: true},
+                    {name: 'Channel', value: `<#${oldMessage.channel.id}>`, inline: true},
+                    {
+                        name: 'Original Message',
+                        value: oldMessage.content ? `\`\`\`${oldMessage.content}\`\`\`` : FEATURE_NOT_AVAIL,
+                        inline: false
+                    },
+                    {
+                        name: 'Edited Message',
+                        value: newMessage.content ? `\`\`\`${newMessage.content}\`\`\`` : FEATURE_NOT_AVAIL,
+                        inline: false
+                    },
                 ],
-                footer: { text: `User ID: ${oldMessage.author.id}` },
+                footer: {text: `User ID: ${oldMessage.author.id}`},
             });
             await userLogsChannel.send({ embeds: [messageUpdateEmbed] });
         }

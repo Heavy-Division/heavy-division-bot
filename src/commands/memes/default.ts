@@ -11,7 +11,7 @@ export const defaultmeme: CommandDefinition = {
     description: 'O_o',
     category: CommandCategory.MEMES,
     executor: async (msg) => {
-        const defaultEmbed = makeEmbed({ image: { url: DEFAULT_URL } });
+        const defaultEmbed = makeEmbed({image: {url: DEFAULT_URL}});
         await msg.channel.send({ embeds: [defaultEmbed] });
     },
 };

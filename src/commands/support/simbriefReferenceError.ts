@@ -21,7 +21,7 @@ export const sbReferenceError: CommandDefinition = {
                 '',
                 '3. Extract the zip to your community folder.',
             ]),
-            image: { url: SB_ReferenceError_URL },
+            image: {url: SB_ReferenceError_URL},
         });
 
         await msg.channel.send({ embeds: [sbErrorEmbed] });
