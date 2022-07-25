@@ -9,7 +9,7 @@ export const cowsay: CommandDefinition = {
     description: 'Emulates the famous UNIX program `cowsay`.',
     category: CommandCategory.MEMES,
     executor: (msg) => {
-        const text = msg.content.replace(/\.(cowsay|cs)\s*/, '');
+        const text = msg.content.replace(/\.(cowsay|cs)\s*/, '').replace(/`/g, '');
 
         if (text) {
             return msg.channel.send(`\`\`\`\n${say(({ text }))}\n\`\`\``);
