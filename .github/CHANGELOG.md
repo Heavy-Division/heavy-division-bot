@@ -4,6 +4,7 @@
 | *date*     | *prefix* | *description*                                   |
 |------------|----------|-------------------------------------------------|
 | 07/07/2022 | fix      | rules embed fix and roles added to constants.ts |
+| 25/07/2022 | fix      | fix(cowsay): input escape                       |
 
 ## June 2022
 
