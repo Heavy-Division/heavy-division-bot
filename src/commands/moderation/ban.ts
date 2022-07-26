@@ -59,7 +59,7 @@ export const ban: CommandDefinition = {
     },
 };
 
-function makeSuccessfulBanEmbed(user: UserLike, reason: string): discord.EmbedBuilder {
+function makeSuccessfulBanEmbed(user: UserLike, reason: string): EmbedBuilder {
     const fields: EmbedField[] = [];
 
     if (user instanceof User) {
