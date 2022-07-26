@@ -1,4 +1,4 @@
-import discord, { EmbedField, Snowflake, TextChannel, User, Colors } from 'discord.js';
+import discord, { EmbedField, EmbedBuilder, Snowflake, TextChannel, User, Colors } from 'discord.js';
 import { CommandDefinition } from '../../lib/command';
 import { Channels, CommandCategory } from '../../constants';
 import { makeEmbed } from '../../lib/embed';
