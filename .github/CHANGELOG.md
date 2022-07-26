@@ -6,7 +6,7 @@
 | 07/07/2022 | fix      | rules embed fix and roles added to constants.ts                                   |
 | 07/07/2022 | chore    | bump @types/node from 17.0.39 to 18.0.0                                           |
 | 07/15/2022 | chore    | updated nodemon, got, and moment dependencies to latest versions for security fix |
-| 07/15/2022 | chore    | discord.js v14 refactor                                                           |
+| 07/26/2022 | chore    | discord.js v14 refactor                                                           |
 
 ## June 2022
 
