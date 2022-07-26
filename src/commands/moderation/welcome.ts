@@ -25,7 +25,7 @@ export const helpEmbed = makeEmbed({
 export const welcome: CommandDefinition = {
     name: 'welcome',
     description: 'Sends a welcome message',
-    requiredPermissions: ['BAN_MEMBERS'],
+    requiredPermissions: ['BanMembers'],
     category: CommandCategory.MODERATION,
     executor: async (msg) => {
         await msg.channel.send({ files: [HEADER_IMAGE_URL] });

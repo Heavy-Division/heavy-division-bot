@@ -10,7 +10,7 @@ export const donate: CommandDefinition = {
         const donateEmbed = makeEmbed({
             title: 'Heavy Division | Donations',
             description: 'See our [Open Collective](https://opencollective.com/heavy-division-simulations) to donate and view a breakdown of expenses. '
-                       + 'You can also receive the donator role by boosting our server!',
+                + 'You can also receive the donator role by boosting our server!',
         });
         await msg.channel.send({ embeds: [donateEmbed] });
     },

@@ -1,8 +1,6 @@
-// based off FlyByWire Simulations Discord Bot - https://github.com/flybywiresim/discord-bot
-
 import request from 'request';
 import { CommandDefinition } from '../../lib/command';
-import { CommandCategory, Units } from '../../constants';
+import { CommandCategory, Units, Colors } from '../../constants';
 import { makeEmbed, makeLines } from '../../lib/embed';
 
 export const metar: CommandDefinition = {
@@ -30,6 +28,7 @@ export const metar: CommandDefinition = {
                 // Response OK, parse the JSON
                 const metarReport = JSON.parse(body);
                 metarEmbed = makeEmbed({
+                    color: Colors.HD_BLUE,
                     title: `METAR Report | ${metarReport.station}`,
                     // eslint-disable-next-line no-sparse-arrays
                     description: makeLines([
@@ -58,6 +57,7 @@ export const metar: CommandDefinition = {
             } else if (response.statusCode == 400) {
                 // Invalid ICAO/IATA code
                 metarEmbed = makeEmbed({
+                    color: Colors.HD_BLUE,
                     title: `METAR Error | ${icaoArg.toUpperCase()}`,
                     description: makeLines([
                         `${icaoArg.toUpperCase()} is not a valid station code!`,
@@ -66,6 +66,7 @@ export const metar: CommandDefinition = {
             } else {
                 // Unknown error
                 metarEmbed = makeEmbed({
+                    color: Colors.HD_BLUE,
                     title: 'METAR Error',
                     description: makeLines([
                         'There was an unknown error with the METAR request!',

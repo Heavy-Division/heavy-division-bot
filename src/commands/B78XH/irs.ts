@@ -2,7 +2,7 @@ import { CommandDefinition } from '../../lib/command';
 import { makeEmbed, makeLines } from '../../lib/embed';
 import { CommandCategory } from '../../constants';
 
-const IRS_IMAGE_URL = 'https://cdn.discordapp.com/attachments/429734269838032898/957887521931530250/irs.PNG'; //TODO: Add a more professional looking photo (square view of overhead panel), clean red box
+const IRS_IMAGE_URL = 'https://media.discordapp.net/attachments/984255062010396702/990392133825490994/IRS_Switch_POS.png'; //TODO: Add a more professional looking photo (square view of overhead panel), clean red box
 
 export const irs: CommandDefinition = {
     name: 'irs',

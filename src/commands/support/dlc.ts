@@ -1,5 +1,5 @@
 import { CommandDefinition } from '../../lib/command';
-import { CommandCategory } from '../../constants';
+import { CommandCategory, Colors } from '../../constants';
 import { makeEmbed } from '../../lib/embed';
 
 export const dlc: CommandDefinition = {
@@ -8,6 +8,7 @@ export const dlc: CommandDefinition = {
     category: CommandCategory.SUPPORT,
     executor: async (msg) => {
         const dlcEmbed = makeEmbed({
+            color: Colors.HD_BLUE,
             title: 'Premium Deluxe is required to Operate the B78XH',
             description: 'Due to digital rights management features, critical 787 files are hidden behind encryption, thus we cannot upload the aircraft as a separate addon.',
         });

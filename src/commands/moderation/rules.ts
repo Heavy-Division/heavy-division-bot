@@ -37,7 +37,7 @@ const RULES_EMBED = makeEmbed({
 export const rules: CommandDefinition = {
     name: 'rules',
     description: 'Sends the rules',
-    requiredPermissions: ['BAN_MEMBERS'],
+    requiredPermissions: ['BanMembers'],
     category: CommandCategory.MODERATION,
     executor: async (msg) => {
         await msg.channel.send({ embeds: [RULES_EMBED] });
