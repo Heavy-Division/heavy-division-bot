@@ -12,7 +12,7 @@ export const hud: CommandDefinition = {
         const hudEmbed = makeEmbed({
             title: 'Heavy Division B78XH | HUD Alignment Issue',
             description: 'The HUD misalignment is a known issue for the default 787 for MSFS. Open \'General\' settings then \'Camera\' to adjust the HUD camera until it is aligned.',
-            image: {url: HUD_URL},
+            image: { url: HUD_URL },
         });
         await msg.channel.send({ embeds: [hudEmbed] });
     },
