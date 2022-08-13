@@ -15,10 +15,10 @@ module.exports = {
 
         if (scamLogs && msg.content.toLowerCase().includes('@everyone') && msg.author.bot === false && !(msg.channel instanceof DMChannel)) {
             const excludedRoles = [
-                'Maintainer',
-                'Heavy Division Team',
-                'Moderator',
-                'Developer',
+                'Administrator',
+                'Moderation Team',
+                'Development Team',
+                'Media Team',
             ];
             let hasRole = false;
             excludedRoles.forEach((findrole) => {
