@@ -27,6 +27,15 @@ export const metar: CommandDefinition = {
             if (response.statusCode == 200) {
                 // Response OK, parse the JSON
                 const metarReport = JSON.parse(body);
+                const altimeterValue = () => {
+                    let altimeterValue = `${metarReport.altimeter.value.toString()} ${metarReport.units.altimeter}`;
+                    if (metarReport.units.altimeter === 'inHg') {
+                        altimeterValue += ` / ${(metarReport.altimeter.value * 33.863886666667).toFixed(0)} hPa`;
+                    } else {
+                        altimeterValue += ` / ${(metarReport.altimeter.value / 33.863886666667).toFixed(2)} inHg`;
+                    }
+                    return altimeterValue;
+                };
                 metarEmbed = makeEmbed({
                     color: Colors.HD_BLUE,
                     title: `METAR Report | ${metarReport.station}`,
@@ -41,7 +50,7 @@ export const metar: CommandDefinition = {
                         `**Visibility:** ${metarReport.visibility.repr} ${Number.isNaN(+metarReport.visibility.repr) ? '' : metarReport.units.visibility}`,
                         `**Temperature:** ${metarReport.temperature.repr} ${Units.CELSIUS}`,
                         `**Dew Point:** ${metarReport.dewpoint.repr} ${Units.CELSIUS}`,
-                        `**Altimeter:** ${metarReport.altimeter.value.toString()} ${metarReport.units.altimeter}`,
+                        `**Altimeter:** ${altimeterValue()}`,
                         `**Flight Rules:** ${metarReport.flight_rules}`,
                     ]),
                     fields: [
