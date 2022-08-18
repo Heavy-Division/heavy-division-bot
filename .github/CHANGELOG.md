@@ -5,6 +5,7 @@
 |------------|----------|-----------------------------------------|
 | 08/13/2022 | fix      | added excluded roles to scam log        |
 | 08/16/2022 | refactor | added inHg conversion to .metar command |
+| 08/16/2022 | fix      | fixed broken links in README.md         |
 
 ## July 2022
 | *date*     | *prefix* | *description*                                                                     |
