@@ -7,14 +7,12 @@ Text and moderation bot for the Heavy Division Discord
 ***
 
 ## Command List
-Check the [Commands Directory](https://github.com/Hypeism/HeavyBot/blob/typescript-refactor/.github/COMMANDS.md) to find the full list of availible commands 
+Check the [Commands Directory](https://github.com/Heavy-Division/heavy-division-bot/blob/staging/.github/COMMANDS.md) to find the full list of availible commands 
 
 ## Contributing 
-To get started with contributing, read the [contributing guide here](https://github.com/Hypeism/HeavyBot/blob/typescript-refactor/.github/CONTRIBUTING.md) 
-and format your pull request [using this template](https://github.com/Hypeism/HeavyBot/blob/typescript-refactor/.github/PULL_REQUEST_TEMPLATE.md)
+To get started with contributing, read the [contributing guide here](https://github.com/Heavy-Division/heavy-division-bot/blob/staging/.github/CONTRIBUTING.md) 
+and format your pull request [using this template](https://github.com/Heavy-Division/heavy-division-bot/blob/staging/.github/PULL_REQUEST_TEMPLATE.md)
 
 Ping or DM HowNowBrownCrow#2591 on Discord if you have any questions.
-
->Repo inspired by the [flybywire discord bot](https://github.com/flybywiresim/discord-bot)
 
 [![DigitalOcean Referral Badge](https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%203.svg)](https://www.digitalocean.com/?refcode=c9afef266f16&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
