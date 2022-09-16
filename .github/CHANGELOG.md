@@ -3,7 +3,7 @@
 ## September 2022
 | *date*     | *prefix* | *description*                                |
 |------------|----------|----------------------------------------------|
-| 09/17/2022 | fix      | Fix null channel id in .experimental command |
+| 09/16/2022 | fix      | Fix null channel id in .experimental command |
 
 ## August 2022
 | *date*     | *prefix* | *description*                           |
