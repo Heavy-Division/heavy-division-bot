@@ -12,7 +12,7 @@ export const experimental: CommandDefinition = {
         const experimentalEmbed = makeEmbed({
             title: 'Heavy Division | Experimental Version',
             description: makeLines([
-                `Check <#${Channels.LINKS}> to see the current uses of the experimental build. **No support will be offered via Discord.** `,
+                `Check <#${Channels.DOWNLOAD_LINKS}> to see the current uses of the experimental build. **No support will be offered via Discord.** `,
                 '',
                 'Please use the appropriate discord thread to discuss any issues: ',
                 '- <#811459130313015328> ',
