@@ -13,14 +13,15 @@
 
 ## General:
 
-| Command             | Description                                                                               | Alias                          |
-|:--------------------|:------------------------------------------------------------------------------------------|:-------------------------------|
-| .donate             | Provides info on donations.                                                               | ---                            |
-| .drm                | Explain the absence of certain features in the B78XH mod.                                 | .features <br> .fsarchive      |
-| .metarhow           | Provides an image guide to reading METAR reports.                                         | ---                            |
-| .newdonor           | Provides info on donations.                                                               | .dintro                        |
-| .oceanfix           | A guide on how to convert latitude and longitude into oceanic fixes on the flight plan.   | .ofix                          |
-| .when               | Explain the absence of release dates or ETAs.                                             | ---                            |
+| Command   | Description                                                                             | Alias                     |
+|:----------|:----------------------------------------------------------------------------------------|:--------------------------|
+| .donate   | Provides info on donations.                                                             | ---                       |
+| .drm      | Explain the absence of certain features in the B78XH mod.                               | .features <br> .fsarchive |
+| .website  | Links to our website                                                                    | .site <br> .web           |
+| .metarhow | Provides an image guide to reading METAR reports.                                       | ---                       |
+| .newdonor | Provides info on donations.                                                             | .dintro                   |
+| .oceanfix | A guide on how to convert latitude and longitude into oceanic fixes on the flight plan. | .ofix                     |
+| .when     | Explain the absence of release dates or ETAs.                                           | ---                       |
 
 ## Memes:
 
