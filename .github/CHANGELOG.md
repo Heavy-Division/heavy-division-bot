@@ -5,6 +5,7 @@
 |------------|----------|---------------------------------------------------|
 | 09/16/2022 | fix      | Fix null channel id in .experimental command      |
 | 09/25/2022 | fix      | Update bug report method in .experimental command |
+| 09/25/2022 | feat     | Added website command                             |
 
 ## August 2022
 | *date*     | *prefix* | *description*                           |
