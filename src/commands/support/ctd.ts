@@ -6,7 +6,7 @@ export const ctd: CommandDefinition = {
     name: ['ctd', 'crash'],
     description: 'Provides direction for addressing CTD issues.',
     category: CommandCategory.SUPPORT,
-    executor: async (msg) => {
+    executor: (msg) => {
         const ctdEmbed = makeEmbed({
             title: 'Heavy Division | Crash to Desktop',
             description: makeLines([
@@ -21,6 +21,6 @@ export const ctd: CommandDefinition = {
             ]),
         });
 
-        await msg.channel.send({ embeds: [ctdEmbed] });
+        return msg.channel.send({ embeds: [ctdEmbed] });
     },
 };

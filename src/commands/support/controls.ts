@@ -8,7 +8,7 @@ export const controls: CommandDefinition = {
     name: 'controls',
     description: 'Instructions on how to switch back to legacy controls and how to use new controls',
     category: CommandCategory.SUPPORT,
-    executor: async (msg) => {
+    executor: (msg) => {
         const controlsEmbed = makeEmbed({
             title: 'MSFS | Cockpit Interaction System ',
             fields: [
@@ -26,6 +26,6 @@ export const controls: CommandDefinition = {
             ],
         });
 
-        await msg.channel.send({ embeds: [controlsEmbed] });
+        return msg.channel.send({ embeds: [controlsEmbed] });
     },
 };

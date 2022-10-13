@@ -1,6 +1,11 @@
 ## Changelog
 
 ## September 2022
+| *date*     | *prefix* | *description*                       |
+|------------|----------|-------------------------------------|
+| 10/13/2022 | refactor | Remove async/await where not useful |    
+
+## September 2022
 | *date*     | *prefix* | *description*                                     |
 |------------|----------|---------------------------------------------------|
 | 09/16/2022 | fix      | Fix null channel id in .experimental command      |

@@ -10,7 +10,7 @@ export const deadzones: CommandDefinition = {
     name: ['deadzone', 'dz'],
     description: 'Display help with controller deadzones',
     category: CommandCategory.SUPPORT,
-    executor: async (msg) => {
+    executor: (msg) => {
         const deadzonesEmbed = makeEmbed({
             title: 'B78XH | AP LNAV Problem',
             description: makeLines([
@@ -23,6 +23,6 @@ export const deadzones: CommandDefinition = {
             image: { url: DEADZONE_IMAGE_URL },
         });
 
-        await msg.channel.send({ embeds: [deadzonesEmbed] });
+        return msg.channel.send({ embeds: [deadzonesEmbed] });
     },
 };

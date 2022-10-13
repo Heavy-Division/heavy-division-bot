@@ -6,10 +6,10 @@ const PREMIUM_URL = 'https://media.discordapp.net/attachments/810316915464863774
 
 export const premium: CommandDefinition = {
     name: ['premium', 'prm'],
-    description: 'need premium deeeloox durr',
+    description: 'Dangit Bobby you were supposed to buy the Premium Deluxe version of MSFS',
     category: CommandCategory.MEMES,
-    executor: async (msg) => {
+    executor: (msg) => {
         const premiumEmbed = makeEmbed({ image: { url: PREMIUM_URL } });
-        await msg.channel.send({ embeds: [premiumEmbed] });
+        return msg.channel.send({ embeds: [premiumEmbed] });
     },
 };

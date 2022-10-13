@@ -6,7 +6,8 @@ export const rot: CommandDefinition = {
     name: ['ruleofthree', 'rot', 'ro3'],
     description: 'Roughly calculates TOD using the rule of 3',
     category: CommandCategory.UTILS,
-    executor: async (msg) => {
+    // eslint-disable-next-line consistent-return
+    executor: (msg) => {
         const text = msg.content.split(' ').slice(1).join('');
 
         const altitude = parseInt(text.replace(/[^0-9.]/g, ''), 10);
@@ -26,9 +27,9 @@ export const rot: CommandDefinition = {
         });
 
         if (Number.isNaN(altitude)) {
-            await msg.channel.send({ embeds: [errorEmbed] });
+            return msg.channel.send({ embeds: [errorEmbed] });
         } if (!msg.content.includes('FL') && altitude <= 1000) {
-            await msg.channel.send({ embeds: [flightLevelerrorEmbed] });
+            return msg.channel.send({ embeds: [flightLevelerrorEmbed] });
         } if (altitude <= 1000 && text.startsWith('FL')) {
             const todFL = Math.floor(altitude * (1 / 3) * (11 / 10));
 
@@ -48,7 +49,7 @@ export const rot: CommandDefinition = {
                 ],
             });
 
-            await msg.channel.send({ embeds: [todFlightLevelEmbed] });
+            return msg.channel.send({ embeds: [todFlightLevelEmbed] });
         } if (altitude >= 1000) {
             const topOfDescent = Math.floor(altitude * (1 / 100) * (1 / 3) * (11 / 10));
 
@@ -68,7 +69,7 @@ export const rot: CommandDefinition = {
                 ],
             });
 
-            await msg.channel.send({ embeds: [todEmbed] });
+            return msg.channel.send({ embeds: [todEmbed] });
         }
     },
 };
