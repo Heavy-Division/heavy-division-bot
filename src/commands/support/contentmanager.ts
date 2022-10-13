@@ -15,7 +15,7 @@ export const contentManager: CommandDefinition = {
             description: 'The B78X Heavy is a modification of the default 787-10 for MSFS. Please ensure the base plane is updated by checking for updates in the content manager.',
             image: { url: CONTENT_MANAGER_URL },
         });
-        
+
         return msg.channel.send({ embeds: [contentManagerEmbed] });
     },
 };
