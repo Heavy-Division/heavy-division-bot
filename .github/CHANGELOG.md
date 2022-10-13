@@ -1,6 +1,6 @@
 ## Changelog
 
-## September 2022
+## October 2022
 | *date*     | *prefix* | *description*                       |
 |------------|----------|-------------------------------------|
 | 10/13/2022 | refactor | Remove async/await where not useful |    
