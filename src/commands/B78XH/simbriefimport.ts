@@ -9,7 +9,7 @@ export const simbriefimport: CommandDefinition = {
     name: ['import', 'integration', 'integ'],
     description: 'Shows how to use SimBrief integration',
     category: CommandCategory.B78XH,
-    executor: async (msg) => {
+    executor: (msg) => {
         const simbriefImportEmbed = makeEmbed({
             title: 'Heavy Division B78XH | simBrief import',
             description: makeLines([
@@ -19,6 +19,6 @@ export const simbriefimport: CommandDefinition = {
             ]),
         });
 
-        await msg.channel.send({ embeds: [simbriefImportEmbed] });
+        return msg.channel.send({ embeds: [simbriefImportEmbed] });
     },
 };

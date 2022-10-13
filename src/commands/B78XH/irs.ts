@@ -8,7 +8,7 @@ export const irs: CommandDefinition = {
     name: 'irs',
     description: 'Display help with IRS alignment',
     category: CommandCategory.B78XH,
-    executor: async (msg) => {
+    executor: (msg) => {
         const irsEmbed = makeEmbed({
             title: 'Heavy Division | IRS',
             description: makeLines([
@@ -24,6 +24,6 @@ export const irs: CommandDefinition = {
             image: { url: IRS_IMAGE_URL },
         });
 
-        await msg.channel.send({ embeds: [irsEmbed] });
+        return msg.channel.send({ embeds: [irsEmbed] });
     },
 };

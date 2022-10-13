@@ -8,7 +8,7 @@ export const lnav: CommandDefinition = {
     name: 'lnav',
     description: 'Explains the plane not following LNAV route due to user error.',
     category: CommandCategory.SUPPORT,
-    executor: async (msg) => {
+    executor: (msg) => {
         const lnavEmbed = makeEmbed({
             title: 'Heavy Division | Engaging LNAV',
             description: makeLines([
@@ -22,6 +22,6 @@ export const lnav: CommandDefinition = {
             ]),
         });
 
-        await msg.channel.send({ embeds: [lnavEmbed] });
+        return msg.channel.send({ embeds: [lnavEmbed] });
     },
 };

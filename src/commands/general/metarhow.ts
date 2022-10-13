@@ -8,11 +8,11 @@ export const metarhow: CommandDefinition = {
     name: 'metarhow',
     description: 'Provides an image guide to reading METAR reports',
     category: CommandCategory.GENERAL,
-    executor: async (msg) => {
+    executor: (msg) => {
         const metarEmbed = makeEmbed({
             title: 'Heavy Division | Reading the METAR',
             image: { url: METAR_URL },
         });
-        await msg.channel.send({ embeds: [metarEmbed] });
+        return msg.channel.send({ embeds: [metarEmbed] });
     },
 };

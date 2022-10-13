@@ -8,8 +8,8 @@ export const boing: CommandDefinition = {
     name: 'boing',
     description: 'Uploads image of a bouncy 747',
     category: CommandCategory.MEMES,
-    executor: async (msg) => {
+    executor: (msg) => {
         const boingEmbed = makeEmbed({ image: { url: BOING_URL } });
-        await msg.channel.send({ embeds: [boingEmbed] });
+        return msg.channel.send({ embeds: [boingEmbed] });
     },
 };

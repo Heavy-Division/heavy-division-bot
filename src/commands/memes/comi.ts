@@ -7,7 +7,5 @@ export const comi: CommandDefinition = {
     name: 'comi',
     description: 'Stop with these sh*ts last chance...',
     category: CommandCategory.MEMES,
-    executor: async (msg) => {
-        await msg.channel.send(COMI_URL);
-    },
+    executor: (msg) => msg.channel.send(COMI_URL),
 };

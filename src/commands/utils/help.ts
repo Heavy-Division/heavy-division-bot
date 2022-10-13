@@ -5,14 +5,14 @@ import { makeEmbed } from '../../lib/embed';
 
 export const help: CommandDefinition = {
     name: ['help'],
-    description: 'Explains the absence of the 787 in hangar after downloading the addon.',
+    description: 'Provides a link to a list of the bot commands',
     category: CommandCategory.UTILS,
-    executor: async (msg) => {
+    executor: (msg) => {
         const helpEmbed = makeEmbed({
             title: 'Heavy Division | Bot Commands',
             description: 'Check out the [Discord Bot Repository](https://github.com/Heavy-Division/heavy-division-bot/blob/main/.github/COMMANDS.md) for a list of availible commands. ',
         });
 
-        await msg.channel.send({ embeds: [helpEmbed] });
+        return msg.channel.send({ embeds: [helpEmbed] });
     },
 };
