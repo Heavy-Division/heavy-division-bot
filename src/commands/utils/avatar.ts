@@ -6,7 +6,7 @@ export const avatar: CommandDefinition = {
     name: ['avatar', 'av'],
     description: 'Shows the selected user\'s avatar',
     category: CommandCategory.UTILS,
-    executor: async (msg) => {
+    executor: (msg) => {
         const user = msg.mentions.users.first() || msg.author;
         user.displayAvatarURL();
         const avatarEmbed = makeEmbed({

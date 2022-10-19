@@ -8,8 +8,8 @@ export const wingflex: CommandDefinition = {
     name: ['wingflex', 'flappy'],
     description: 'Uploads image of flappy plane',
     category: CommandCategory.MEMES,
-    executor: async (msg) => {
+    executor: (msg) => {
         const wingFlexEmbed = makeEmbed({ image: { url: WING_FLEX_URL } });
-        await msg.channel.send({ embeds: [wingFlexEmbed] });
+        return msg.channel.send({ embeds: [wingFlexEmbed] });
     },
 };

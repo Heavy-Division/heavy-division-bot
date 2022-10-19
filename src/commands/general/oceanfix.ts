@@ -9,11 +9,11 @@ export const oceanfix: CommandDefinition = {
     name: ['ocean', 'ofix'],
     description: 'A guide on how to convert latitude and longitude into oceanic fixes on the flight plan.',
     category: CommandCategory.GENERAL,
-    executor: async (msg) => {
+    executor: (msg) => {
         const oceanicFixEmbed = makeEmbed({
             title: 'Heavy Division B78XH | Oceanic Fixes',
             image: { url: OCEAN_FIX_URL },
         });
-        await msg.channel.send({ embeds: [oceanicFixEmbed] });
+        return msg.channel.send({ embeds: [oceanicFixEmbed] });
     },
 };

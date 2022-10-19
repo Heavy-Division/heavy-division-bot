@@ -8,10 +8,10 @@ const DEFAULT_URL = 'https://c.tenor.com/QWjhCWftI2YAAAAC/airplane-fly.gif';
 
 export const defaultmeme: CommandDefinition = {
     name: 'default',
-    description: 'O_o',
+    description: 'Accurate Description of the default 787-10 for Microsoft Flight Sim',
     category: CommandCategory.MEMES,
-    executor: async (msg) => {
+    executor: (msg) => {
         const defaultEmbed = makeEmbed({ image: { url: DEFAULT_URL } });
-        await msg.channel.send({ embeds: [defaultEmbed] });
+        return msg.channel.send({ embeds: [defaultEmbed] });
     },
 };

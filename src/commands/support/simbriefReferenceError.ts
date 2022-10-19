@@ -9,7 +9,7 @@ export const sbReferenceError: CommandDefinition = {
     name: ['sbError', 'cau'],
     description: 'Provides solution to SimBrief reference error: Cannot Access Uninitialized',
     category: CommandCategory.SUPPORT,
-    executor: async (msg) => {
+    executor: (msg) => {
         const sbErrorEmbed = makeEmbed({
             title: 'Heavy Division | SimBrief Reference Error: Cannot Access Uninitialized',
             description: makeLines([
@@ -24,6 +24,6 @@ export const sbReferenceError: CommandDefinition = {
             image: { url: SB_ReferenceError_URL },
         });
 
-        await msg.channel.send({ embeds: [sbErrorEmbed] });
+        return msg.channel.send({ embeds: [sbErrorEmbed] });
     },
 };
