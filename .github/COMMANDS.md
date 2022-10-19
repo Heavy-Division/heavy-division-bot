@@ -17,10 +17,9 @@
 |:----------|:----------------------------------------------------------------------------------------|:--------------------------|
 | .donate   | Provides info on donations.                                                             | ---                       |
 | .drm      | Explain the absence of certain features in the B78XH mod.                               | .features <br> .fsarchive |
-| .website  | Links to our website                                                                    | .site <br> .web           |
 | .metarhow | Provides an image guide to reading METAR reports.                                       | ---                       |
-| .newdonor | Provides info on donations.                                                             | .dintro                   |
 | .oceanfix | A guide on how to convert latitude and longitude into oceanic fixes on the flight plan. | .ofix                     |
+| .website  | Links to our website                                                                    | .site <br> .web           |
 | .when     | Explain the absence of release dates or ETAs.                                           | ---                       |
 
 ## Memes:
@@ -58,13 +57,13 @@
 
 ## Utilities
 
-| Command             | Description                                                                               | Alias                          |
-|:--------------------|:------------------------------------------------------------------------------------------|:-------------------------------|
-| .avatar             | Shows the selected user's avatar.                                                         | .av                            |
-| .help               | Explains the abscence of the 787 in hangar after downloading the addon.                   | ---                            |
-| .membercount        | Lists the guild's current amount of members.                                              | ---                            |
-| .ping               | Send back a message.                                                                      | ---                            |
-| .roleinfo           | Lists the guild's current amount of members.                                              | ---                            |
-| .station            | Provides station information.                                                             | ---                            |
-| .timezone           | Returns the time at a given timezone.                                                     | .utc <br> .gmt <br> .zulu      |
-| .ruleofthree        | Roughly calculates TOD using the rule of 3.                                               | .rot <br> .ro3                 |
+| Command      | Description                                           | Alias                     |
+|:-------------|:------------------------------------------------------|:--------------------------|
+| .avatar      | Shows the selected user's avatar.                     | .av                       |
+| .help        | Provides a link to the list of availible bot commands | ---                       |
+| .membercount | Lists the guild's current amount of members.          | ---                       |
+| .ping        | Send back a message.                                  | ---                       |
+| .roleinfo    | Provides the info for a given role id                 | ---                       |
+| .station     | Provides station information.                         | ---                       |
+| .timezone    | Returns the time at a given timezone.                 | .utc <br> .gmt <br> .zulu |
+| .ruleofthree | Roughly calculates TOD using the rule of 3.           | .rot <br> .ro3            |
