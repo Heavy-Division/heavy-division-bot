@@ -110,7 +110,7 @@ const commands: CommandDefinition[] = [
     conflict,
     website,
     apu,
-    
+
 ];
 
 const commandsObject: { [k: string]: CommandDefinition } = {};
