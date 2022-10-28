@@ -53,6 +53,7 @@ import { drm } from './general/missingfeature';
 import { ci } from './support/cleaninstall';
 import { conflict } from './support/conflicts';
 import { website } from './general/website';
+import { apu } from './support/apu';
 
 const commands: CommandDefinition[] = [
     when,
@@ -108,6 +109,8 @@ const commands: CommandDefinition[] = [
     ci,
     conflict,
     website,
+    apu,
+    
 ];
 
 const commandsObject: { [k: string]: CommandDefinition } = {};
