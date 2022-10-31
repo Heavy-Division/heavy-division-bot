@@ -6,6 +6,8 @@
 | 10/13/2022 | refactor | Remove async/await where not useful  |
 | 10/19/2022 | refactor | Fix errors in commands documentation |
 | 10/28/2022 | feat     | Added APU Bug command                |
+| 10/31/2022 | feat     | error handling for process start     |
+
 
 ## September 2022
 | *date*     | *prefix* | *description*                                     |
