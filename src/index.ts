@@ -6,6 +6,7 @@ import { join } from 'path';
 import commands from './commands';
 import { makeEmbed } from './lib/embed';
 import Logger from './lib/logger';
+import { connect } from './lib/db';
 
 dotenv.config();
 const apm = require('elastic-apm-node').start({
@@ -41,6 +42,11 @@ let healthy = false;
 client.on('ready', () => {
     Logger.info(`Logged in as ${client.user.tag}!`);
     healthy = true;
+    // Connect to database
+    if (process.env.MONGODB_URL) {
+        connect(process.env.MONGODB_URL)
+            .catch(Logger.error);
+    }
 });
 
 client.on('disconnect', () => {
