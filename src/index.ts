@@ -133,12 +133,16 @@ client.login(process.env.DISCORD_TOKEN)
 //express/k8s code. Auto restarts?
 
 const app = express();
+const port = 3000;
 
 app.get('/healthz', (req, res) => (healthy ? res.status(200)
     .send('Ready') : res.status(500)
     .send('Not Ready')));
-app.listen(3000, () => {
-    Logger.info('Server is running at http://localhost:3000');
+
+app.listen(port, () => {
+    Logger.info(`Server is running at http://localhost:${port}`);
+}).on('error', (err) => {
+    Logger.error(err);
 });
 
 process.on('SIGTERM', () => {
