@@ -7,6 +7,7 @@
 | 10/19/2022 | refactor | Fix errors in commands documentation |
 | 10/28/2022 | feat     | Added APU Bug command                |
 | 10/31/2022 | feat     | error handling for process start     |
+| 10/31/2022 | feat     | Add an example .env                  | 
 
 
 ## September 2022
