@@ -1,5 +1,10 @@
 ## Changelog
 
+## November 2022
+| *date*     | *prefix* | *description*                                        |
+|------------|----------|------------------------------------------------------|
+| 11/10/2022 | refactor | Remove discord escape characters from role constants |
+
 ## October 2022
 | *date*     | *prefix* | *description*                         |
 |------------|----------|---------------------------------------|

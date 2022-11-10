@@ -2,7 +2,7 @@
 
 import { CommandDefinition } from '../../lib/command';
 import { makeEmbed } from '../../lib/embed';
-import { CommandCategory } from '../../constants';
+import { CommandCategory, Roles } from '../../constants';
 
 const FLIGHT_DECK_IMAGE_URL = 'https://media.discordapp.net/attachments/820431837901750282/952035653166719046/unknown.png?width=1618&height=910';
 
@@ -36,7 +36,7 @@ const faqEmbeds = [
             },
             {
                 name: 'I am a real life Aero Engineer, GA, B787-8/9/10 Pilot, or Cabin Crew. Where do I get my role?',
-                value: '> Simply DM one of the <@&964672207253045288> or <@&964674392414109766> with proof of your job!\n ',
+                value: `> Simply DM one of the <@&${Roles.ADMIN}> or <@&${Roles.MODERATOR}> with proof of your job!\n `,
             },
 
         ],
