@@ -4,6 +4,7 @@
 | *date*     | *prefix* | *description*                                        |
 |------------|----------|------------------------------------------------------|
 | 11/10/2022 | refactor | Remove discord escape characters from role constants |
+| 11/10/2022 | feat     | Connect db and add temporaryCommands                 |
 
 ## October 2022
 | *date*     | *prefix* | *description*                         |
