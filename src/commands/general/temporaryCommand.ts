@@ -147,7 +147,7 @@ export const temporarycommand: CommandDefinition = {
             case 'warning':
                 color = Colors.Yellow;
                 break;
-            case 'error':
+            case 'critical':
                 color = Colors.Red;
                 break;
             default:

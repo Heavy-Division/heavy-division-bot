@@ -21,7 +21,7 @@ const helpEmbed = (evokedCommand: String) => makeEmbed({
                 'To create a temporary command, use the following bot command: ',
                 `\`${evokedCommand} add <command> <severity> <title> <content>\``,
                 '`command`: The command to be created that can be executed by regular users.',
-                '`severity`: The type can be `info`, `warning`, or `error`. Depending on the severity, the command output will have an appropriate color: regular, yellow or red.',
+                '`severity`: The type can be `info`, `warning`, or `critical`. Depending on the severity, the command output will have an appropriate color: regular, yellow or red.',
                 '`title`: A double quote (`"`) encapsulated string used as the title of the bot message.',
                 '`content`: A double quote (`"`) encapsulated string used as the content of the bot message.',
                 'Example:',
@@ -255,7 +255,7 @@ export const temporarycommandedit: CommandDefinition = {
         }
 
         if (subCommand === 'add') {
-            const regexCheck = /^["]?\.?(?<command>[\w-]+)["]?\s["]?(?<severity>info|warning|error)["]?\s"(?<title>[^"]*|^[^"]*$)"\s"(?<content>[^"]*|^[^"]*$)"\s*$/;
+            const regexCheck = /^["]?\.?(?<command>[\w-]+)["]?\s["]?(?<severity>info|warning|critical)["]?\s"(?<title>[^"]*|^[^"]*$)"\s"(?<content>[^"]*|^[^"]*$)"\s*$/;
             const regexMatches = subArgs.match(regexCheck);
             if (regexMatches === null || !regexMatches.groups.command || !regexMatches.groups.severity) {
                 return msg.channel.send({ embeds: [missingInfoEmbed('Add', `You need to provide the expected format to create a temporary command. Check \`${evokedCommand} help\` for more details.`)] });
