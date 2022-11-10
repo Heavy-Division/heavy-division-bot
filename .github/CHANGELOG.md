@@ -4,15 +4,18 @@
 | *date*     | *prefix* | *description*                                        |
 |------------|----------|------------------------------------------------------|
 | 11/10/2022 | refactor | Remove discord escape characters from role constants |
+| 11/10/2022 | feat     | Connect db and add temporaryCommands                 |
 
 ## October 2022
-| *date*     | *prefix* | *description*                        |
-|------------|----------|--------------------------------------|
-| 10/13/2022 | refactor | Remove async/await where not useful  |
-| 10/19/2022 | refactor | Fix errors in commands documentation |
-| 10/28/2022 | feat     | Added APU Bug command                |
-| 10/31/2022 | feat     | error handling for process start     |
-| 10/31/2022 | feat     | Add an example .env                  | 
+| *date*     | *prefix* | *description*                         |
+|------------|----------|---------------------------------------|
+| 10/13/2022 | refactor | Remove async/await where not useful   |
+| 10/19/2022 | refactor | Fix errors in commands documentation  |
+| 10/28/2022 | feat     | Added APU Bug command                 |
+| 10/31/2022 | feat     | error handling for process start      |
+| 10/31/2022 | feat     | Add an example .env                   | 
+| 10/31/2022 | feat     | Connect the bot to a mongodb database | 
+
 
 
 ## September 2022

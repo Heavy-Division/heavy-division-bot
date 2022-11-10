@@ -79,6 +79,19 @@ Privileged Gateway Intents must now be enabled within the Discord Developer Port
 3. If all has gone well, you will see the bot is running as `http://localhost:3000` and logged into the name of the bot you created!
 4. You can now test your commands
 
+### MongoDB
+
+Some commands require access to a MongoDB server to store persistence data. The steps below outline MongoDB's setup procedure, and the necessary steps to
+connect your application to your MongoDB instance.
+
+1. Install MongoDB from [their website](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/) or set up an [Atlas cluster](https://www.mongodb.com/cloud/atlas/lp/try2)
+2. If running MongoDB locally, run it [as a service](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/#run-mongodb-community-edition-as-a-windows-service) or [from the terminal](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/#run-mongodb-community-edition-from-the-command-interpreter)
+3. Create a new database named hd in your MongoDB instance
+4. Inside the .env file, on a new line type `MONGODB_URL=URL` replacing URL with your MongoDB access URL
+
+If you have installed MongoDB locally, your access url will be `mongodb://localhost:27017/hd`. If you are using Atlas, the connection URL can be found under
+`Connect->Connect your application` in Database, located under Deployments.
+
 ## Editing Methods
 
 ### Adding a New Command

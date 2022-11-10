@@ -16,6 +16,7 @@ export enum Channels {
     USER_LOGS = '964722187581927475',
     SCAM_LOGS = '964722605783400458',
     DOWNLOAD_LINKS = '852748629877850143',
+    SUPPORT = '964717019289247754',
 }
 
 export const UserLogExclude = [
