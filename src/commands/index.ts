@@ -54,6 +54,8 @@ import { ci } from './support/cleaninstall';
 import { conflict } from './support/conflicts';
 import { website } from './general/website';
 import { apu } from './support/apu';
+import { temporarycommand } from './general/temporaryCommand';
+import { temporarycommandedit } from './moderation/temporaryCommandEdit';
 
 const commands: CommandDefinition[] = [
     when,
@@ -110,7 +112,8 @@ const commands: CommandDefinition[] = [
     conflict,
     website,
     apu,
-
+    temporarycommand,
+    temporarycommandedit,
 ];
 
 const commandsObject: { [k: string]: CommandDefinition } = {};

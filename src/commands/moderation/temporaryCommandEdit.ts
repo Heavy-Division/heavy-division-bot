@@ -239,10 +239,11 @@ export const temporarycommandedit: CommandDefinition = {
         const hasPermittedRole = msg.member.roles.cache.some((role) => permittedRoles.map((r) => r.toString()).includes(role.id));
         const evokedCommand = msg.content.split(/\s+/)[0];
         const args = msg.content.replace(evokedCommand, '').trim();
+        console.log(args);
         if (!hasPermittedRole) {
             return msg.channel.send({ embeds: [noPermEmbed] });
         }
-        if ((args.length < 1 && parseInt(args[1]) !== 0) || args[0] === 'help') {
+        if ((args.length < 1 && parseInt(args[1]) !== 0) || args === 'help') {
             return msg.channel.send({ embeds: [helpEmbed(evokedCommand)] });
         }
 
