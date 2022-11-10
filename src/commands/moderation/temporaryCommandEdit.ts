@@ -235,7 +235,7 @@ export const temporarycommandedit: CommandDefinition = {
         }
 
         const modLogsChannel = msg.guild.channels.resolve(Channels.MOD_LOGS) as TextChannel | null;
-        const supportOpsChannel = msg.guild.channels.resolve(Channels.SUPPORT) as TextChannel | null;
+        const supportOpsChannel = msg.guild.channels.resolve(Channels.SUPPORT_OPS) as TextChannel | null;
         const hasPermittedRole = msg.member.roles.cache.some((role) => permittedRoles.map((r) => r.toString()).includes(role.id));
         const evokedCommand = msg.content.split(/\s+/)[0];
         const args = msg.content.replace(evokedCommand, '').trim();
