@@ -39,9 +39,10 @@
 
 ## Support
 
-| Command             | Description                                                                               | Alias                          |
-|:--------------------|:------------------------------------------------------------------------------------------|:-------------------------------|
-| .at                 | Provides a fix for auto-throttle bug.                                                     | .throttle <br> .autothrottle   |
+| Command | Description                           | Alias                        |
+|:--------|:--------------------------------------|:-----------------------------|
+| .at     | Provides a fix for auto-throttle bug. | .throttle <br> .autothrottle |
+| .apu                 | Provides the way to avoid the apu bug.                                                        |
 | .cleaninstall       | Last-resort option for people with major bugs/issues that can't be fixed by normal means. | .ci <br> .order66              |
 | .conflict           | Describes process for narrowing down bugs and issues to the B78XH mod.                    | .conflicts                     |
 | .contentmanager     | For initial troubleshooting, to make sure the base plane is up to date.                   | .cm                            |
