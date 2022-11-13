@@ -1,11 +1,16 @@
 ## Changelog
 
+## November 2022
+| *date*     | *prefix* | *description*                      |
+|------------|----------|------------------------------------|
+| 11/13/2022 | when     | Changed description of the command |
 ## October 2022
-| *date*     | *prefix* | *description*                        |
-|------------|----------|--------------------------------------|
-| 10/13/2022 | refactor | Remove async/await where not useful  |
-| 10/19/2022 | refactor | Fix errors in commands documentation |
-| 10/28/2022 | feat     | Added new command for APU bug        |
+| *date*     | *prefix* | *description*                                                 |
+|------------|----------|---------------------------------------------------------------|
+| 10/13/2022 | refactor | Remove async/await where not useful                           |
+| 10/19/2022 | refactor | Fix errors in commands documentation                          |
+| 10/28/2022 | feat     | Added new command for APU bug                                 |
+| 10/28/2022 | feat     | Added new command for showing proper way to post a screenshot |
 
 ## September 2022
 | *date*     | *prefix* | *description*                                     |

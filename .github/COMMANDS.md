@@ -55,7 +55,7 @@
 | .lnav               | Explains the plane not following LNAV route due to user error.                            | ---                            |
 | .msfs               | Provides links to MSFS support for sim issues.                                            | ---                            |
 | .sbError            | Provides solution to SimBrief reference error: Cannot Access Uninitialized.               | .cau                           |
-
+| .screenshot         | Provides proper way to post a screenshot when reporting a bug                             | ---                            |
 ## Utilities
 
 | Command      | Description                                           | Alias                     |
