@@ -6,7 +6,7 @@ import { makeEmbed, makeLines } from '../../lib/embed';
 const cycleURL = '';
 
 export const cycleWarning: CommandDefinition = {
-    name: ['cycle', 'cycleoutdated', 'navdatawarning'],
+    name: ['cycle', 'oldcycle', 'navdatawarning'],
     description: 'Provides solution for issues with navdata cycle warnings.',
     category: CommandCategory.SUPPORT,
     executor: (msg) => {

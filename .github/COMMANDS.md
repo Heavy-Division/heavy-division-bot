@@ -56,6 +56,7 @@
 | .lnav               | Explains the plane not following LNAV route due to user error.                            | ---                            |
 | .msfs               | Provides links to MSFS support for sim issues.                                            | ---                            |
 | .sbError            | Provides solution to SimBrief reference error: Cannot Access Uninitialized.               | .cau                           |
+| .cycle              | Provides solution for issues with navdata cycle warnings.                                 | .oldcycle <br> .navdatawarning |
 
 ## Utilities
 
