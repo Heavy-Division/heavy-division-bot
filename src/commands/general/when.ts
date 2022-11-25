@@ -9,7 +9,7 @@ export const when: CommandDefinition = {
     executor: (msg) => {
         const whenEmbed = makeEmbed({
             title: 'When is there going to be an update?',
-            description: 'Contributors to the B78XH are unpaid volunteers who ensure the smooth operation of the B78XH modification for MSFS, '
+            description: 'Contributors at Heavy Division are unpaid volunteers who ensure the smooth operation of the B78XH and B789H for MSFS, '
                 + 'thus we cannot enforce deadlines or provide an estimate when new features or updates will be ready.',
         });
 
