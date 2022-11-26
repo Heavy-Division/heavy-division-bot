@@ -48,6 +48,7 @@
 | .conflict           | Describes process for narrowing down bugs and issues to the B78XH mod.                    | .conflicts                     |
 | .contentmanager     | For initial troubleshooting, to make sure the base plane is up to date.                   | .cm                            |
 | .controls           | Instructions on how to switch back to legacy controls and how to use new controls.        | ---                            |
+| .cycle              | Provides solution for issues with navdata cycle warnings.                                 | .oldcycle <br> .navdatawarning |
 | .ctd                | Provides direction for addressing CTD issues.                                             | .crash                         |
 | .deadzones          | Display help with controller deadzones.                                                   | .dz                            |
 | .dx12               | Explaination for the current state of MSFS DirectX12 support.                             | ---                            |
@@ -56,7 +57,6 @@
 | .lnav               | Explains the plane not following LNAV route due to user error.                            | ---                            |
 | .msfs               | Provides links to MSFS support for sim issues.                                            | ---                            |
 | .sbError            | Provides solution to SimBrief reference error: Cannot Access Uninitialized.               | .cau                           |
-| .cycle              | Provides solution for issues with navdata cycle warnings.                                 | .oldcycle <br> .navdatawarning |
 
 ## Utilities
 
