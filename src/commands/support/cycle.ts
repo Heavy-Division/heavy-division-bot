@@ -6,7 +6,7 @@ import { makeEmbed, makeLines } from '../../lib/embed';
 const cycleURL = 'https://media.discordapp.net/attachments/810316915464863774/935820464931094578/unknown.png';
 
 export const cycleWarning: CommandDefinition = {
-    name: ['cycle', 'oldcycle', 'navdatawarning'],
+    name: ['cycle', 'oldcycle', 'airac'],
     description: 'Provides solution for issues with navdata cycle warnings.',
     category: CommandCategory.SUPPORT,
     executor: (msg) => {
