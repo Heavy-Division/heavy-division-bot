@@ -49,6 +49,7 @@
 | .contentmanager     | For initial troubleshooting, to make sure the base plane is up to date.                   | .cm                            |
 | .controls           | Instructions on how to switch back to legacy controls and how to use new controls.        | ---                            |
 | .ctd                | Provides direction for addressing CTD issues.                                             | .crash                         |
+| .cycle              | Provides solution for issues with navdata cycle warnings.                                 | .oldcycle <br> .airac          |
 | .deadzones          | Display help with controller deadzones.                                                   | .dz                            |
 | .dx12               | Explaination for the current state of MSFS DirectX12 support.                             | ---                            |
 | .dlc                | Explains the abscence of the 787 in hangar after downloading the addon.                   | ---                            |
