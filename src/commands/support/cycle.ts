@@ -3,7 +3,7 @@ import { CommandCategory } from '../../constants';
 import { makeEmbed, makeLines } from '../../lib/embed';
 
 // eslint-disable-next-line camelcase
-const cycleURL = 'https://cdn.discordapp.com/attachments/984255062010396702/1045974216299778098/Screen_Shot_2022-11-26_at_5.09.28_PM.png';
+const cycleURL = 'https://media.discordapp.net/attachments/810316915464863774/935820464931094578/unknown.png';
 
 export const cycleWarning: CommandDefinition = {
     name: ['cycle', 'oldcycle', 'navdatawarning'],
