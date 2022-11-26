@@ -115,7 +115,7 @@ const commands: CommandDefinition[] = [
     apu,
     temporarycommand,
     temporarycommandedit,
-	cycleWarning,
+    cycleWarning,
 ];
 
 const commandsObject: { [k: string]: CommandDefinition } = {};

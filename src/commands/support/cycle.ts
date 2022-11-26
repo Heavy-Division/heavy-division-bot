@@ -14,12 +14,12 @@ export const cycleWarning: CommandDefinition = {
             title: 'Heavy Division | Navdata Warning Message',
             description: makeLines([
                 'Users will occasionally see "end date of data base has passed select new cycle on ident page."',
-				"",
-				'There are a couple of reasons why this message may appear: ',
+                '',
+                'There are a couple of reasons why this message may appear: ',
                 '- MSFS navdata is out of date.',
                 '- Your navdata is out of date.',
-				'',
-				'If you own a navigraph subscription, close the sim and update your navdata using their installer. If you do not own a navigraph subscription, and are facing no issues with flight plan imports, this message can be safely ignored. If you face flight plan import issues when seeing this message, check that you are using the correct AIRAC cycle from your simBrief dispatch.',
+                '',
+                'If you own a navigraph subscription, close the sim and update your navdata using their installer. If you do not own a navigraph subscription, and are facing no issues with flight plan imports, this message can be safely ignored. If you face flight plan import issues when seeing this message, check that you are using the correct AIRAC cycle from your simBrief dispatch.',
             ]),
             image: { url: CYCLE_URL },
         });
