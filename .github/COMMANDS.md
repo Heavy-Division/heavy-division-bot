@@ -48,8 +48,8 @@
 | .conflict           | Describes process for narrowing down bugs and issues to the B78XH mod.                    | .conflicts                     |
 | .contentmanager     | For initial troubleshooting, to make sure the base plane is up to date.                   | .cm                            |
 | .controls           | Instructions on how to switch back to legacy controls and how to use new controls.        | ---                            |
-| .cycle              | Provides solution for issues with navdata cycle warnings.                                 | .oldcycle <br> .navdatawarning |
 | .ctd                | Provides direction for addressing CTD issues.                                             | .crash                         |
+| .cycle              | Provides solution for issues with navdata cycle warnings.                                 | .oldcycle <br> .navdatawarning |
 | .deadzones          | Display help with controller deadzones.                                                   | .dz                            |
 | .dx12               | Explaination for the current state of MSFS DirectX12 support.                             | ---                            |
 | .dlc                | Explains the abscence of the 787 in hangar after downloading the addon.                   | ---                            |
