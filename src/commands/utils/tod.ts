@@ -3,7 +3,7 @@ import { CommandCategory } from '../../constants';
 import { makeEmbed, makeLines } from '../../lib/embed';
 
 export const rot: CommandDefinition = {
-    name: ['ruleofthree', 'rot', 'ro3'],
+    name: ['ruleofthree', 'rot', 'ro3', 'tod'],
     description: 'Roughly calculates TOD using the rule of 3',
     category: CommandCategory.UTILS,
     // eslint-disable-next-line consistent-return
@@ -12,25 +12,29 @@ export const rot: CommandDefinition = {
 
         const altitude = parseInt(text.replace(/[^0-9.]/g, ''), 10);
 
-        const error = 'Please specify a valid altitude or flight level.';
+        const error = 'Please specify a valid altitude (1000-10,000ft) or flight level between FL100 and FL550.';
 
-        const flightLevelError = 'Hint: Try appending \'FL\' to the beginning of values below 1000';
+        const flightLevelError = 'Hint: Try using the \'Flight Level\' convention for values above 10,000ft up to 50,000ft'
+           + 'E.g. 18000ft = FL180 ';
 
         const errorEmbed = makeEmbed({
-            title: 'Error',
+            title: 'Error | Invalid Input',
             description: error,
         });
 
         const flightLevelerrorEmbed = makeEmbed({
-            title: 'Error',
+            title: 'Error | Use Flight Level Format',
             description: flightLevelError,
         });
 
-        if (Number.isNaN(altitude)) {
+        if (Number.isNaN(altitude) || altitude > 10000) {
             return msg.channel.send({ embeds: [errorEmbed] });
-        } if (!msg.content.includes('FL') && altitude <= 1000) {
+        } if (!text.startsWith('FL') && altitude < 1000) {
             return msg.channel.send({ embeds: [flightLevelerrorEmbed] });
-        } if (altitude <= 1000 && text.startsWith('FL')) {
+        }
+        if (text.startsWith('FL') && altitude > 550) {
+            return msg.channel.send({ embeds: [errorEmbed] });
+        } if (text.startsWith('FL') && altitude <= 550) {
             const todFL = Math.floor(altitude * (1 / 3) * (11 / 10));
 
             const todFlightLevelEmbed = makeEmbed({
@@ -43,7 +47,7 @@ export const rot: CommandDefinition = {
                 fields: [
                     {
                         name: 'This is an **approximation** of your TOD',
-                        value: '*Values may not be entirely accurate',
+                        value: '*Values are an estimate, not exact calculation',
                         inline: false,
                     },
                 ],
