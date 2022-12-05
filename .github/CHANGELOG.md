@@ -1,12 +1,12 @@
 ## Changelog
 
 ## November 2022
-| *date*     | *prefix*  | *description*                                                        |
-|------------|-----------|----------------------------------------------------------------------|
-| 11/10/2022 | refactor  | Remove discord escape characters from role constants                 |
-| 11/10/2022 | feat      | Connect db and add temporaryCommands                                 |
-| 11/10/2022 | fix       | Fix temporaryCommands support channel logging and error in changelog |
-| 11/13/2022 | refractor | Edited when command to apply on all of the HeavyDivision feautres    |
+| *date*     | *prefix* | *description*                                                        |
+|------------|----------|----------------------------------------------------------------------|
+| 11/10/2022 | refactor | Remove discord escape characters from role constants                 |
+| 11/10/2022 | feat     | Connect db and add temporaryCommands                                 |
+| 11/10/2022 | fix      | Fix temporaryCommands support channel logging and error in changelog |
+| 11/26/2022 | feat     | Cycle Warning Command                                                |
 
 ## October 2022
 | *date*     | *prefix* | *description*                        |

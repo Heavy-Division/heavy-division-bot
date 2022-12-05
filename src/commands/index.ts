@@ -56,6 +56,7 @@ import { website } from './general/website';
 import { apu } from './support/apu';
 import { temporarycommand } from './general/temporaryCommand';
 import { temporarycommandedit } from './moderation/temporaryCommandEdit';
+import { cycleWarning } from './support/cycle';
 
 const commands: CommandDefinition[] = [
     when,
@@ -114,6 +115,7 @@ const commands: CommandDefinition[] = [
     apu,
     temporarycommand,
     temporarycommandedit,
+    cycleWarning,
 ];
 
 const commandsObject: { [k: string]: CommandDefinition } = {};
