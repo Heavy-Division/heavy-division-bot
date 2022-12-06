@@ -13,6 +13,7 @@ bot:
   discordToken: change_me
   metarToken: change_me
   stationToken: change_me
+  mongodbUrl: change_me
 
 
 serviceAccount:

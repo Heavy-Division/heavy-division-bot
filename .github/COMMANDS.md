@@ -13,14 +13,15 @@
 
 ## General:
 
-| Command   | Description                                                                             | Alias                     |
-|:----------|:----------------------------------------------------------------------------------------|:--------------------------|
-| .donate   | Provides info on donations.                                                             | ---                       |
-| .drm      | Explain the absence of certain features in the B78XH mod.                               | .features <br> .fsarchive |
-| .metarhow | Provides an image guide to reading METAR reports.                                       | ---                       |
-| .oceanfix | A guide on how to convert latitude and longitude into oceanic fixes on the flight plan. | .ofix                     |
-| .website  | Links to our website                                                                    | .site <br> .web           |
-| .when     | Explain the absence of release dates or ETAs.                                           | ---                       |
+| Command           | Description                                                                             | Alias                     |
+|:------------------|:----------------------------------------------------------------------------------------|:--------------------------|
+| .donate           | Provides info on donations.                                                             | ---                       |
+| .drm              | Explain the absence of certain features in the B78XH mod.                               | .features <br> .fsarchive |
+| .metarhow         | Provides an image guide to reading METAR reports.                                       | ---                       |
+| .oceanfix         | A guide on how to convert latitude and longitude into oceanic fixes on the flight plan. | .ofix                     |
+| .temporarycommand | Runs a temporary command with a simple text embed created by the moderators.            | .tc <br> .temp command    |
+| .website          | Links to our website                                                                    | .site <br> .web           |
+| .when             | Explain the absence of release dates or ETAs.                                           | ---                       |
 
 ## Memes:
 
@@ -48,6 +49,7 @@
 | .contentmanager     | For initial troubleshooting, to make sure the base plane is up to date.                   | .cm                            |
 | .controls           | Instructions on how to switch back to legacy controls and how to use new controls.        | ---                            |
 | .ctd                | Provides direction for addressing CTD issues.                                             | .crash                         |
+| .cycle              | Provides solution for issues with navdata cycle warnings.                                 | .oldcycle <br> .airac          |
 | .deadzones          | Display help with controller deadzones.                                                   | .dz                            |
 | .dx12               | Explaination for the current state of MSFS DirectX12 support.                             | ---                            |
 | .dlc                | Explains the abscence of the 787 in hangar after downloading the addon.                   | ---                            |
