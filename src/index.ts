@@ -18,6 +18,7 @@ export const DEBUG_MODE = process.env.DEBUG_MODE === 'true';
 const client = new Client({
     intents: [
         'Guilds',
+        'GuildBans',
         'GuildMembers',
         'GuildPresences',
         'GuildMessages',

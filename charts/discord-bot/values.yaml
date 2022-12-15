@@ -14,6 +14,7 @@ bot:
   metarToken: change_me
   stationToken: change_me
   mongodbUrl: change_me
+  banAppealUrl : change_me
 
 
 serviceAccount:
