@@ -79,6 +79,11 @@ Privileged Gateway Intents must now be enabled within the Discord Developer Port
 3. If all has gone well, you will see the bot is running as `http://localhost:3000` and logged into the name of the bot you created!
 4. You can now test your commands
 
+### Ban Appeal Form
+
+A ban appeal form is sent to a user when they are banned. The URL for the form is stored as an environment variable, 
+BAN_APPEAL_URL. For testing, you could set to a URL like `https://hdsimulations.com`
+
 ### MongoDB
 
 Some commands require access to a MongoDB server to store persistence data. The steps below outline MongoDB's setup procedure, and the necessary steps to
