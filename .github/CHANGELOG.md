@@ -7,6 +7,8 @@
 | 11/10/2022 | feat     | Connect db and add temporaryCommands                                 |
 | 11/10/2022 | fix      | Fix temporaryCommands support channel logging and error in changelog |
 | 11/26/2022 | feat     | Cycle Warning Command                                                |
+| 11/29/2022 | fix      | Fix top of descent command to sanitize user input                    |
+
 
 ## October 2022
 | *date*     | *prefix* | *description*                         |
