@@ -1,9 +1,10 @@
 ## Changelog
 
 ## December 2022
-| *date*     | *prefix* | *description*      |
-|------------|----------|--------------------|
-| 12/16/2022 | feat     | Ban command update |
+| *date*     | *prefix* | *description*                                              |
+|------------|----------|------------------------------------------------------------|
+| 12/16/2022 | feat     | Ban command update                                         |
+| 12/16/2022 | feat     | Scam protection now uses timeout instead of a 'muted' role |
 
 ## November 2022
 | *date*     | *prefix* | *description*                                                        |

@@ -1,7 +1,13 @@
-import { DMChannel, TextChannel } from 'discord.js';
-import { makeEmbed } from '../lib/embed';
+import { codeBlock, Colors, DMChannel, TextChannel } from 'discord.js';
+import { makeEmbed, makeLines } from '../lib/embed';
 import Logger from '../lib/logger';
-import { Channels } from '../constants';
+import { Roles, Channels } from '../constants';
+
+const excludedRoles = [
+    Roles.ADMIN,
+    Roles.MODERATOR,
+    Roles.DEVELOPER,
+];
 
 module.exports = {
     event: 'messageCreate',
@@ -12,95 +18,106 @@ module.exports = {
         }
 
         const scamLogs = msg.guild.channels.resolve(Channels.SCAM_LOGS) as TextChannel | null;
-
         if (scamLogs && msg.content.toLowerCase().includes('@everyone') && msg.author.bot === false && !(msg.channel instanceof DMChannel)) {
-            const excludedRoles = [
-                'Administrator',
-                'Moderation Team',
-                'Development Team',
-                'Media Team',
-            ];
             let hasRole = false;
-            excludedRoles.forEach((findrole) => {
-                if (msg.member.roles.cache.some((role) => role.name === findrole)) {
-                    hasRole = true;
-                }
-            });
-            // @ts-ignore
-            if (hasRole === true) {
+            try {
+                excludedRoles.forEach((roleList) => {
+                    if (msg.member.roles.cache.some((role) => role.id === roleList)) {
+                        hasRole = true;
+                    }
+                });
+            } catch (e) {
+                Logger.error(e);
+            }
+
+            if (hasRole) {
                 const allowedEmbed = makeEmbed({
                     title: 'Potential Scam Alert',
                     thumbnail: { url: 'https://cdn.discordapp.com/attachments/932350968522240101/932625886275043338/Approved.png' },
                     description: 'An allowed role has used @everyone',
                     author: {
                         name: msg.author.tag,
-                        iconURL: msg.author.displayAvatarURL(),
+                        iconURL: msg.author.displayAvatarURL({ dynamic: true }),
                     },
                     fields: [
                         {
                             name: 'User:',
-                            value: `<@${msg.author.id}>`,
+                            value: `${msg.author}`,
                         },
                         {
                             name: 'Channel:',
-                            value: `<#${msg.channel.id}>`,
+                            value: `${msg.channel}`,
                         },
                         {
                             name: 'Message Content:',
-                            value: `\`\`\`${msg.content.toString()}\`\`\``,
+                            value: codeBlock(msg.content.toString()),
                         },
                     ],
                 });
 
                 await scamLogs.send({ embeds: [allowedEmbed] });
-            } else {
-                const mutedRole = msg.guild.roles.cache.find((role) => role.name === 'Muted');
+                return;
+            }
 
-                await msg.delete();
-                try {
-                    await msg.author.send('We have detected use of @everyone in one of our text channels. This function is in place to prevent discord scams and has resulted in an automatic mute and notification of our moderation team. If this was done in error, our moderation team will reverse the mute, however please refrain from using the @everyone ping in future.');
-                } catch (e) {
-                    Logger.error(e);
+            await msg.delete();
 
-                    const noDMEmbed = makeEmbed({
-                        author: {
-                            name: msg.author.tag,
-                            iconURL: msg.author.displayAvatarURL(),
-                        },
-                        // eslint-disable-next-line no-useless-concat
-                        description: ' DM was not sent to ' + `<@${msg.author.id}>` + '.',
-                    });
-
-                    await scamLogs.send({ embeds: [noDMEmbed] });
-                }
-
-                const notAllowedEmbed = makeEmbed({
-                    title: 'Potential Scam Alert',
-                    thumbnail: { url: 'https://cdn.discordapp.com/attachments/932350968522240101/932625893657026630/Scam.png' },
-                    author: {
-                        name: msg.author.tag,
-                        iconURL: msg.author.displayAvatarURL(),
+            const notAllowedEmbed = makeEmbed({
+                title: 'Potential Scam Alert',
+                thumbnail: { url: 'https://cdn.discordapp.com/attachments/932350968522240101/932625893657026630/Scam.png' },
+                author: {
+                    name: msg.author.tag,
+                    iconURL: msg.author.displayAvatarURL({ dynamic: true }),
+                },
+                fields: [
+                    {
+                        name: 'User:',
+                        value: `${msg.author}`,
                     },
-                    fields: [
-                        {
-                            name: 'User:',
-                            value: `<@${msg.author.id}>`,
-                        },
-                        {
-                            name: 'Channel:',
-                            value: `<#${msg.channel.id}>`,
-                        },
-                        {
-                            name: 'Message Content:',
-                            value: `\`\`\`${msg.content.toString()}\`\`\``,
-                        },
-                    ],
+                    {
+                        name: 'Channel:',
+                        value: `${msg.channel}`,
+                    },
+                    {
+                        name: 'Message Content:',
+                        value: codeBlock(msg.content.toString()),
+                    },
+                ],
+            });
+            try {
+                await msg.member.timeout(60 * 60 * 24 * 7 * 1000, 'Scam log');
+            } catch (e) {
+                Logger.error(e);
+                const errorEmbed = makeEmbed({
+                    title: 'Error timing out user',
+                    description: makeLines([
+                        `An error occurred while timing out ${msg.author}`,
+                        `${codeBlock(`Error : ${e}`)}`,
+                    ]),
+                    color: Colors.Red,
                 });
+                await scamLogs.send({ embeds: [errorEmbed] });
 
                 await scamLogs.send({ embeds: [notAllowedEmbed] });
-                await msg.member.roles.add(mutedRole);
+                return;
             }
+
+            try {
+                await msg.author.send('We have detected use of @everyone in one of our text channels. This function is in place to prevent discord scams and has resulted in an automatic timeout and notification of our moderation team. If this was done in error, our moderation team will reverse the timeout, however please refrain from using the @everyone ping in future.');
+            } catch (e) {
+                Logger.error(e);
+
+                const noDMEmbed = makeEmbed({
+                    author: {
+                        name: msg.author.tag,
+                        iconURL: msg.author.displayAvatarURL({ dynamic: true }),
+                    },
+                    description: `DM was not sent to ${msg.author.id}.`,
+                });
+
+                await scamLogs.send({ embeds: [noDMEmbed] });
+            }
+
+            await scamLogs.send({ embeds: [notAllowedEmbed] });
         }
     },
-
 };
