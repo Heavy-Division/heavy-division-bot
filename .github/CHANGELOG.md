@@ -16,13 +16,13 @@
 
 
 ## October 2022
-| *date*     | *prefix* | *description*                         |
-|------------|----------|---------------------------------------|
-| 10/13/2022 | refactor | Remove async/await where not useful   |
-| 10/19/2022 | refactor | Fix errors in commands documentation  |
-| 10/28/2022 | feat     | Added APU Bug command                 |
-| 10/31/2022 | feat     | error handling for process start      |
-| 10/31/2022 | feat     | Add an example .env                   |
+| *date*     | *prefix* | *description*                        |
+|------------|----------|--------------------------------------|
+| 10/13/2022 | refactor | Remove async/await where not useful  |
+| 10/19/2022 | refactor | Fix errors in commands documentation |
+| 10/28/2022 | feat     | Added APU Bug command                |
+| 10/31/2022 | feat     | error handling for process start     |
+| 10/31/2022 | feat     | Add an example .env                  |
 
 
 
@@ -53,7 +53,7 @@
 | *date*     | *prefix* | *description*                                                                          |
 |------------|----------|----------------------------------------------------------------------------------------|
 | 09/06/2022 | fix      | rules & faq embed user references fixed                                                |
-| 09/06/2022 | refactor | updated welcome command                                                                | 
+| 09/06/2022 | refactor | updated welcome command                                                                |
 | 09/06/2022 | chore    | stylized the layout of commands                                                        |
 | 25/06/2022 | refactor | updated help link and fixed typo                                                       |
 | 25/06/2022 | refactor | fixes to .version and download links channel constant added                            |
