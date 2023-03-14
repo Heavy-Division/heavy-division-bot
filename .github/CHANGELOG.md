@@ -1,5 +1,15 @@
 ## Changelog
 
+## March 2023
+| *date*     | *prefix* | *description* |
+|------------|----------|--|
+| 03/14/2023 | feat | Added chatGPT command |
+
+## February 2023
+| *date*     | *prefix* | *description*            |
+|------------|----------|--------------------------|
+| 02/03/2023 | refactor | When command text update |
+
 ## December 2022
 | *date*     | *prefix* | *description*      |
 |------------|----------|--------------------|
