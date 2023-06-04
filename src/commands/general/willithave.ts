@@ -3,7 +3,7 @@ import { CommandCategory } from '../../constants';
 import { makeEmbed } from '../../lib/embed';
 
 export const willItHave: CommandDefinition = {
-    name: ['thumb', 'willItHave', 'willithave'],
+    name: ['willithave', 'thumb'],
     description: 'Answers the big question, will it have FEATURE?',
     category: CommandCategory.GENERAL,
     executor: (msg) => {
