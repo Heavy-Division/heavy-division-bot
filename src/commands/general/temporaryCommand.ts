@@ -140,7 +140,7 @@ export const temporarycommand: CommandDefinition = {
                 return;
             }
 
-            let color = HDColors.HD_BLUE;
+            let color: number = HDColors.HD_BLUE;
             const [temporaryCommand] = temporaryCommands;
             const { title, content, severity, imageUrl } = temporaryCommand;
             switch (severity) {
