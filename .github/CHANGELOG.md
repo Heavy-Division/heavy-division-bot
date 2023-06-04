@@ -1,6 +1,6 @@
 ## Changelog
 
-## May 2023
+## June 2023
 | *date*     | *prefix* | *description*      |
 |------------|----------|--------------------|
 | 06/04/2023 | feat     | Add will it have command, update changelog |
