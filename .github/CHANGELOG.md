@@ -1,15 +1,5 @@
 ## Changelog
 
-## June 2023
-| *date*     | *prefix* | *description*      |
-|------------|----------|--------------------|
-| 06/04/2023 | feat     | Add will it have command, update changelog |
-
-## May 2023
-| *date*     | *prefix* | *description*      |
-|------------|----------|--------------------|
-| 05/31/2023 | fix     | fix type error causing bot crash |
-
 ## December 2022
 | *date*     | *prefix* | *description*      |
 |------------|----------|--------------------|
