@@ -1,13 +1,23 @@
 ## Changelog
 
+## June 2023
+| *date*     | *prefix* | *description*          |
+| ---------- | -------- | ---------------------- |
+| 06/04/2023 | feat     | add willithave command |
+
+## May 2023
+| *date*     | *prefix* | *description*                    |
+| ---------- | -------- | -------------------------------- |
+| 05/31/2023 | fix      | fix type error causing bot crash |
+
 ## December 2022
 | *date*     | *prefix* | *description*      |
-|------------|----------|--------------------|
+| ---------- | -------- | ------------------ |
 | 12/16/2022 | feat     | Ban command update |
 
 ## November 2022
 | *date*     | *prefix* | *description*                                                        |
-|------------|----------|----------------------------------------------------------------------|
+| ---------- | -------- | -------------------------------------------------------------------- |
 | 11/10/2022 | refactor | Remove discord escape characters from role constants                 |
 | 11/10/2022 | feat     | Connect db and add temporaryCommands                                 |
 | 11/10/2022 | fix      | Fix temporaryCommands support channel logging and error in changelog |
@@ -17,7 +27,7 @@
 
 ## October 2022
 | *date*     | *prefix* | *description*                        |
-|------------|----------|--------------------------------------|
+| ---------- | -------- | ------------------------------------ |
 | 10/13/2022 | refactor | Remove async/await where not useful  |
 | 10/19/2022 | refactor | Fix errors in commands documentation |
 | 10/28/2022 | feat     | Added APU Bug command                |
@@ -28,21 +38,21 @@
 
 ## September 2022
 | *date*     | *prefix* | *description*                                     |
-|------------|----------|---------------------------------------------------|
+| ---------- | -------- | ------------------------------------------------- |
 | 09/16/2022 | fix      | Fix null channel id in .experimental command      |
 | 09/25/2022 | fix      | Update bug report method in .experimental command |
 | 09/25/2022 | feat     | Added website command                             |
 
 ## August 2022
 | *date*     | *prefix* | *description*                           |
-|------------|----------|-----------------------------------------|
+| ---------- | -------- | --------------------------------------- |
 | 08/13/2022 | fix      | added excluded roles to scam log        |
 | 08/16/2022 | refactor | added inHg conversion to .metar command |
 | 08/16/2022 | fix      | fixed broken links in README.md         |
 
 ## July 2022
 | *date*     | *prefix* | *description*                                                                     |
-|------------|----------|-----------------------------------------------------------------------------------|
+| ---------- | -------- | --------------------------------------------------------------------------------- |
 | 07/07/2022 | fix      | rules embed fix and roles added to constants.ts                                   |
 | 07/07/2022 | chore    | bump @types/node from 17.0.39 to 18.0.0                                           |
 | 07/15/2022 | chore    | updated nodemon, got, and moment dependencies to latest versions for security fix |
@@ -51,7 +61,7 @@
 ## June 2022
 
 | *date*     | *prefix* | *description*                                                                          |
-|------------|----------|----------------------------------------------------------------------------------------|
+| ---------- | -------- | -------------------------------------------------------------------------------------- |
 | 09/06/2022 | fix      | rules & faq embed user references fixed                                                |
 | 09/06/2022 | refactor | updated welcome command                                                                |
 | 09/06/2022 | chore    | stylized the layout of commands                                                        |
