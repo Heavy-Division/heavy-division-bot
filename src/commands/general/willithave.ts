@@ -9,7 +9,7 @@ export const willItHave: CommandDefinition = {
     executor: (msg) => {
         const willItHaveEmbed = makeEmbed({
             title: 'Will the Aircraft have [X]?',
-            description: 'If it\'s in the real Aircraft, it will be in ours.',
+            description: 'If it\'s in the real aircraft, it will be in ours.',
         });
 
         return msg.channel.send({ embeds: [willItHaveEmbed] });
