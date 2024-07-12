@@ -23,7 +23,6 @@
     "elastic-apm-node": "^3.35.0",
     "express": "^4.17.3",
     "got": "^12.1.0",
-    "leo-profanity": "^1.7.0",
     "moment": "^2.29.4",
     "mongoose": "^7.1.0",
     "request": "^2.88.2",
