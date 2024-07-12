@@ -1,4 +1,5 @@
-![HD_Banner](https://cdn.discordapp.com/attachments/960729491750141993/983010796189659216/hdgithub_banner.png)
+![Heavy Division](https://github.com/Heavy-Division/branding/blob/main/src/svg/Logo%20Dark.svg#gh-dark-mode-only)
+![Heavy Division](https://github.com/Heavy-Division/branding/blob/main/src/svg/Logo%20Light.svg#gh-light-mode-only)
 Text and moderation bot for the Heavy Division Discord
 
 [![Discord](https://img.shields.io/discord/808476259016769546?color=%237289DA&label=%20&logo=Discord&logoColor=%23ffff)](https://discord.gg/BR38YwKZea)

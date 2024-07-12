@@ -4,7 +4,8 @@
 | *date*     | *prefix*   | *description*                                          |
 | ---------- | ---------- | ------------------------------------------------------ |
 | 07/12/2024 | feat/chore | add profanity filter, setup deployment for new service |
-| 07/12/2023 | chor       | deprecate old workflows                                |
+| 07/12/2023 | chore      | deprecate old workflows                                |
+| 07/12/2023 | docs       | update the hd banner in the repo                       |
 
 ## June 2023
 | *date*     | *prefix* | *description*          |
