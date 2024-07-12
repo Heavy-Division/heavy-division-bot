@@ -239,7 +239,6 @@ export const temporarycommandedit: CommandDefinition = {
         const hasPermittedRole = msg.member.roles.cache.some((role) => permittedRoles.map((r) => r.toString()).includes(role.id));
         const evokedCommand = msg.content.split(/\s+/)[0];
         const args = msg.content.replace(evokedCommand, '').trim();
-        console.log(args);
         if (!hasPermittedRole) {
             return msg.channel.send({ embeds: [noPermEmbed] });
         }
