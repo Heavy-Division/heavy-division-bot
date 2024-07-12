@@ -1,0 +1,35 @@
+services:
+  app:
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: .
+    container_name: "heavy-division-bot"
+    secrets:
+      - debug_mode
+      - node_env
+      - discord_token
+      - metar_token
+      - station_token
+      - ban_appeal_url
+    environment:
+      DEBUG_MODE: /run/secrets/debug_mode
+      NODE_ENV: /run/secrets/node_env
+      DISCORD_TOKEN: /run/secrets/discord_token
+      METAR_TOKEN: /run/secrets/metar_token
+      STATION_TOKEN: /run/secrets/station_token
+      BAN_APPEAL_URL: /run/secrets/ban_appeal_url
+
+secrets:
+  debug_mode:
+    file: ./DEBUG_MODE.txt
+  node_env:
+    file: ./NODE_ENV.txt
+  discord_token:
+    file: ./DISCORD_TOKEN.txt
+  metar_token:
+    file: ./METAR_TOKEN.txt
+  station_token:
+    file: ./STATION_TOKEN.txt
+  ban_appeal_url:
+    file: ./BAN_APPEAL_URL.txt

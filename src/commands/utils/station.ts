@@ -4,6 +4,7 @@ import request from 'request';
 import { CommandDefinition } from '../../lib/command';
 import { CommandCategory } from '../../constants';
 import { makeEmbed, makeLines } from '../../lib/embed';
+import { STATION_TOKEN } from '../../secrets';
 
 export const station: CommandDefinition = {
     name: 'station',
@@ -21,7 +22,7 @@ export const station: CommandDefinition = {
         request({
             method: 'GET',
             url: `https://avwx.rest/api/station/${icaoArg}`,
-            headers: { Authorization: process.env.STATION_TOKEN },
+            headers: { Authorization: STATION_TOKEN },
         }, async (error, response, body) => {
             let stationEmbed;
 

@@ -7,6 +7,7 @@ import commands from './commands';
 import { makeEmbed } from './lib/embed';
 import Logger from './lib/logger';
 import { connect } from './lib/db';
+import { DEBUG_MODE, DISCORD_TOKEN } from './secrets';
 
 dotenv.config();
 const apm = require('elastic-apm-node').start({
@@ -14,7 +15,7 @@ const apm = require('elastic-apm-node').start({
     disableSend: true,
 });
 
-export const DEBUG_MODE = process.env.DEBUG_MODE === 'true';
+export const IS_DEBUG_MODE = DEBUG_MODE === 'true';
 const client = new Client({
     intents: [
         'Guilds',
@@ -44,10 +45,10 @@ client.on('ready', () => {
     Logger.info(`Logged in as ${client.user.tag}!`);
     healthy = true;
     // Connect to database
-    if (process.env.MONGODB_URL) {
-        connect(process.env.MONGODB_URL)
-            .catch(Logger.error);
-    }
+    // if (process.env.MONGODB_URL) {
+    //     connect(process.env.MONGODB_URL)
+    //         .catch(Logger.error);
+    // }
 });
 
 client.on('disconnect', () => {
@@ -96,7 +97,7 @@ client.on('messageCreate', async (msg) => {
                         const errorEmbed = makeEmbed({
                             color: Colors.Red,
                             title: 'Error while Executing Command',
-                            description: DEBUG_MODE ? `\`\`\`D\n${stack}\`\`\`` : `\`\`\`\n${name}: ${message}\n\`\`\``,
+                            description: IS_DEBUG_MODE ? `\`\`\`D\n${stack}\`\`\`` : `\`\`\`\n${name}: ${message}\n\`\`\``,
                         });
 
                         await msg.channel.send({ embeds: [errorEmbed] });
@@ -130,7 +131,7 @@ for (const file of eventHandlers) {
     }
 }
 
-client.login(process.env.DISCORD_TOKEN)
+client.login(DISCORD_TOKEN)
     .then()
     .catch((e) => {
         Logger.error(e);

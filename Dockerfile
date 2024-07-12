@@ -1,4 +1,4 @@
-FROM node:16-alpine as builder
+FROM node:22-alpine3.19 as builder
 
 WORKDIR /app
 ENV NODE_ENV=development
@@ -12,7 +12,7 @@ COPY src/ src/
 RUN npm run build:typescript
 
 
-FROM node:16-alpine
+FROM node:22-alpine3.19
 
 WORKDIR /app
 ENV NODE_ENV=production

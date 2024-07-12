@@ -2,19 +2,20 @@
 
 import winston from 'winston';
 import ecsFormat from '@elastic/ecs-winston-format';
+import { DEBUG_MODE, NODE_ENV } from '../secrets';
 
 const level = () => {
-    if (process.env.DEBUG_MODE === 'true') {
+    if (DEBUG_MODE === 'true') {
         return 'debug';
     }
 
-    const env = process.env.NODE_ENV || 'development';
+    const env = NODE_ENV || 'development';
     const isDevelopment = env === 'development';
     return isDevelopment ? 'debug' : 'info';
 };
 
 const format = () => {
-    const env = process.env.NODE_ENV || 'development';
+    const env = NODE_ENV || 'development';
     const isDevelopment = env === 'development';
     return isDevelopment ? winston.format.simple() : ecsFormat();
 };

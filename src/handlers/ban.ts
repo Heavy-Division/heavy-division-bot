@@ -2,6 +2,7 @@ import { AuditLogEvent, bold, Colors, TextChannel, User } from 'discord.js';
 import { Channels, ModLogsExclude } from '../constants';
 import { makeEmbed, makeLines } from '../lib/embed';
 import Logger from '../lib/logger';
+import { BAN_APPEAL_URL } from '../secrets';
 
 const MAX_RETRIES = 5;
 const SLEEP_TIMER = 0.5 * 1000;
@@ -17,7 +18,7 @@ const noLogEmbed = (user: User, guildName: string) => makeEmbed({
         '',
         bold('NOTE - This was a non bot ban.'),
         '',
-        `Please remember to send the user the reason they were banned and the ban appeal form - ${process.env.BAN_APPEAL_URL}`,
+        `Please remember to send the user the reason they were banned and the ban appeal form - ${BAN_APPEAL_URL}`,
     ]),
     footer: { text: `User ID: ${user.id}` },
 });
@@ -31,7 +32,7 @@ const userBannedEmbed = (user: User, executor: User, reason: string) => makeEmbe
     description: makeLines([
         bold('NOTE - This was a non bot ban.'),
         '',
-        `Please remember to send the user the reason they were banned and the ban appeal form - ${process.env.BAN_APPEAL_URL}`,
+        `Please remember to send the user the reason they were banned and the ban appeal form - ${BAN_APPEAL_URL}`,
     ]),
     fields: [
         {
@@ -59,7 +60,7 @@ const userBannedIncompleteEmbed = (user: User) => makeEmbed({
     description: makeLines([
         bold('NOTE - This was a non bot ban.'),
         '',
-        `Please remember to send the user the reason they were banned and the ban appeal form - ${process.env.BAN_APPEAL_URL}`,
+        `Please remember to send the user the reason they were banned and the ban appeal form - ${BAN_APPEAL_URL}`,
     ]),
     fields: [
         {

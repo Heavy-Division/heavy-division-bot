@@ -2,6 +2,7 @@ import request from 'request';
 import { CommandDefinition } from '../../lib/command';
 import { CommandCategory, Units, Colors } from '../../constants';
 import { makeEmbed, makeLines } from '../../lib/embed';
+import { METAR_TOKEN } from '../../secrets';
 
 export const metar: CommandDefinition = {
     name: 'metar',
@@ -19,7 +20,7 @@ export const metar: CommandDefinition = {
         request({
             method: 'GET',
             url: `https://avwx.rest/api/metar/${icaoArg}`,
-            headers: { Authorization: process.env.METAR_TOKEN },
+            headers: { Authorization: METAR_TOKEN },
         }, async (error, response, body) => {
             let metarEmbed;
 

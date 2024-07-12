@@ -3,6 +3,14 @@
 build
 charts
 node_modules
+.env
 
 Dockerfile
 .dockerignore
+
+# secrets
+DEBUG_MODE.txt
+DISCORD_TOKEN.txt
+METAR_TOKEN.txt
+NODE_ENV.txt
+STATION_TOKEN.txt
