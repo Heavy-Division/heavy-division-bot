@@ -3,7 +3,7 @@ name: Staging CI
 on:
   push:
     branches:
-      - staging
+      - old-deployment 
 
 jobs:
   lint_helm:
