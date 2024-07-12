@@ -1,5 +1,11 @@
 ## Changelog
 
+## July 2024 
+| *date*     | *prefix*   | *description*                                          |
+| ---------- | ---------- | ------------------------------------------------------ |
+| 07/12/2024 | feat/chore | add profanity filter, setup deployment for new service |
+| 07/12/2023 | chor       | deprecate old workflows                                |
+
 ## June 2023
 | *date*     | *prefix* | *description*          |
 | ---------- | -------- | ---------------------- |
