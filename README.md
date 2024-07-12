@@ -15,5 +15,3 @@ To get started with contributing, read the [contributing guide here](https://git
 and format your pull request [using this template](https://github.com/Heavy-Division/heavy-division-bot/blob/staging/.github/PULL_REQUEST_TEMPLATE.md)
 
 Ping or DM HowNowBrownCrow#2591 on Discord if you have any questions.
-
-[![DigitalOcean Referral Badge](https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%203.svg)](https://www.digitalocean.com/?refcode=c9afef266f16&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
