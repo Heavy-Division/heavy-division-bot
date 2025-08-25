@@ -9,8 +9,10 @@
     "dev": "nodemon --watch src/ -e ts --exec ts-node src/index.ts",
     "run": "npm run build:typescript && npm run run:node",
     "watch": "-tsc -w",
-    "lint": "eslint src/**/**/*.ts",
-    "lint-fix": "eslint src/**/**/*.ts --fix"
+    "lint": "biome lint",
+    "lint-fix": "biome lint --write",
+    "format": "biome format",
+    "format-fix": "biome format --write"
   },
   "author": "Heavy Division Simulations",
   "license": "AGPL 3.0",
@@ -29,12 +31,9 @@
     "winston": "^3.3.4"
   },
   "devDependencies": {
-    "@heavy-division/eslint-config": "^0.1.0",
+    "@biomejs/biome": "2.2.2",
     "@types/node": "^18.0.0",
-    "@typescript-eslint/eslint-plugin": "^4.28.5",
-    "@typescript-eslint/parser": "^4.28.5",
     "dotenv": "^16.0.0",
-    "eslint": "^7.29.0",
     "nodemon": "^2.0.19",
     "ts-node": "^10.4.0",
     "typescript": "^5.0.4"
