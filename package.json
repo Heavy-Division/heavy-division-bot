@@ -1,41 +1,41 @@
 {
-  "name": "heavy-division-bot",
-  "version": "0.1.16",
-  "description": "Chat, support, and moderation bot for the Heavy Division Discord",
-  "main": "src/index.js",
-  "scripts": {
-    "build:typescript": "tsc",
-    "run:node": "node build/index.js",
-    "dev": "nodemon --watch src/ -e ts --exec ts-node src/index.ts",
-    "run": "npm run build:typescript && npm run run:node",
-    "watch": "-tsc -w",
-    "lint": "biome lint",
-    "lint-fix": "biome lint --write",
-    "format": "biome format",
-    "format-fix": "biome format --write"
-  },
-  "author": "Heavy Division Simulations",
-  "license": "AGPL 3.0",
-  "dependencies": {
-    "@elastic/ecs-winston-format": "^1.1.0",
-    "@types/bad-words": "^3.0.3",
-    "bad-words": "^3.0.4",
-    "cowsay": "^1.5.0",
-    "discord.js": "^14.0.3",
-    "elastic-apm-node": "^3.35.0",
-    "express": "^4.17.3",
-    "got": "^12.1.0",
-    "moment": "^2.29.4",
-    "mongoose": "^7.1.0",
-    "request": "^2.88.2",
-    "winston": "^3.3.4"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.2.2",
-    "@types/node": "^18.0.0",
-    "dotenv": "^16.0.0",
-    "nodemon": "^2.0.19",
-    "ts-node": "^10.4.0",
-    "typescript": "^5.0.4"
-  }
+	"name": "heavy-division-bot",
+	"version": "0.1.16",
+	"description": "Chat, support, and moderation bot for the Heavy Division Discord",
+	"main": "src/index.js",
+	"scripts": {
+		"build:typescript": "tsc",
+		"run:node": "node build/index.js",
+		"dev": "nodemon --watch src/ -e ts --exec ts-node src/index.ts",
+		"run": "npm run build:typescript && npm run run:node",
+		"watch": "-tsc -w",
+		"lint": "biome lint",
+		"lint-fix": "biome lint --write",
+		"format": "biome format",
+		"format-fix": "biome format --write"
+	},
+	"author": "Heavy Division Simulations",
+	"license": "AGPL 3.0",
+	"dependencies": {
+		"@elastic/ecs-winston-format": "^1.1.0",
+		"@types/bad-words": "^3.0.3",
+		"bad-words": "^3.0.4",
+		"cowsay": "^1.5.0",
+		"discord.js": "^14.0.3",
+		"elastic-apm-node": "^3.35.0",
+		"express": "^4.17.3",
+		"got": "^12.1.0",
+		"moment": "^2.29.4",
+		"mongoose": "^7.1.0",
+		"request": "^2.88.2",
+		"winston": "^3.3.4"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.2.2",
+		"@types/node": "^18.0.0",
+		"dotenv": "^16.0.0",
+		"nodemon": "^2.0.19",
+		"ts-node": "^10.4.0",
+		"typescript": "^5.0.4"
+	}
 }
