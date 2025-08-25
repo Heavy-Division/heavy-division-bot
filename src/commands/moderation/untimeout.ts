@@ -1,7 +1,7 @@
 // based off FlyByWire Simulations Discord Bot - https://github.com/flybywiresim/discord-bot
 
-import { Guild, GuildMember, TextChannel, User, Colors } from "discord.js";
-import { CommandDefinition } from "../../lib/command";
+import { type Guild, type GuildMember, type TextChannel, type User, Colors } from "discord.js";
+import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory, Channels } from "../../constants";
 import { makeEmbed } from "../../lib/embed";
 import Logger from "../../lib/logger";

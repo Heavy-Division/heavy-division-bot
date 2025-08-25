@@ -1,5 +1,5 @@
-import { Client, Message, PermissionsString } from "discord.js";
-import { CommandCategory } from "../constants";
+import type { Client, Message, PermissionsString } from "discord.js";
+import type { CommandCategory } from "../constants";
 
 export interface CommandDefinition {
 	name: string | string[];

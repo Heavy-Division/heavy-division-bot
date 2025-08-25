@@ -2,7 +2,7 @@
 
 import { say } from "cowsay";
 import Filter from "bad-words";
-import { CommandDefinition } from "../../lib/command";
+import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory } from "../../constants";
 
 export const cowsay: CommandDefinition = {

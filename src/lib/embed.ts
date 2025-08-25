@@ -1,4 +1,4 @@
-import { EmbedBuilder, EmbedData } from "discord.js";
+import { EmbedBuilder, type EmbedData } from "discord.js";
 import { Colors } from "../constants";
 
 export function makeEmbed(embed: EmbedData): EmbedBuilder {

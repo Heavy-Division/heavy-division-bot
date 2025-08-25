@@ -1,6 +1,6 @@
 // based off FlyByWire Simulations Discord Bot - https://github.com/flybywiresim/discord-bot
 
-import { CommandDefinition } from "../../lib/command";
+import type { CommandDefinition } from "../../lib/command";
 import { makeEmbed, makeLines } from "../../lib/embed";
 import { CommandCategory } from "../../constants";
 

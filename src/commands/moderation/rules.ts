@@ -1,4 +1,4 @@
-import { CommandDefinition } from "../../lib/command";
+import type { CommandDefinition } from "../../lib/command";
 import { makeEmbed, makeLines } from "../../lib/embed";
 import { CommandCategory, Roles } from "../../constants";
 

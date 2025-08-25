@@ -1,4 +1,4 @@
-import { CommandDefinition } from "../lib/command";
+import type { CommandDefinition } from "../lib/command";
 import Logger from "../lib/logger";
 import { when } from "./general/when";
 import { dlc } from "./support/dlc";

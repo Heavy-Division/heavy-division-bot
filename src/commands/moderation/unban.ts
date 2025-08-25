@@ -1,7 +1,7 @@
 // based off FlyByWire Simulations Discord Bot - https://github.com/flybywiresim/discord-bot
 
-import { EmbedBuilder, EmbedField, Snowflake, User, Colors } from "discord.js";
-import { CommandDefinition } from "../../lib/command";
+import { type EmbedBuilder, type EmbedField, type Snowflake, User, Colors } from "discord.js";
+import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory } from "../../constants";
 import { makeEmbed } from "../../lib/embed";
 

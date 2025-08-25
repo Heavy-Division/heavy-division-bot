@@ -1,4 +1,4 @@
-import { DMChannel, TextChannel } from "discord.js";
+import { DMChannel, type TextChannel } from "discord.js";
 import { makeEmbed } from "../lib/embed";
 import Logger from "../lib/logger";
 import { Channels } from "../constants";
@@ -33,7 +33,7 @@ module.exports = {
 					hasRole = true;
 				}
 			});
-			// @ts-ignore
+			// @ts-expect-error
 			if (hasRole === true) {
 				const allowedEmbed = makeEmbed({
 					title: "Potential Scam Alert",

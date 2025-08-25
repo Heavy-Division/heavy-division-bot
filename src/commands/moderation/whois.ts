@@ -1,7 +1,7 @@
 // based off FlyByWire Simulations Discord Bot - https://github.com/flybywiresim/discord-bot
 
 import moment from "moment";
-import { CommandDefinition } from "../../lib/command";
+import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory } from "../../constants";
 import { makeEmbed } from "../../lib/embed";
 

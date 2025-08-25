@@ -1,5 +1,5 @@
-import { Guild, TextChannel, User, Colors } from "discord.js";
-import { CommandDefinition } from "../../lib/command";
+import { type Guild, type TextChannel, type User, Colors } from "discord.js";
+import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory, Channels } from "../../constants";
 import { makeEmbed } from "../../lib/embed";
 import {

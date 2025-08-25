@@ -1,6 +1,6 @@
-import { Colors, EmbedField, TextChannel } from "discord.js";
+import { Colors, type EmbedField, type TextChannel } from "discord.js";
 import moment from "moment";
-import { CommandDefinition } from "../../lib/command";
+import type { CommandDefinition } from "../../lib/command";
 import { Roles, Channels, CommandCategory } from "../../constants";
 import { makeEmbed, makeLines } from "../../lib/embed";
 import { getConn } from "../../lib/db";
@@ -8,7 +8,7 @@ import TemporaryCommand from "../../lib/schemas/temporaryCommandSchema";
 
 const permittedRoles = [Roles.ADMIN, Roles.MODERATOR];
 
-const helpEmbed = (evokedCommand: String) =>
+const helpEmbed = (evokedCommand: string) =>
 	makeEmbed({
 		title: "Manage Temporary Commands - Help",
 		description:

@@ -1,5 +1,5 @@
 import request from "request";
-import { CommandDefinition } from "../../lib/command";
+import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory, Units, Colors } from "../../constants";
 import { makeEmbed, makeLines } from "../../lib/embed";
 import { METAR_TOKEN } from "../../secrets";

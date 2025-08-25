@@ -1,6 +1,6 @@
-import { Colors, TextChannel, User } from "discord.js";
+import { Colors, type TextChannel, User } from "discord.js";
 import moment from "moment";
-import { CommandDefinition } from "../../lib/command";
+import type { CommandDefinition } from "../../lib/command";
 import { Channels, CommandCategory } from "../../constants";
 import { makeEmbed, makeLines } from "../../lib/embed";
 import { BAN_APPEAL_URL } from "../../secrets";

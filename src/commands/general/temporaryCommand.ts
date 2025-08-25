@@ -1,11 +1,11 @@
-import { Colors, EmbedField, TextChannel } from "discord.js";
-import { CommandDefinition } from "../../lib/command";
+import { Colors, type EmbedField, type TextChannel } from "discord.js";
+import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory, Colors as HDColors, Channels } from "../../constants";
 import { makeEmbed, makeLines } from "../../lib/embed";
 import { getConn } from "../../lib/db";
 import TemporaryCommand from "../../lib/schemas/temporaryCommandSchema";
 
-const helpEmbed = (evokedCommand: String) =>
+const helpEmbed = (evokedCommand: string) =>
 	makeEmbed({
 		title: "Temporary Command - Help",
 		description: "A command to run temporary commands.",

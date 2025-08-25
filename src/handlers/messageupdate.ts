@@ -1,4 +1,4 @@
-import { TextChannel, Colors } from "discord.js";
+import { type TextChannel, Colors } from "discord.js";
 import { Channels, UserLogExclude } from "../constants";
 import { makeEmbed } from "../lib/embed";
 

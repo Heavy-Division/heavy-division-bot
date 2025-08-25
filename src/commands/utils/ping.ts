@@ -1,4 +1,4 @@
-import { CommandDefinition } from "../../lib/command";
+import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory } from "../../constants";
 
 export const ping: CommandDefinition = {
