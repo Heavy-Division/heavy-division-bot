@@ -36,10 +36,10 @@ export const roleassignment: CommandDefinition = {
 	requiredPermissions: ["BanMembers"],
 	category: CommandCategory.MODERATION,
 	executor: async (msg) => {
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable");
-            return;
-        }
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
 		await msg.channel.send({ embeds: [ROLES_EMBED] });
 		const messageEmbed = await msg.channel.send({
 			embeds: [MEDIA_ANNOUNCEMENT_EMBED],

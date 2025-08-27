@@ -12,10 +12,10 @@ export const addon: CommandDefinition = {
 	category: CommandCategory.MEMES,
 	executor: (msg) => {
 		const modEmbed = makeEmbed({ image: { url: MOD_URL } });
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable");
-            return;
-        }
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
 		return msg.channel.send({ embeds: [modEmbed] });
 	},
 };

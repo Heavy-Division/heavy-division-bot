@@ -12,10 +12,10 @@ export const wingflex: CommandDefinition = {
 	category: CommandCategory.MEMES,
 	executor: (msg) => {
 		const wingFlexEmbed = makeEmbed({ image: { url: WING_FLEX_URL } });
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable");
-            return;
-        }
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
 		return msg.channel.send({ embeds: [wingFlexEmbed] });
 	},
 };

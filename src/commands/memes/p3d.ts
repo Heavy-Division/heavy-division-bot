@@ -12,10 +12,10 @@ export const p3d: CommandDefinition = {
 	description: "No!",
 	category: CommandCategory.MEMES,
 	executor: async (msg) => {
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable");
-            return;
-        }
-        msg.channel.send(P3D_URL)
-    },
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
+		msg.channel.send(P3D_URL);
+	},
 };

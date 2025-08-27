@@ -1,6 +1,12 @@
 // based off FlyByWire Simulations Discord Bot - https://github.com/flybywiresim/discord-bot
 
-import { type EmbedBuilder, type EmbedField, type Snowflake, User, Colors } from "discord.js";
+import {
+	type EmbedBuilder,
+	type EmbedField,
+	type Snowflake,
+	User,
+	Colors,
+} from "discord.js";
 import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory } from "../../constants";
 import { makeEmbed } from "../../lib/embed";
@@ -27,19 +33,19 @@ export const unban: CommandDefinition = {
 		return msg.guild.members
 			.unban(idArg)
 			.then((user: User | Snowflake) => {
-                if (!msg.channel.isSendable()) {
-                    Logger.error("Channel is not sendable");
-                    return;
-                }
+				if (!msg.channel.isSendable()) {
+					Logger.error("Channel is not sendable");
+					return;
+				}
 				msg.channel.send({ embeds: [makeSuccessfulUnbanEmbed(user)] });
 			})
 			.catch(async (error) => {
 				const guildMember = await msg.guild.members.fetch(idArg);
 
-                if (!msg.channel.isSendable()) {
-                    Logger.error("Channel is not sendable");
-                    return;
-                }
+				if (!msg.channel.isSendable()) {
+					Logger.error("Channel is not sendable");
+					return;
+				}
 
 				msg.channel.send({
 					embeds: [makeFailedUnbanEmbed(guildMember?.user ?? idArg, error)],

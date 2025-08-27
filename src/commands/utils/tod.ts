@@ -30,10 +30,10 @@ export const rot: CommandDefinition = {
 			description: flightLevelError,
 		});
 
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable");
-            return;
-        }
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
 
 		if (Number.isNaN(altitude) || altitude > 10000) {
 			return msg.channel.send({ embeds: [errorEmbed] });

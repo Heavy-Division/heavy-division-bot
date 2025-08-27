@@ -17,10 +17,10 @@ export const hud: CommandDefinition = {
 				"The HUD misalignment is a known issue for the default 787 for MSFS. Open 'General' settings then 'Camera' to adjust the HUD camera until it is aligned.",
 			image: { url: HUD_URL },
 		});
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable");
-            return;
-        }
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
 		return msg.channel.send({ embeds: [hudEmbed] });
 	},
 };

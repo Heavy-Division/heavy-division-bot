@@ -32,10 +32,10 @@ export const roleinfo: CommandDefinition = {
 			description: `**${role.members.size}** members have that role.`,
 		});
 
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable");
-            return;
-        }
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
 
 		return msg.channel.send({ embeds: [roleinfoEmbed] });
 	},

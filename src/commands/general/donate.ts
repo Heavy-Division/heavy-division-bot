@@ -15,11 +15,10 @@ export const donate: CommandDefinition = {
 				"You can also receive the donator role by boosting our server!",
 		});
 
-
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable");
-            return;
-        }
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
 		return msg.channel.send({ embeds: [donateEmbed] });
 	},
 };

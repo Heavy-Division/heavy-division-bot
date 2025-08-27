@@ -22,10 +22,10 @@ export const lnav: CommandDefinition = {
 				"3. Engage by pressing the 'LNAV' button on the glareshield.",
 			]),
 		});
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable");
-            return;
-        }
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
 		return msg.channel.send({ embeds: [lnavEmbed] });
 	},
 };

@@ -14,10 +14,10 @@ export const help: CommandDefinition = {
 			description:
 				"Check out the [Discord Bot Repository](https://github.com/Heavy-Division/heavy-division-bot/blob/main/.github/COMMANDS.md) for a list of availible commands. ",
 		});
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable");
-            return;
-        }
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
 		return msg.channel.send({ embeds: [helpEmbed] });
 	},
 };

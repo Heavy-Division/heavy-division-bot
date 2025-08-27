@@ -1,6 +1,12 @@
 // based off FlyByWire Simulations Discord Bot - https://github.com/flybywiresim/discord-bot
 
-import { type Guild, type GuildMember, type TextChannel, type User, Colors } from "discord.js";
+import {
+	type Guild,
+	type GuildMember,
+	type TextChannel,
+	type User,
+	Colors,
+} from "discord.js";
 import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory, Channels } from "../../constants";
 import { makeEmbed } from "../../lib/embed";
@@ -94,17 +100,17 @@ export const untimeout: CommandDefinition = {
 
 		targetUser.timeout(0).then(async () => {
 			if (targetUser.isCommunicationDisabled() === false) {
-                if (!msg.channel.isSendable()) {
-                    Logger.error("Channel is not sendable");
-                    return;
-                }
+				if (!msg.channel.isSendable()) {
+					Logger.error("Channel is not sendable");
+					return;
+				}
 
 				const timeoutResponse = await msg.channel.send({
-                    // @ts-ignore typescript is dumb
+					// @ts-ignore typescript is dumb
 					embeds: [unTimeoutEmbed(targetUser.user)],
 				});
 				try {
-                    // @ts-ignore typescript is dumb
+					// @ts-ignore typescript is dumb
 					await targetUser.send({
 						embeds: [unTimeoutDMEmbed(msg.author, msg.guild)],
 					});
@@ -120,7 +126,7 @@ export const untimeout: CommandDefinition = {
 									},
 									title: "Error while sending DM",
 									color: Colors.Red,
-                                    // @ts-ignore typescript is dumb
+									// @ts-ignore typescript is dumb
 									description: `DM was not sent to ${targetUser.toString()} for their timeout removal.`,
 								}),
 							],
@@ -129,7 +135,7 @@ export const untimeout: CommandDefinition = {
 				}
 				if (modLogsChannel) {
 					await modLogsChannel.send({
-                        // @ts-ignore typescript is dumb
+						// @ts-ignore typescript is dumb
 						embeds: [unTimeoutModLogEmbed(msg.author, targetUser.user)],
 					});
 				}
@@ -138,10 +144,10 @@ export const untimeout: CommandDefinition = {
 					msg.delete();
 				}, 4000);
 			}
-            if (!msg.channel.isSendable()) {
-                Logger.error("Channel is not sendable");
-                return;
-            }
+			if (!msg.channel.isSendable()) {
+				Logger.error("Channel is not sendable");
+				return;
+			}
 
 			return msg.channel.send({
 				embeds: [failedUnTimeoutEmbed(targetUser.user)],

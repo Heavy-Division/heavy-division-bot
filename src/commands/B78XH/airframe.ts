@@ -15,10 +15,10 @@ export const airframe: CommandDefinition = {
 				"As of now the B78XH does not have a custom simbrief airframe. We recommend using the default B78X airframe.",
 		});
 
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable");
-            return;
-        }
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
 
 		return msg.channel.send({ embeds: [airframeEmbed] });
 	},

@@ -13,10 +13,10 @@ export const premium: CommandDefinition = {
 	category: CommandCategory.MEMES,
 	executor: (msg) => {
 		const premiumEmbed = makeEmbed({ image: { url: PREMIUM_URL } });
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable");
-            return;
-        }
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
 
 		return msg.channel.send({ embeds: [premiumEmbed] });
 	},

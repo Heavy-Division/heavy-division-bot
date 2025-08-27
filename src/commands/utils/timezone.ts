@@ -12,10 +12,10 @@ export const timezone: CommandDefinition = {
 
 		const currentDate = new Date();
 
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable")
-            return;
-        }
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
 		/**
 		 * Is end of command number or negative number
 		 */

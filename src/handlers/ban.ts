@@ -1,4 +1,10 @@
-import { AuditLogEvent, bold, Colors, type TextChannel, type User } from "discord.js";
+import {
+	AuditLogEvent,
+	bold,
+	Colors,
+	type TextChannel,
+	type User,
+} from "discord.js";
 import { Channels, ModLogsExclude } from "../constants";
 import { makeEmbed, makeLines } from "../lib/embed";
 import Logger from "../lib/logger";

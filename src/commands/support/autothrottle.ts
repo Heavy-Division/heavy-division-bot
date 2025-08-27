@@ -14,10 +14,10 @@ export const autothrottle: CommandDefinition = {
 				"Issues with the AT are under investigation. To restore the normal auto-throttle function, push forward on the control column while Autopilot is engaged.",
 		});
 
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable");
-            return;
-        }
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
 		return msg.channel.send({ embeds: [atEmbed] });
 	},
 };

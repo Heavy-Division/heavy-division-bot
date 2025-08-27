@@ -12,10 +12,10 @@ export const boing: CommandDefinition = {
 	category: CommandCategory.MEMES,
 	executor: (msg) => {
 		const boingEmbed = makeEmbed({ image: { url: BOING_URL } });
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable");
-            return;
-        }
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
 
 		return msg.channel.send({ embeds: [boingEmbed] });
 	},

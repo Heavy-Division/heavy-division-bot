@@ -11,10 +11,10 @@ export const merge: CommandDefinition = {
 	description: "GIT MERGE!",
 	category: CommandCategory.MEMES,
 	executor: async (msg) => {
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable");
-            return;
-        }
-        msg.channel.send(MERGE_URL)
-    },
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
+		msg.channel.send(MERGE_URL);
+	},
 };

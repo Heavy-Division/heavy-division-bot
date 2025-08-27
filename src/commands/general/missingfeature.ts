@@ -17,11 +17,10 @@ export const drm: CommandDefinition = {
 				"This list is not set in stone, and we will update it when and if Asobo provides access to various core systems files in the future.",
 		});
 
-
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable");
-            return;
-        }
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
 
 		return msg.channel.send({ embeds: [drmEmbed] });
 	},

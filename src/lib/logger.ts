@@ -5,7 +5,7 @@ import ecsFormat from "@elastic/ecs-winston-format";
 import { NODE_ENV } from "../secrets";
 
 const level = () => {
-    return process.env.LOG_LEVEL || "INFO";
+	return process.env.LOG_LEVEL || "INFO";
 };
 
 const format = () => {

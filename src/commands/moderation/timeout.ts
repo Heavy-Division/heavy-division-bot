@@ -204,10 +204,10 @@ export const timeout: CommandDefinition = {
 		return targetUser.timeout(timeoutDuration, reason).then(async () => {
 			if (timeoutDuration === 0) {
 				// Timeout removed
-                if (!msg.channel.isSendable()) {
-                    Logger.error("Channel is not sendable");
-                    return;
-                }
+				if (!msg.channel.isSendable()) {
+					Logger.error("Channel is not sendable");
+					return;
+				}
 				const timeoutResponse = await msg.channel.send({
 					embeds: [unTimeoutEmbed(targetUser.user)],
 				});
@@ -246,10 +246,10 @@ export const timeout: CommandDefinition = {
 
 			if (targetUser.isCommunicationDisabled()) {
 				// Timeout successful
-                if (!msg.channel.isSendable()) {
-                    Logger.error("Channel is not sendable");
-                    return;
-                }
+				if (!msg.channel.isSendable()) {
+					Logger.error("Channel is not sendable");
+					return;
+				}
 				const timeoutResponse = await msg.channel.send({
 					embeds: [timeoutEmbed(targetUser.user, reason, timeoutArg)],
 				});
@@ -297,10 +297,10 @@ export const timeout: CommandDefinition = {
 				}, 4000);
 			}
 
-            if (!msg.channel.isSendable()) {
-                Logger.error("Channel is not sendable");
-                return;
-            }
+			if (!msg.channel.isSendable()) {
+				Logger.error("Channel is not sendable");
+				return;
+			}
 			return msg.channel.send({ embeds: [failedTimeoutEmbed(targetUser)] }); // Timeout unsuccessful
 		});
 	},

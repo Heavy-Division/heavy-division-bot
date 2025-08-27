@@ -11,11 +11,11 @@ export const coffee: CommandDefinition = {
 	description: "Would you like some coffee?",
 	category: CommandCategory.MEMES,
 	executor: async (msg) => {
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable");
-            return;
-        }
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
 
-        msg.channel.send(COFFEE_URL)
-    },
+		msg.channel.send(COFFEE_URL);
+	},
 };

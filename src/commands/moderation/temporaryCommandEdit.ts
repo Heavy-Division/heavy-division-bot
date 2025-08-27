@@ -259,14 +259,13 @@ export const temporarycommandedit: CommandDefinition = {
 	description: "Creates a temporary command for temporary use.",
 	category: CommandCategory.MODERATION,
 	executor: async (msg) => {
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable");
-            return;
-        }
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
 
 		const subCommands = ["add", "image", "delete", "info"];
 		const conn = getConn();
-
 
 		if (!conn) {
 			return msg.channel.send({ embeds: [noConnEmbed] });
@@ -298,10 +297,10 @@ export const temporarycommandedit: CommandDefinition = {
 		}
 
 		if (subCommand === "add") {
-            const regexCheck =
-                /^"?\.?([\w-]+)"?\s"?(info|warning|critical)"?\s"([^"]*|^[^"]*$)"\s"([^"]*|^[^"]*$)"\s*$/;
+			const regexCheck =
+				/^"?\.?([\w-]+)"?\s"?(info|warning|critical)"?\s"([^"]*|^[^"]*$)"\s"([^"]*|^[^"]*$)"\s*$/;
 
-            const regexMatches = subArgs.match(regexCheck);
+			const regexMatches = subArgs.match(regexCheck);
 			if (
 				regexMatches === null ||
 				!regexMatches.groups.command ||
@@ -415,10 +414,10 @@ export const temporarycommandedit: CommandDefinition = {
 		}
 
 		if (subCommand === "image") {
-            const regexCheck =
-                /^"?\.?([\w-]+)"?\s"?(https?:\/\/[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&\/=]*))"?\s*$/;
+			const regexCheck =
+				/^"?\.?([\w-]+)"?\s"?(https?:\/\/[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&\/=]*))"?\s*$/;
 
-            const regexMatches = subArgs.match(regexCheck);
+			const regexMatches = subArgs.match(regexCheck);
 			if (
 				regexMatches === null ||
 				!regexMatches.groups.command ||
@@ -511,7 +510,7 @@ export const temporarycommandedit: CommandDefinition = {
 			});
 		}
 
-        const regexCheck = /^"?\.?([\w-]+)?"?.*$/;
+		const regexCheck = /^"?\.?([\w-]+)?"?.*$/;
 		const regexMatches = subArgs.match(regexCheck);
 		if (!regexMatches || !regexMatches.groups || !regexMatches.groups.command) {
 			const subCommandText =

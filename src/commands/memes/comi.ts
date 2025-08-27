@@ -10,10 +10,10 @@ export const comi: CommandDefinition = {
 	description: "Stop with these sh*ts last chance...",
 	category: CommandCategory.MEMES,
 	executor: async (msg) => {
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable");
-            return;
-        }
-        msg.channel.send(COMI_URL)
-    },
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
+		msg.channel.send(COMI_URL);
+	},
 };

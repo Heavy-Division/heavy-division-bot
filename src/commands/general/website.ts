@@ -9,11 +9,11 @@ export const website: CommandDefinition = {
 	description: "Link to the Heavy Division Website",
 	category: CommandCategory.GENERAL,
 	executor: async (msg) => {
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable");
-            return;
-        }
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
 
-        msg.channel.send(WEBSITE_URL)
-    },
+		msg.channel.send(WEBSITE_URL);
+	},
 };

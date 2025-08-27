@@ -40,10 +40,10 @@ export const rules: CommandDefinition = {
 	requiredPermissions: ["BanMembers"],
 	category: CommandCategory.MODERATION,
 	executor: async (msg) => {
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable");
-            return;
-        }
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
 		await msg.channel.send({ embeds: [RULES_EMBED] });
 	},
 };

@@ -13,10 +13,10 @@ export const willItHave: CommandDefinition = {
 			description: "If it's in the real aircraft, it will be in ours.",
 		});
 
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable");
-            return;
-        }
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
 
 		return msg.channel.send({ embeds: [willItHaveEmbed] });
 	},

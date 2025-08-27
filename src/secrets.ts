@@ -1,4 +1,4 @@
-import fs from 'node:fs';
+import fs from "node:fs";
 
 // Function to read secrets from the file
 function readSecret(secretPath: string): string {

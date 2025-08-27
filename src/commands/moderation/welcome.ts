@@ -33,10 +33,10 @@ export const welcome: CommandDefinition = {
 	requiredPermissions: ["BanMembers"],
 	category: CommandCategory.MODERATION,
 	executor: async (msg) => {
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable");
-            return;
-        }
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
 		await msg.channel.send({ files: [HEADER_IMAGE_URL] });
 
 		await msg.channel.send(

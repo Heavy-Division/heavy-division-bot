@@ -110,10 +110,10 @@ export const temporarycommand: CommandDefinition = {
 		const evokedCommand = msg.content.split(/\s+/)[0];
 		const args = msg.content.split(/\s+/).slice(1);
 
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable");
-            return;
-        }
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
 
 		if ((args.length < 1 && parseInt(args[1]) !== 0) || args[0] === "help") {
 			await msg.channel.send({ embeds: [helpEmbed(evokedCommand)] });
@@ -127,23 +127,20 @@ export const temporarycommand: CommandDefinition = {
 			[subArgs] = args;
 		}
 
-        const regexCheck = /^["]?\.?([\w-]+)?["]?.*$/;
-        const regexMatches = subArgs.match(regexCheck);
+		const regexCheck = /^["]?\.?([\w-]+)?["]?.*$/;
+		const regexMatches = subArgs.match(regexCheck);
 
-        if (
-            subArgs.length > 0 &&
-            (!regexMatches || !regexMatches[1])
-        ) {
-            await msg.channel.send({
-                embeds: [
-                    missingInfoEmbed(
-                        subCommand,
-                        `You need to provide the expected format to ${subCommand} a temporary command. Check \`${evokedCommand} help\` for more details.`,
-                    ),
-                ],
-            });
-            return;
-        }
+		if (subArgs.length > 0 && (!regexMatches || !regexMatches[1])) {
+			await msg.channel.send({
+				embeds: [
+					missingInfoEmbed(
+						subCommand,
+						`You need to provide the expected format to ${subCommand} a temporary command. Check \`${evokedCommand} help\` for more details.`,
+					),
+				],
+			});
+			return;
+		}
 
 		if (subCommand === "show") {
 			if (

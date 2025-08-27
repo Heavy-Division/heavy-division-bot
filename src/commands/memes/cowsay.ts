@@ -11,25 +11,24 @@ export const cowsay: CommandDefinition = {
 	description: "Emulates the famous UNIX program `cowsay`.",
 	category: CommandCategory.MEMES,
 	executor: (msg) => {
-
-        const filter = new Filter();
-        if (!msg.channel.isSendable()) {
-            Logger.error("Channel is not sendable");
-            return;
-        }
+		const filter = new Filter();
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
 
 		if (filter.isProfane(msg.content.trim())) {
 			return msg.author.send("Watch your tongue!");
 		}
 
-        const messageMaxlength = 300;
+		const messageMaxlength = 300;
 
-        if (msg.content.length > messageMaxlength) {
-            return msg.reply(`please keep it under ${messageMaxlength} characters.`);
-        }
-        const text = msg.content.replace(/\.(cowsay|cs)\s*/, "").replace(/`/g, "");
+		if (msg.content.length > messageMaxlength) {
+			return msg.reply(`please keep it under ${messageMaxlength} characters.`);
+		}
+		const text = msg.content.replace(/\.(cowsay|cs)\s*/, "").replace(/`/g, "");
 
-        if (text) {
+		if (text) {
 			return msg.channel.send(`\`\`\`\n${say({ text })}\n\`\`\``);
 		}
 
