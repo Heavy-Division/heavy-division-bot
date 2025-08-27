@@ -415,7 +415,7 @@ export const temporarycommandedit: CommandDefinition = {
 
 		if (subCommand === "image") {
 			const regexCheck =
-				/^"?\.?([\w-]+)"?\s"?(https?:\/\/[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&\/=]*))"?\s*$/;
+				/^"?\.?([\w-]+)"?\s"?(https?:\/\/[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*))"?\s*$/;
 
 			const regexMatches = subArgs.match(regexCheck);
 			if (

@@ -1,4 +1,4 @@
-import { Colors, GuildMember, type TextChannel, User } from "discord.js";
+import { Colors, type GuildMember, type TextChannel, User } from "discord.js";
 import moment from "moment";
 import type { CommandDefinition } from "../../lib/command";
 import { Channels, CommandCategory } from "../../constants";

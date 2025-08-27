@@ -5,8 +5,8 @@ import { CommandCategory } from "../../constants";
 import { makeEmbed, makeLines } from "../../lib/embed";
 import { STATION_TOKEN } from "../../secrets";
 import Logger from "../../lib/logger";
-import { EmbedBuilder } from "discord.js";
-import { Station } from "../../lib/schemas/avwx/station";
+import type { EmbedBuilder } from "discord.js";
+import type { Station } from "../../lib/schemas/avwx/station";
 
 export const station: CommandDefinition = {
 	name: "station",

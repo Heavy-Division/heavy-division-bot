@@ -106,11 +106,11 @@ export const untimeout: CommandDefinition = {
 				}
 
 				const timeoutResponse = await msg.channel.send({
-					// @ts-ignore typescript is dumb
+					// @ts-expect-error typescript is dumb
 					embeds: [unTimeoutEmbed(targetUser.user)],
 				});
 				try {
-					// @ts-ignore typescript is dumb
+					// @ts-expect-error typescript is dumb
 					await targetUser.send({
 						embeds: [unTimeoutDMEmbed(msg.author, msg.guild)],
 					});
@@ -126,7 +126,7 @@ export const untimeout: CommandDefinition = {
 									},
 									title: "Error while sending DM",
 									color: Colors.Red,
-									// @ts-ignore typescript is dumb
+									// @ts-expect-error typescript is dumb
 									description: `DM was not sent to ${targetUser.toString()} for their timeout removal.`,
 								}),
 							],
@@ -135,7 +135,7 @@ export const untimeout: CommandDefinition = {
 				}
 				if (modLogsChannel) {
 					await modLogsChannel.send({
-						// @ts-ignore typescript is dumb
+						// @ts-expect-error typescript is dumb
 						embeds: [unTimeoutModLogEmbed(msg.author, targetUser.user)],
 					});
 				}

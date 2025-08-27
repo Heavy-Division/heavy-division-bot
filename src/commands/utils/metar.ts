@@ -3,8 +3,8 @@ import { CommandCategory, Units, Colors } from "../../constants";
 import { makeEmbed, makeLines } from "../../lib/embed";
 import { METAR_TOKEN } from "../../secrets";
 import Logger from "../../lib/logger";
-import { MetarResponse } from "../../lib/schemas/avwx/metar";
-import { EmbedBuilder } from "discord.js";
+import type { MetarResponse } from "../../lib/schemas/avwx/metar";
+import type { EmbedBuilder } from "discord.js";
 
 export const metar: CommandDefinition = {
 	name: "metar",
