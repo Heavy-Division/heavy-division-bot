@@ -6,10 +6,11 @@ ENV NODE_ENV=development
 COPY package*.json ./
 COPY tsconfig*.json ./
 
-RUN npm ci
+RUN npm install -g pnpm  && pnpm install
+
 
 COPY src/ src/
-RUN npm run build:typescript
+RUN pnpm run build:typescript
 
 
 FROM node:22-alpine3.19
