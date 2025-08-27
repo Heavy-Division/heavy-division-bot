@@ -24,7 +24,6 @@ import { irs } from "./B78XH/irs";
 import { metarhow } from "./general/metarhow";
 import { coffee } from "./memes/coffee";
 import { merge } from "./memes/merge";
-import { defaultmeme } from "./memes/default";
 import { cowsay } from "./memes/cowsay";
 import { avatar } from "./utils/avatar";
 import { oceanfix } from "./general/oceanfix";
@@ -84,7 +83,6 @@ const commands: CommandDefinition[] = [
 	metarhow,
 	coffee,
 	merge,
-	defaultmeme,
 	cowsay,
 	avatar,
 	oceanfix,
