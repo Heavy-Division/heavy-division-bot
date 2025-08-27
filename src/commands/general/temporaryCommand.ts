@@ -2,8 +2,8 @@ import { Colors, type EmbedField, type TextChannel } from "discord.js";
 import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory, Colors as HDColors, Channels } from "../../constants";
 import { makeEmbed, makeLines } from "../../lib/embed";
-import { getConn } from "../../lib/db";
 import TemporaryCommand from "../../lib/schemas/temporaryCommandSchema";
+import Logger from "../../lib/logger";
 
 const helpEmbed = (evokedCommand: string) =>
 	makeEmbed({
@@ -106,14 +106,15 @@ export const temporarycommand: CommandDefinition = {
 		const modLogsChannel = msg.guild.channels.resolve(
 			Channels.MOD_LOGS,
 		) as TextChannel | null;
-		const conn = await getConn();
-		if (!conn) {
-			await msg.channel.send({ embeds: [noConnEmbed] });
-			return;
-		}
 
 		const evokedCommand = msg.content.split(/\s+/)[0];
 		const args = msg.content.split(/\s+/).slice(1);
+
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
+
 		if ((args.length < 1 && parseInt(args[1]) !== 0) || args[0] === "help") {
 			await msg.channel.send({ embeds: [helpEmbed(evokedCommand)] });
 			return;
@@ -126,22 +127,23 @@ export const temporarycommand: CommandDefinition = {
 			[subArgs] = args;
 		}
 
-		const regexCheck = /^["]?\.?(?<command>[\w-]+)?["]?.*$/;
-		const regexMatches = subArgs.match(regexCheck);
-		if (
-			subArgs.length > 0 &&
-			(!regexMatches || !regexMatches.groups || !regexMatches.groups.command)
-		) {
-			await msg.channel.send({
-				embeds: [
-					missingInfoEmbed(
-						subCommand,
-						`You need to provide the expected format to ${subCommand} a temporary command. Check \`${evokedCommand} help\` for more details.`,
-					),
-				],
-			});
-			return;
-		}
+        const regexCheck = /^["]?\.?([\w-]+)?["]?.*$/;
+        const regexMatches = subArgs.match(regexCheck);
+
+        if (
+            subArgs.length > 0 &&
+            (!regexMatches || !regexMatches[1])
+        ) {
+            await msg.channel.send({
+                embeds: [
+                    missingInfoEmbed(
+                        subCommand,
+                        `You need to provide the expected format to ${subCommand} a temporary command. Check \`${evokedCommand} help\` for more details.`,
+                    ),
+                ],
+            });
+            return;
+        }
 
 		if (subCommand === "show") {
 			if (

@@ -3,6 +3,7 @@
 import type { CommandDefinition } from "../../lib/command";
 import { makeEmbed, makeLines } from "../../lib/embed";
 import { CommandCategory } from "../../constants";
+import Logger from "../../lib/logger";
 
 // TODO: APPEND A GIF OF THE INSTRUCTIONS TO THE FOLLOWING:
 export const simbriefimport: CommandDefinition = {
@@ -17,6 +18,11 @@ export const simbriefimport: CommandDefinition = {
 					"Remember to hit the ACTIVATE key then EXEC when green to activate your flight plan!",
 			]),
 		});
+
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
 
 		return msg.channel.send({ embeds: [simbriefImportEmbed] });
 	},

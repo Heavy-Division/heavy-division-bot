@@ -9,7 +9,7 @@ export const ping: CommandDefinition = {
 	executor: (msg) => {
 		const text = msg.content.replace(/\.ping\s*/, "");
 
-		if (text) {
+		if (text && msg.channel.isSendable()) {
 			return msg.channel.send(text);
 		}
 

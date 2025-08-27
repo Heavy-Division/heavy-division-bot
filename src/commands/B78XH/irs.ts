@@ -25,6 +25,6 @@ export const irs: CommandDefinition = {
 			image: { url: IRS_IMAGE_URL },
 		});
 
-		return msg.channel.send({ embeds: [irsEmbed] });
+		return msg.reply({ embeds: [irsEmbed] });
 	},
 };

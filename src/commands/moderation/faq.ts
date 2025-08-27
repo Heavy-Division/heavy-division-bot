@@ -3,6 +3,7 @@
 import type { CommandDefinition } from "../../lib/command";
 import { makeEmbed } from "../../lib/embed";
 import { CommandCategory, Roles } from "../../constants";
+import Logger from "../../lib/logger";
 
 const FLIGHT_DECK_IMAGE_URL =
 	"https://media.discordapp.net/attachments/820431837901750282/952035653166719046/unknown.png?width=1618&height=910";
@@ -54,9 +55,17 @@ export const faq: CommandDefinition = {
 	requiredPermissions: ["BanMembers"],
 	category: CommandCategory.MODERATION,
 	executor: async (msg) => {
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
 		await msg.channel.send({ files: [FLIGHT_DECK_IMAGE_URL] });
 		await Promise.all(
 			faqEmbeds.map(async (faqEmbed) => {
+                if (!msg.channel.isSendable()) {
+                    Logger.error("Channel is not sendable");
+                    return;
+                }
 				await msg.channel.send({ embeds: [faqEmbed] });
 			}),
 		);

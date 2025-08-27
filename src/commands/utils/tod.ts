@@ -1,6 +1,7 @@
 import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory } from "../../constants";
 import { makeEmbed, makeLines } from "../../lib/embed";
+import Logger from "../../lib/logger";
 
 export const rot: CommandDefinition = {
 	name: ["ruleofthree", "rot", "ro3", "tod"],
@@ -28,6 +29,11 @@ export const rot: CommandDefinition = {
 			title: "Error | Use Flight Level Format",
 			description: flightLevelError,
 		});
+
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
 
 		if (Number.isNaN(altitude) || altitude > 10000) {
 			return msg.channel.send({ embeds: [errorEmbed] });

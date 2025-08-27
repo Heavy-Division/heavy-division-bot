@@ -1,6 +1,7 @@
 import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory } from "../../constants";
 import { makeEmbed } from "../../lib/embed";
+import Logger from "../../lib/logger";
 
 export const conflict: CommandDefinition = {
 	name: ["conflict", "conflicts"],
@@ -13,6 +14,10 @@ export const conflict: CommandDefinition = {
 			description:
 				"Before attributing major issues to the mod, ensure that no conflicts are occuring by removing other addons from the community folder and testing each one individually in the sim. ",
 		});
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
 
 		return msg.channel.send({ embeds: [conflictEmbed] });
 	},

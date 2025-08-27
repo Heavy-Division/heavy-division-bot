@@ -1,6 +1,7 @@
 import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory } from "../../constants";
 import { makeEmbed } from "../../lib/embed";
+import Logger from "../../lib/logger";
 
 //TODO: Append an image of the simBrief default airframe to this message
 export const airframe: CommandDefinition = {
@@ -13,6 +14,11 @@ export const airframe: CommandDefinition = {
 			description:
 				"As of now the B78XH does not have a custom simbrief airframe. We recommend using the default B78X airframe.",
 		});
+
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
 
 		return msg.channel.send({ embeds: [airframeEmbed] });
 	},

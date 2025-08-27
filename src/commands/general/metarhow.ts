@@ -1,6 +1,7 @@
 import type { CommandDefinition } from "../../lib/command";
 import { makeEmbed } from "../../lib/embed";
 import { CommandCategory } from "../../constants";
+import Logger from "../../lib/logger";
 
 const METAR_URL =
 	"https://i0.wp.com/www.dronepilotgroundschool.com/wp-content/uploads/2019/12/How-to-Read-a-METAR.jpg?resize=1536%2C864&ssl=1"; //TODO: Make a Heavy Division themed DARK guide on reading METAR reports
@@ -14,6 +15,12 @@ export const metarhow: CommandDefinition = {
 			title: "Heavy Division | Reading the METAR",
 			image: { url: METAR_URL },
 		});
+
+
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
 		return msg.channel.send({ embeds: [metarEmbed] });
 	},
 };

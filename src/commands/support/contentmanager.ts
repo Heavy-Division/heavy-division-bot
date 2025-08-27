@@ -1,6 +1,7 @@
 import type { CommandDefinition } from "../../lib/command";
 import { makeEmbed } from "../../lib/embed";
 import { CommandCategory } from "../../constants";
+import Logger from "../../lib/logger";
 
 // TODO: Add red box around the 787-10 in the content manager image, and replace with that. Upload in discord and call link here, do not use a local file.
 const CONTENT_MANAGER_URL =
@@ -18,7 +19,10 @@ export const contentManager: CommandDefinition = {
 				"The B78X Heavy is a modification of the default 787-10 for MSFS. Please ensure the base plane is updated by checking for updates in the content manager.",
 			image: { url: CONTENT_MANAGER_URL },
 		});
-
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
 		return msg.channel.send({ embeds: [contentManagerEmbed] });
 	},
 };

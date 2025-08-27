@@ -1,7 +1,7 @@
 import type { CommandDefinition } from "../../lib/command";
 import { makeEmbed, makeLines } from "../../lib/embed";
 import { CommandCategory } from "../../constants";
-
+import Logger from "../../lib/logger";
 const gitEmoji = "<:Interest_programming:984230714851606528>";
 const modellingEmoji = "<:Interest_modeling:984230713656246282>";
 
@@ -36,6 +36,10 @@ export const roleassignment: CommandDefinition = {
 	requiredPermissions: ["BanMembers"],
 	category: CommandCategory.MODERATION,
 	executor: async (msg) => {
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
 		await msg.channel.send({ embeds: [ROLES_EMBED] });
 		const messageEmbed = await msg.channel.send({
 			embeds: [MEDIA_ANNOUNCEMENT_EMBED],

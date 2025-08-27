@@ -1,6 +1,7 @@
 import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory } from "../../constants";
 import { makeEmbed, makeLines } from "../../lib/embed";
+import Logger from "../../lib/logger";
 
 export const ctd: CommandDefinition = {
 	name: ["ctd", "crash"],
@@ -20,7 +21,10 @@ export const ctd: CommandDefinition = {
 				"3. [Crashing/CTD Advanced Troubleshooting](https://flightsimulator.zendesk.com/hc/en-us/articles/4406280653202-All-versions-Crashing-CTDs-issues-Advanced-Troubleshooting) ",
 			]),
 		});
-
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
 		return msg.channel.send({ embeds: [ctdEmbed] });
 	},
 };

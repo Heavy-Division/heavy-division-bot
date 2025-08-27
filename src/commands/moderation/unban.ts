@@ -4,6 +4,7 @@ import { type EmbedBuilder, type EmbedField, type Snowflake, User, Colors } from
 import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory } from "../../constants";
 import { makeEmbed } from "../../lib/embed";
+import Logger from "../../lib/logger";
 
 type UserLike = User | Snowflake;
 
@@ -26,10 +27,19 @@ export const unban: CommandDefinition = {
 		return msg.guild.members
 			.unban(idArg)
 			.then((user: User | Snowflake) => {
+                if (!msg.channel.isSendable()) {
+                    Logger.error("Channel is not sendable");
+                    return;
+                }
 				msg.channel.send({ embeds: [makeSuccessfulUnbanEmbed(user)] });
 			})
 			.catch(async (error) => {
 				const guildMember = await msg.guild.members.fetch(idArg);
+
+                if (!msg.channel.isSendable()) {
+                    Logger.error("Channel is not sendable");
+                    return;
+                }
 
 				msg.channel.send({
 					embeds: [makeFailedUnbanEmbed(guildMember?.user ?? idArg, error)],

@@ -3,6 +3,7 @@
 import type { CommandDefinition } from "../../lib/command";
 import { makeEmbed, makeLines } from "../../lib/embed";
 import { CommandCategory } from "../../constants";
+import Logger from "../../lib/logger";
 
 const DEADZONE_IMAGE_URL =
 	"https://cdn.discordapp.com/attachments/770835189419999262/802254518376464424/Deadzone_Controls.png";
@@ -23,7 +24,10 @@ export const deadzones: CommandDefinition = {
 			]),
 			image: { url: DEADZONE_IMAGE_URL },
 		});
-
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
 		return msg.channel.send({ embeds: [deadzonesEmbed] });
 	},
 };

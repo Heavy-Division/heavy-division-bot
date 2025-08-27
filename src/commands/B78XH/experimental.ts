@@ -3,6 +3,7 @@
 import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory, Channels } from "../../constants";
 import { makeEmbed, makeLines } from "../../lib/embed";
+import Logger from "../../lib/logger";
 
 export const experimental: CommandDefinition = {
 	name: ["experimental", "exp"],
@@ -19,6 +20,12 @@ export const experimental: CommandDefinition = {
 				"The Experimental version is a test version to find problems, issues and to improve functionality based on your feedback. It is not meant to be used for daily use or serious flights with an Online ATC service. ",
 			]),
 		});
+
+
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
 
 		return msg.channel.send({ embeds: [experimentalEmbed] });
 	},

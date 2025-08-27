@@ -1,6 +1,7 @@
 import type { CommandDefinition } from "../../lib/command";
 import { makeEmbed } from "../../lib/embed";
 import { CommandCategory } from "../../constants";
+import Logger from "../../lib/logger";
 
 const APU_URL =
 	"https://cdn.discordapp.com/attachments/1025417231573733386/1035516838701973574/apu.png";
@@ -16,6 +17,12 @@ export const apu: CommandDefinition = {
 				"Because of default behavior implemented by Asobo, the fuel logic is implemented incorrectly. Please refrain from turning on the center fuel pumps until both engines are running.",
 			image: { url: APU_URL },
 		});
+
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
+
 		return msg.channel.send({ embeds: [apuEmbed] });
 	},
 };

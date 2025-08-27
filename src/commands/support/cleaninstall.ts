@@ -1,6 +1,7 @@
 import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory } from "../../constants";
 import { makeEmbed } from "../../lib/embed";
+import Logger from "../../lib/logger";
 
 export const ci: CommandDefinition = {
 	name: ["cleaninstall", "ci", "order66"],
@@ -13,6 +14,11 @@ export const ci: CommandDefinition = {
 			description:
 				"If an issue can't be resolved through normal means, attempt a clean install by deleting the B78XH mod from your community folder, and downloading the latest version from <#852748629877850143> or github. ",
 		});
+
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
 
 		return msg.channel.send({ embeds: [ciEmbed] });
 	},

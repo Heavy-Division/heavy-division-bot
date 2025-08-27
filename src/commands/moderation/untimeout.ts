@@ -90,14 +90,21 @@ export const untimeout: CommandDefinition = {
 			Channels.MOD_LOGS,
 		) as TextChannel | null;
 		const id = args[0];
-		const targetUser: GuildMember = await msg.guild.members.fetch(id);
+		const targetUser = await msg.guild.members.fetch(id);
 
 		targetUser.timeout(0).then(async () => {
 			if (targetUser.isCommunicationDisabled() === false) {
+                if (!msg.channel.isSendable()) {
+                    Logger.error("Channel is not sendable");
+                    return;
+                }
+
 				const timeoutResponse = await msg.channel.send({
+                    // @ts-ignore typescript is dumb
 					embeds: [unTimeoutEmbed(targetUser.user)],
 				});
 				try {
+                    // @ts-ignore typescript is dumb
 					await targetUser.send({
 						embeds: [unTimeoutDMEmbed(msg.author, msg.guild)],
 					});
@@ -113,6 +120,7 @@ export const untimeout: CommandDefinition = {
 									},
 									title: "Error while sending DM",
 									color: Colors.Red,
+                                    // @ts-ignore typescript is dumb
 									description: `DM was not sent to ${targetUser.toString()} for their timeout removal.`,
 								}),
 							],
@@ -121,6 +129,7 @@ export const untimeout: CommandDefinition = {
 				}
 				if (modLogsChannel) {
 					await modLogsChannel.send({
+                        // @ts-ignore typescript is dumb
 						embeds: [unTimeoutModLogEmbed(msg.author, targetUser.user)],
 					});
 				}
@@ -129,6 +138,11 @@ export const untimeout: CommandDefinition = {
 					msg.delete();
 				}, 4000);
 			}
+            if (!msg.channel.isSendable()) {
+                Logger.error("Channel is not sendable");
+                return;
+            }
+
 			return msg.channel.send({
 				embeds: [failedUnTimeoutEmbed(targetUser.user)],
 			});

@@ -1,6 +1,7 @@
 import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory } from "../../constants";
 import { makeEmbed } from "../../lib/embed";
+import Logger from "../../lib/logger";
 
 export const avatar: CommandDefinition = {
 	name: ["avatar", "av"],
@@ -13,6 +14,10 @@ export const avatar: CommandDefinition = {
 			title: `${user.tag}'s Avatar`,
 			image: { url: user.displayAvatarURL({ size: 4096 }) },
 		});
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
 		return msg.channel.send({ embeds: [avatarEmbed] });
 	},
 };

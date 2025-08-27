@@ -3,6 +3,7 @@
 import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory } from "../../constants";
 import { makeEmbed } from "../../lib/embed";
+import Logger from "../../lib/logger";
 
 export const directx12: CommandDefinition = {
 	name: "dx12",
@@ -15,7 +16,10 @@ export const directx12: CommandDefinition = {
 				"Use of DX11 is still recommended for best performance due to an issue with some glass cockpit technologies in the DX12 version of the simulator. " +
 				'This is not a HD issue and we cannot address it for now - please keep in mind DX12 is officially a "beta feature" and you use it at your own risk. No support will be provided.',
 		});
-
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
 		return msg.channel.send({ embeds: [directx12Embed] });
 	},
 };

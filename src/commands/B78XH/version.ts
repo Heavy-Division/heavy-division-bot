@@ -1,6 +1,7 @@
 import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory } from "../../constants";
 import { makeEmbed, makeLines } from "../../lib/embed";
+import Logger from "../../lib/logger";
 
 export const versions: CommandDefinition = {
 	name: ["versions", "version"],
@@ -42,6 +43,12 @@ export const versions: CommandDefinition = {
 				},
 			],
 		});
+
+
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
 
 		return msg.channel.send({ embeds: [versionsEmbed] });
 	},

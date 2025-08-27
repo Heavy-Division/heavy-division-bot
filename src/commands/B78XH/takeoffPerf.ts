@@ -1,6 +1,7 @@
 import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory } from "../../constants";
 import { makeEmbed, makeLines } from "../../lib/embed";
+import Logger from "../../lib/logger";
 
 export const takeoffPerf: CommandDefinition = {
 	name: ["takeoff", "calculator", "perf"],
@@ -14,6 +15,12 @@ export const takeoffPerf: CommandDefinition = {
 				"Currently, Boeing does not publicly release takeoff performance data for the 787-10, which means it is difficult to create an accurate takeoff calculator.",
 			]),
 		});
+
+
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
 
 		return msg.channel.send({ embeds: [takeoffPerfEmbed] });
 	},

@@ -1,6 +1,7 @@
 import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory } from "../../constants";
 import { makeEmbed, makeLines } from "../../lib/embed";
+import Logger from "../../lib/logger";
 
 // eslint-disable-next-line camelcase
 const CYCLE_URL =
@@ -24,7 +25,10 @@ export const cycleWarning: CommandDefinition = {
 			]),
 			image: { url: CYCLE_URL },
 		});
-
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
 		return msg.channel.send({ embeds: [navdataCycleEmbed] });
 	},
 };

@@ -1,6 +1,7 @@
 import type { CommandDefinition } from "../../lib/command";
 import { makeEmbed, makeLines } from "../../lib/embed";
 import { CommandCategory, Roles } from "../../constants";
+import Logger from "../../lib/logger";
 
 const moderationTeam = Roles.MODERATOR;
 
@@ -39,6 +40,10 @@ export const rules: CommandDefinition = {
 	requiredPermissions: ["BanMembers"],
 	category: CommandCategory.MODERATION,
 	executor: async (msg) => {
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
 		await msg.channel.send({ embeds: [RULES_EMBED] });
 	},
 };

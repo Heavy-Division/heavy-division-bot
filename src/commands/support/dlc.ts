@@ -1,6 +1,7 @@
 import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory, Colors } from "../../constants";
 import { makeEmbed } from "../../lib/embed";
+import Logger from "../../lib/logger";
 
 export const dlc: CommandDefinition = {
 	name: ["dlc"],
@@ -14,7 +15,10 @@ export const dlc: CommandDefinition = {
 			description:
 				"Due to digital rights management features, critical 787 files are hidden behind encryption, thus we cannot upload the aircraft as a separate addon.",
 		});
-
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
 		return msg.channel.send({ embeds: [dlcEmbed] });
 	},
 };

@@ -1,7 +1,7 @@
-const fs = require("fs");
+import fs from 'node:fs';
 
 // Function to read secrets from the file
-function readSecret(secretPath) {
+function readSecret(secretPath: string): string {
 	try {
 		return fs.readFileSync(secretPath, "utf8").trim();
 	} catch (err) {

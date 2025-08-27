@@ -1,6 +1,7 @@
 import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory } from "../../constants";
 import { makeEmbed } from "../../lib/embed";
+import Logger from "../../lib/logger";
 
 export const drm: CommandDefinition = {
 	name: ["features", "drm", "fsarchive"],
@@ -15,6 +16,12 @@ export const drm: CommandDefinition = {
 				"For a detailed list of features we are able to work on, check out the [contributor guide](https://github.com/Heavy-Division/B78XH/blob/main/.github/CONTRIBUTING.md). " +
 				"This list is not set in stone, and we will update it when and if Asobo provides access to various core systems files in the future.",
 		});
+
+
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
 
 		return msg.channel.send({ embeds: [drmEmbed] });
 	},

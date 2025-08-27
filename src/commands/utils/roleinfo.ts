@@ -3,6 +3,7 @@
 import type { CommandDefinition } from "../../lib/command";
 import { makeEmbed } from "../../lib/embed";
 import { CommandCategory } from "../../constants";
+import Logger from "../../lib/logger";
 
 export const roleinfo: CommandDefinition = {
 	name: "roleinfo",
@@ -30,6 +31,11 @@ export const roleinfo: CommandDefinition = {
 			title: `${role.name}`,
 			description: `**${role.members.size}** members have that role.`,
 		});
+
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
 
 		return msg.channel.send({ embeds: [roleinfoEmbed] });
 	},

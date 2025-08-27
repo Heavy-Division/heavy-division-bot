@@ -1,6 +1,7 @@
 import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory } from "../../constants";
 import { makeEmbed, makeLines } from "../../lib/embed";
+import Logger from "../../lib/logger";
 
 // TODO: Implement a GIF guide of the following:
 
@@ -21,7 +22,10 @@ export const lnav: CommandDefinition = {
 				"3. Engage by pressing the 'LNAV' button on the glareshield.",
 			]),
 		});
-
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
 		return msg.channel.send({ embeds: [lnavEmbed] });
 	},
 };

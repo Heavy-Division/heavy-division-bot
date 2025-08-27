@@ -3,6 +3,7 @@
 import type { CommandDefinition } from "../../lib/command";
 import { makeEmbed } from "../../lib/embed";
 import { CommandCategory } from "../../constants";
+import Logger from "../../lib/logger";
 
 export const membercount: CommandDefinition = {
 	name: "membercount",
@@ -14,7 +15,10 @@ export const membercount: CommandDefinition = {
 			title: "Members",
 			description: `${memberCount}`,
 		});
-
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
 		return msg.channel.send({ embeds: [membercountEmbed] });
 	},
 };

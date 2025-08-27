@@ -2,16 +2,10 @@
 
 import winston from "winston";
 import ecsFormat from "@elastic/ecs-winston-format";
-import { DEBUG_MODE, NODE_ENV } from "../secrets";
+import { NODE_ENV } from "../secrets";
 
 const level = () => {
-	if (DEBUG_MODE === "true") {
-		return "debug";
-	}
-
-	const env = NODE_ENV || "development";
-	const isDevelopment = env === "development";
-	return isDevelopment ? "debug" : "info";
+    return process.env.LOG_LEVEL || "INFO";
 };
 
 const format = () => {

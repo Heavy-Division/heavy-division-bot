@@ -3,6 +3,7 @@
 import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory } from "../../constants";
 import { makeEmbed } from "../../lib/embed";
+import Logger from "../../lib/logger";
 
 // TODO: Replace Url With custom one
 const HEADER_IMAGE_URL =
@@ -32,6 +33,10 @@ export const welcome: CommandDefinition = {
 	requiredPermissions: ["BanMembers"],
 	category: CommandCategory.MODERATION,
 	executor: async (msg) => {
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
 		await msg.channel.send({ files: [HEADER_IMAGE_URL] });
 
 		await msg.channel.send(

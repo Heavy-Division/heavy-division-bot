@@ -1,5 +1,6 @@
 import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory } from "../../constants";
+import Logger from "../../lib/logger";
 
 export const timezone: CommandDefinition = {
 	name: ["Timezone", "utc", "gmt", "zulu"],
@@ -11,6 +12,10 @@ export const timezone: CommandDefinition = {
 
 		const currentDate = new Date();
 
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable")
+            return;
+        }
 		/**
 		 * Is end of command number or negative number
 		 */

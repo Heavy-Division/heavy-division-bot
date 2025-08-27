@@ -4,6 +4,7 @@ import moment from "moment";
 import type { CommandDefinition } from "../../lib/command";
 import { CommandCategory } from "../../constants";
 import { makeEmbed } from "../../lib/embed";
+import Logger from "../../lib/logger";
 
 enum beautifiedStatus {
 	ONLINE = "Online",
@@ -86,6 +87,11 @@ export const whois: CommandDefinition = {
 				},
 			],
 		});
+
+        if (!msg.channel.isSendable()) {
+            Logger.error("Channel is not sendable");
+            return;
+        }
 
 		return msg.channel.send({ embeds: [whoisEmbed] });
 	},
