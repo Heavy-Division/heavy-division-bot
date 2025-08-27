@@ -1,17 +1,24 @@
-import { CommandDefinition } from '../../lib/command';
-import { CommandCategory } from '../../constants';
-import { makeEmbed } from '../../lib/embed';
+import type { CommandDefinition } from "../../lib/command";
+import { CommandCategory } from "../../constants";
+import { makeEmbed } from "../../lib/embed";
+import Logger from "../../lib/logger";
 
 export const conflict: CommandDefinition = {
-    name: ['conflict', 'conflicts'],
-    description: 'Describes process for narrowing down bugs and issues to the B78XH mod.',
-    category: CommandCategory.SUPPORT,
-    executor: (msg) => {
-        const conflictEmbed = makeEmbed({
-            title: 'Heavy Division | Conflicts',
-            description: 'Before attributing major issues to the mod, ensure that no conflicts are occuring by removing other addons from the community folder and testing each one individually in the sim. ',
-        });
+	name: ["conflict", "conflicts"],
+	description:
+		"Describes process for narrowing down bugs and issues to the B78XH mod.",
+	category: CommandCategory.SUPPORT,
+	executor: (msg) => {
+		const conflictEmbed = makeEmbed({
+			title: "Heavy Division | Conflicts",
+			description:
+				"Before attributing major issues to the mod, ensure that no conflicts are occuring by removing other addons from the community folder and testing each one individually in the sim. ",
+		});
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
 
-        return msg.channel.send({ embeds: [conflictEmbed] });
-    },
+		return msg.channel.send({ embeds: [conflictEmbed] });
+	},
 };

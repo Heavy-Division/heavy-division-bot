@@ -1,42 +1,40 @@
 {
-  "name": "heavy-division-bot",
-  "version": "0.1.16",
-  "description": "Chat, support, and moderation bot for the Heavy Division Discord",
-  "main": "src/index.js",
-  "scripts": {
-    "build:typescript": "tsc",
-    "run:node": "node build/index.js",
-    "dev": "nodemon --watch src/ -e ts --exec ts-node src/index.ts",
-    "run": "npm run build:typescript && npm run run:node",
-    "watch": "-tsc -w",
-    "lint": "eslint src/**/**/*.ts",
-    "lint-fix": "eslint src/**/**/*.ts --fix"
-  },
-  "author": "Heavy Division Simulations",
-  "license": "AGPL 3.0",
-  "dependencies": {
-    "@elastic/ecs-winston-format": "^1.1.0",
-    "@types/bad-words": "^3.0.3",
-    "bad-words": "^3.0.4",
-    "cowsay": "^1.5.0",
-    "discord.js": "^14.0.3",
-    "elastic-apm-node": "^3.35.0",
-    "express": "^4.17.3",
-    "got": "^12.1.0",
-    "moment": "^2.29.4",
-    "mongoose": "^7.1.0",
-    "request": "^2.88.2",
-    "winston": "^3.3.4"
-  },
-  "devDependencies": {
-    "@heavy-division/eslint-config": "^0.1.0",
-    "@types/node": "^18.0.0",
-    "@typescript-eslint/eslint-plugin": "^4.28.5",
-    "@typescript-eslint/parser": "^4.28.5",
-    "dotenv": "^16.0.0",
-    "eslint": "^7.29.0",
-    "nodemon": "^2.0.19",
-    "ts-node": "^10.4.0",
-    "typescript": "^5.0.4"
-  }
+	"name": "heavy-division-bot",
+	"version": "0.1.16",
+	"description": "Chat, support, and moderation bot for the Heavy Division Discord",
+	"main": "src/index.js",
+	"scripts": {
+		"build:typescript": "tsc",
+		"run:node": "node build/index.js",
+		"dev": "nodemon --watch src/ -e ts --exec ts-node src/index.ts",
+		"run": "npm run build:typescript && npm run run:node",
+		"watch": "-tsc -w",
+		"lint": "biome lint",
+		"lint-fix": "biome lint --write",
+		"format": "biome format",
+		"format-fix": "biome format --write"
+	},
+	"author": "Heavy Division Simulations",
+	"license": "AGPL 3.0",
+	"dependencies": {
+		"@elastic/ecs-winston-format": "^1.5.3",
+		"bad-words": "^4.0.0",
+		"cowsay": "^1.6.0",
+		"discord.js": "^14.22.1",
+		"elastic-apm-node": "^4.13.0",
+		"express": "^5.1.0",
+		"got": "^14.4.7",
+		"moment": "^2.30.1",
+		"mongoose": "^8.18.0",
+		"winston": "^3.17.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.2.2",
+		"@types/bad-words": "^3.0.3",
+		"@types/node": "^24.3.0",
+		"dotenv": "^17.2.1",
+		"nodemon": "^3.1.10",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.9.2"
+	}
 }

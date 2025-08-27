@@ -1,4 +1,4 @@
-FROM node:22-alpine3.19 as builder
+FROM node:24-alpine3.21 as builder
 
 WORKDIR /app
 ENV NODE_ENV=development
@@ -6,13 +6,14 @@ ENV NODE_ENV=development
 COPY package*.json ./
 COPY tsconfig*.json ./
 
-RUN npm ci
+RUN npm install -g pnpm  && pnpm install
+
 
 COPY src/ src/
-RUN npm run build:typescript
+RUN pnpm run build:typescript
 
 
-FROM node:22-alpine3.19
+FROM node:24-alpine3.21
 
 WORKDIR /app
 ENV NODE_ENV=production

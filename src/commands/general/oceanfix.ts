@@ -1,19 +1,26 @@
-import { CommandDefinition } from '../../lib/command';
-import { makeEmbed } from '../../lib/embed';
-import { CommandCategory } from '../../constants';
+import type { CommandDefinition } from "../../lib/command";
+import { makeEmbed } from "../../lib/embed";
+import { CommandCategory } from "../../constants";
+import Logger from "../../lib/logger";
 
 // TODO: Add red box around the 787-10 in the content manager image, and replace with that. Upload in discord and call link here, do not use a local file.
-const OCEAN_FIX_URL = 'http://img89.imageshack.us/img89/8084/yujx.jpg';
+const OCEAN_FIX_URL = "http://img89.imageshack.us/img89/8084/yujx.jpg";
 
 export const oceanfix: CommandDefinition = {
-    name: ['ocean', 'ofix'],
-    description: 'A guide on how to convert latitude and longitude into oceanic fixes on the flight plan.',
-    category: CommandCategory.GENERAL,
-    executor: (msg) => {
-        const oceanicFixEmbed = makeEmbed({
-            title: 'Heavy Division B78XH | Oceanic Fixes',
-            image: { url: OCEAN_FIX_URL },
-        });
-        return msg.channel.send({ embeds: [oceanicFixEmbed] });
-    },
+	name: ["ocean", "ofix"],
+	description:
+		"A guide on how to convert latitude and longitude into oceanic fixes on the flight plan.",
+	category: CommandCategory.GENERAL,
+	executor: (msg) => {
+		const oceanicFixEmbed = makeEmbed({
+			title: "Heavy Division B78XH | Oceanic Fixes",
+			image: { url: OCEAN_FIX_URL },
+		});
+
+		if (!msg.channel.isSendable()) {
+			Logger.error("Channel is not sendable");
+			return;
+		}
+		return msg.channel.send({ embeds: [oceanicFixEmbed] });
+	},
 };

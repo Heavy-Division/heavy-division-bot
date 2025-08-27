@@ -1,86 +1,109 @@
 // based off FlyByWire Simulations Discord Bot - https://github.com/flybywiresim/discord-bot
 
-import { EmbedBuilder, EmbedField, Snowflake, User, Colors } from 'discord.js';
-import { CommandDefinition } from '../../lib/command';
-import { CommandCategory } from '../../constants';
-import { makeEmbed } from '../../lib/embed';
+import {
+	type EmbedBuilder,
+	type EmbedField,
+	type Snowflake,
+	User,
+	Colors,
+} from "discord.js";
+import type { CommandDefinition } from "../../lib/command";
+import { CommandCategory } from "../../constants";
+import { makeEmbed } from "../../lib/embed";
+import Logger from "../../lib/logger";
 
-type UserLike = User | Snowflake
+type UserLike = User | Snowflake;
 
 export const unban: CommandDefinition = {
-    name: 'unban',
-    requiredPermissions: ['BanMembers'],
-    category: CommandCategory.MODERATION,
-    executor: async (msg) => {
-        const splitUp = msg.content.replace(/\.unban\s+/, '').split(' ');
+	name: "unban",
+	requiredPermissions: ["BanMembers"],
+	category: CommandCategory.MODERATION,
+	executor: async (msg) => {
+		const splitUp = msg.content.replace(/\.unban\s+/, "").split(" ");
 
-        if (splitUp.length < 1) {
-            await msg.reply('you did not provide enough arguments for this command. (<id>)');
-            return Promise.resolve();
-        }
+		if (splitUp.length < 1) {
+			await msg.reply(
+				"you did not provide enough arguments for this command. (<id>)",
+			);
+			return Promise.resolve();
+		}
 
-        const idArg = splitUp[0];
+		const idArg = splitUp[0];
 
-        return msg.guild.members.unban(idArg).then((user: User | Snowflake) => {
-            msg.channel.send({ embeds: [makeSuccessfulUnbanEmbed(user)] });
-        }).catch(async (error) => {
-            const guildMember = await msg.guild.members.fetch(idArg);
+		return msg.guild.members
+			.unban(idArg)
+			.then((user: User | Snowflake) => {
+				if (!msg.channel.isSendable()) {
+					Logger.error("Channel is not sendable");
+					return;
+				}
+				msg.channel.send({ embeds: [makeSuccessfulUnbanEmbed(user)] });
+			})
+			.catch(async (error) => {
+				const guildMember = await msg.guild.members.fetch(idArg);
 
-            msg.channel.send({ embeds: [makeFailedUnbanEmbed(guildMember?.user ?? idArg, error)] });
-        });
-    },
+				if (!msg.channel.isSendable()) {
+					Logger.error("Channel is not sendable");
+					return;
+				}
+
+				msg.channel.send({
+					embeds: [makeFailedUnbanEmbed(guildMember?.user ?? idArg, error)],
+				});
+			});
+	},
 };
 
 function makeSuccessfulUnbanEmbed(user: UserLike): EmbedBuilder {
-    const fields: EmbedField[] = [];
+	const fields: EmbedField[] = [];
 
-    if (user instanceof User) {
-        fields.push({
-            inline: true,
-            name: 'Username',
-            value: user.toString(),
-        });
-    }
+	if (user instanceof User) {
+		fields.push({
+			inline: true,
+			name: "Username",
+			value: user.toString(),
+		});
+	}
 
-    fields.push({
-        inline: true,
-        name: 'ID',
-        value: (user instanceof User) ? user.id : user,
-    });
+	fields.push({
+		inline: true,
+		name: "ID",
+		value: user instanceof User ? user.id : user,
+	});
 
-    return makeEmbed({
-        title: 'User Successfully Unbanned',
-        fields,
-        color: Colors.Green,
-    });
+	return makeEmbed({
+		title: "User Successfully Unbanned",
+		fields,
+		color: Colors.Green,
+	});
 }
 
 function makeFailedUnbanEmbed(user: UserLike, error: any): EmbedBuilder {
-    const fields: EmbedField[] = [];
+	const fields: EmbedField[] = [];
 
-    if (user instanceof User) {
-        fields.push({
-            inline: true,
-            name: 'Username',
-            value: user.toString(),
-        });
-    }
+	if (user instanceof User) {
+		fields.push({
+			inline: true,
+			name: "Username",
+			value: user.toString(),
+		});
+	}
 
-    fields.push({
-        inline: true,
-        name: 'ID',
-        value: (user instanceof User) ? user.id : user,
-    });
+	fields.push({
+		inline: true,
+		name: "ID",
+		value: user instanceof User ? user.id : user,
+	});
 
-    fields.push({
-        inline: false,
-        name: 'Error',
-        value: error,
-    });
+	fields.push({
+		inline: false,
+		name: "Error",
+		value: error,
+	});
 
-    return makeEmbed({
-        title: 'Failed to Unban User',
-        fields,
-        color: Colors.Red,
-    });
+	return makeEmbed({
+		title: "Failed to Unban User",
+		fields,
+		color: Colors.Red,
+	});
 }

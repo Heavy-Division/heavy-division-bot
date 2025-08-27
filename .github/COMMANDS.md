@@ -33,7 +33,6 @@
 | .coffee   | Would you like some coffee?                                              | ---     |
 | .comi     | Stop with these sh*ts last chance...                                     | ---     |
 | .cowsay   | Emulates the famous UNIX program `cowsay`.                               | .cs     |
-| .default  | Accurate Description of the default 787-10 for Microsoft Flight Sim      | ---     |
 | .merge    | GIT MERGE!                                                               | ---     |
 | .p3d      | No!                                                                      | ---     |
 | .premium  | Dangit Bobby you were supposed to buy the Premium Deluxe version of MSFS | .prm    |
